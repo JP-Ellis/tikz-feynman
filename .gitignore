@@ -1,0 +1,38 @@
+# Ignore LaTeX temporary files
+*.aux
+*.auxlock
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.figlist
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.loa
+*.loe
+*.log
+*.makefile
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex
+*.synctex.gz
+*.toc
+*.unq
+/pgf-img/
+/_minted*/
+
+# Ignore AUCTeX folder and files
+/auto/
+/_region_.*
+
+# Ignore backup files and temporary files
+*~
+*#

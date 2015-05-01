@@ -1,0 +1,682 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Feynman Diagrams with TikZ
+% Copyright (C) 2014  Joshua Ellis
+%
+% Allows Feynman diagrams to be used with TikZ.
+%
+%
+%% This LaTeX file is free: you can redistribute it and/or modify it under the
+% terms of the GNU General Public License as published by the Free Software
+% Foundation, either version 3 of the License, or (at your option) any later
+% version.
+%
+% This is distributed in the hope that it will be useful, but WITHOUT ANY
+% WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
+% A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% HEADER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\pgfautoxrefs{1}
+\documentclass[a4paper,final]{ltxdoc}
+
+%% Formatting
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{multicol}
+\usepackage[
+    a4paper,
+    hmargin=2.25cm,
+    vmargin=2.5cm,
+    nohead
+]{geometry} % Easily change margin sizes (and many more dimensions)
+
+%\usepackage{setspace} % Line spacing
+%\singlespacing        % 1-spacing (default)
+%\onehalfspacing       % 1,5-spacing
+%\doublespacing        % 2-spacing
+
+%% Language
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[UKenglish]{babel}
+\usepackage[T1]{fontenc}
+% \usepackage{microtype}
+\usepackage{pifont}
+
+%% Graphics & Figure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[pdftex]{graphicx}   % For loading graphic files
+
+\usepackage{tikz}
+\usepackage{tikz-feynman}
+
+% Set up PGF externalization
+% Note that this requires the folder pgf-img to already exist
+\usetikzlibrary{external}
+\tikzexternalize[shell escape=-shell-escape, prefix=pgf-img/]
+\tikzset{
+    external/mode=list and make,
+    external/system call={
+        lualatex \tikzexternalcheckshellescape -halt-on-error -interaction=batchmode -jobname="\image" "\texsource" || rm "\image.pdf"},
+}
+
+
+%% Math Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{amsmath,amsfonts,amssymb} % The core packages for math
+\usepackage{mathtools}                % Extra features
+
+% Add tags to referenced lines only
+\mathtoolsset{showonlyrefs,showmanualtags}
+% Define \withnumber which forces a single line to have a number
+\def\withnumber{\refstepcounter{equation}\tag{\theequation}}
+
+% Allows page breaks in math (1 = avoid if possible, 4 = whenever)
+% Page breaks can be avoided at particular places by using \\*
+\allowdisplaybreaks[2]
+
+%% Other Packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{enumitem}    % Can customize {enumerate} and {itemize} lists
+\usepackage{hyperref}    % Automatically inserts hyperlinks.
+\usepackage{listings}    % Code listings
+\usepackage{fp}          % Floating point arithmetics
+\usepackage{minted}      % Use Pygments
+\usepackage{makeidx}
+\usepackage{xr}          % Cross-referencing
+
+%% Other modifications
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Modify the skip after each paragraph
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+% \setlength{\headheight}{25.23pt}
+
+\definecolor{link-color}{RGB}{0 0 75}
+\definecolor{cite-color}{RGB}{75 0 25}
+\definecolor{file-color}{RGB}{75 25 0}
+\definecolor{url-color}{RGB}{75 25 0}
+\definecolor{link-border-color}{RGB}{100 200 255}
+\definecolor{cite-border-color}{RGB}{255 0 150}
+\definecolor{url-border-color}{RGB}{255 150 0}
+
+\hypersetup{
+    pdftitle={tikz-feynman: Feynman diagrams with TikZ},
+    pdfkeywords={Feynman diagrams; TeX; LaTeX; ConTeXt; Tikz; pgf; tikz-feynman},
+    colorlinks=true,      % If colorlinks is false, a border is drawn instead
+                          % which does not appear in print.  If it is true, the
+                          % font is coloured and does appear in print.
+    linkcolor=link-color,
+    citecolor=cite-color,
+    filecolor=file-color,
+    urlcolor=url-color,
+    linkbordercolor=link-border-color,
+    citebordercolor=cite-border-color,
+    urlbordercolor=url-border-color,
+}
+
+\providecommand{\LuaTeX}{Lua\TeX}
+
+\IfFileExists{pgfmanual-en-macros}
+  {\input{pgfmanual-en-macros}}
+  {\PackageError{tikz-feynman-manual}{
+This document requires the file pgfmanual-en-macros.tex (distributed
+with pgf) to compile.  Please place a copy of that file in the current
+directory}{}}
+
+\makeindex
+
+\pgfkeys{
+  /pdflinks/search key prefixes in=
+    {/tikz/feynman/,/tikz/graphs/feynman/}  % This really needs to be commented out!
+  /pdflinks/internal link prefix=tikzfeynman,
+	%
+  /pdflinks/warnings=false,
+	% for debugging:
+  /pdflinks/show labels=false,
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%     DOCUMENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\vspace*{1em}
+\tikz\node[scale=1.2]{%
+  \color{gray}\Huge\ttfamily \char`\{\textcolor{red!75!black}{tikz-feynman}\char`\}};
+
+\vspace{0.5em}
+{\Large\bfseries Feynman diagrams with \tikzname}
+
+\vspace{0.7em}
+{Version 0.1 \qquad 1 May 2014}
+
+\vspace{1.3em}
+{by  Joshua Ellis}
+\end{center}
+
+\vfill
+
+\begin{center}
+\begin{codeexample}[graphic=white]
+\begin{tikzpicture}
+  \graph [feynman, node distance=2.5cm, edges={thick}, vertical= e to f]
+  {
+    a -- [fermion] b -- [photon] c -- [fermion] d,
+    b -- [fermion] e -- [fermion] c,
+    e -- [gluon]  f,
+    h -- [fermion] f -- [fermion] i;
+  };
+\end{tikzpicture}\end{codeexample}
+\end{center}
+
+\vfill
+
+\begin{multicols}{2}
+  \tableofcontents
+\end{multicols}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% CONTENT
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+\section{Introduction}
+\label{sec:introduction}
+
+This package provides a set of pre-defined styles in order to draw Feynman
+diagrams using \href{https://www.ctan.org/pkg/pgf}{\tikzname} more easily and
+consistently.  The set of styles defined here were originally inspired by
+\href{http://tex.stackexchange.com/a/87395/26980}{this answer} on
+\href{http://tex.stackexchange.com}{|http://tex.stackexchange.com|}, so due
+credit must go to Jake.
+
+If you have any suggestions or have found any bugs, please feel free to create a
+new issue or pull request on the Github page:
+\href{https://www.github.com/JP-Ellis/tikz-feynman}{|https://www.github.com/JP-Ellis/tikz-feynman|}.
+
+\subsection{Installation}
+\label{subsec:installation}
+
+This package is \emph{not} currently offered on
+\href{https://www.ctan.org}{CTAN} as it is just a personal project of mine;
+however, if enough people find it useful, I will look into making it available
+through CTAN.
+
+In order to use this as it is, simply download |tikz-feynman.sty| and place it
+in the same directory as your \TeX~file and include it using the usual
+|\usepackage{tikz-feynman}|.  Alternatively, it is also possible to install
+|tikz-feynman| system-wide by placing it inside \TeX's search path (which will
+vary based on your operating system).
+
+In v3.0.0 of \tikzname, there is a bug in the Lua component of the graphdrawing
+library which prevents it from handling coordinate nodes properly.  This bug
+does not seem to affect the usual \tikzname~drawing library.  If you wish to use the
+|\graph| command with any of the options that require Lua, you will need to
+apply the following patch:
+
+\begin{minted}[fontsize=\footnotesize, bgcolor=codebackground]{diff}
+--- a/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua
++++ b/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua
+@@ -263,6 +263,13 @@ end
+
+ function InterfaceToDisplay.createVertex(name, shape, path, height, binding_infos, anchors)
+
++  -- The path should never be empty, so we create a trivial path in the provided
++  -- path is empty.  This occurs with the `coordinate` shape for example.
++  if #path == 0 then
++    path:appendMoveto(0, 0)
++    path:appendClosepath()
++  end
++
+   -- Setup
+   local scope = InterfaceCore.topScope()
+   local binding = InterfaceCore.binding
+\end{minted}
+
+
+\newpage
+\section{Usage}
+\label{sec:usage}
+
+|tikz-feynman| has three ways of setting up the Feynman diagram.  The placement
+of vertices can either be fully-automated using some algorithm; specified
+related to other vertices; or fully manual using coordinates.  Each method is
+mostly compatible with the others, so it is possible to specify a an initial
+set of vertices using one of the graph algorithms, and then place additional
+vertices relative to these.
+
+There is one exception: a |\graph| with |feynman spring layout| or |feynman
+ electrical layout| must consist entirely of new nodes and \emph{cannot} anchor
+to nodes defined outside the graph.
+
+The three methods of placing nodes are illustrated below and see also the
+examples for uses in different contexts.
+
+
+\subsection{Automatic Placement}
+\label{subsec:automatic_placement}
+
+The \tikzname~graphdrawing library offers the ability to automatically position the
+vertices of a Feynman diagram by following an algorithm.  For some of these
+algorithm, \LuaTeX~is required as the edges are modelled by springs, and the
+vertices may be given charges.
+
+|tikz-feynman| pre-defines three graph styles: |feynman spring layout|, |feynman
+ electrical layout| and |feynman layered layout|.  By default, when using
+|\graph [feynman]|, the spring layout is used which models each edge as springs.
+
+\begin{codeexample}[]
+\tikz \graph [feynman, horizontal'=a to b] {
+    a1 -- [fermion, edge label=\(e^{-}\)] a [label=70:\(g\)] -- [fermion, edge label=\(e^{+}\)] a2,
+    a  -- [photon, edge label=\(\gamma\)] b,
+    b1 -- [fermion, edge label=\(e^{+}\)] b -- [fermion, edge label=\(e^{-}\)] b2;
+  };\end{codeexample}
+
+
+\subsection{Semi-automatic Placement}
+\label{subsec:semi-automatic_placement}
+
+\tikzname~also provides the ability to place vertices relative to other previously
+labelled vertices using various |above=of name|, |left=of name|, and similar
+keys.  |tikz-feynman| also provides the command |\vertex| which just a shorthand
+for |\node[vertex]|.  In the future, |\vertex| is intended to intelligently
+recognize when a vertex has a name and adapt the style to display the name.
+
+Once the nodes have been placed, it is possible to use a simple |\graph|
+environment in order to draw in the edges, or alternatively, using the |\draw| command.
+
+\begin{codeexample}[]
+\begin{tikzpicture}[feynman]
+  \vertex [label=70:\(g\)] (a) {};
+  \vertex (b) [right=of a] {};
+  \vertex (a1) [above left=of a] {};
+  \vertex (a2) [below left=of a] {};
+  \vertex (b1) [above right=of b] {};
+  \vertex (b2) [below right=of b] {};
+
+  \graph {
+    (a1) -- [fermion, edge label=\(e^{-}\)] (a) [label=70:\(g\)] -- [fermion, edge label=\(e^{+}\)] (a2),
+    (a)  -- [photon, edge label=\(\gamma\)] (b);
+    (b1) -- [fermion, edge label'=\(e^{+}\)] (b) -- [fermion, edge label'=\(e^{-}\)] (b2);
+  };
+\end{tikzpicture}\end{codeexample}
+
+
+\subsection{Manual Placement}
+\label{subsec:manual_placement}
+
+Lastly, it is possible to fully specify each vertex' coordinates.
+
+\begin{codeexample}[]
+\begin{tikzpicture}[feynman]
+  \vertex[label=70:\(g\)] (a) at (-1, 0) {};
+  \vertex (b)  at (1, 0)       {};
+  \vertex (a1) at (-2.5, 1.5)  {};
+  \vertex (a2) at (-2.5, -1.5) {};
+  \vertex (b1) at (2.5, 1.5)   {};
+  \vertex (b2) at (2.5, -1.5)  {};
+
+  \graph {
+    (a1) -- [fermion, edge label=\(e^{-}\)] (a) [label=70:\(g\)] -- [fermion, edge label=\(e^{+}\)] (a2),
+    (a)  -- [photon, edge label=\(\gamma\)] (b);
+    (b1) -- [fermion, edge label'=\(e^{+}\)] (b) -- [fermion, edge label'=\(e^{-}\)] (b2);
+  };
+\end{tikzpicture}\end{codeexample}
+
+
+\clearpage
+\section{Examples}
+\label{sec:examples}
+
+\begin{center}
+\begin{codeexample}[]
+\begin{tikzpicture}
+  \graph [feynman, horizontal=a to b1]
+  {
+    ai [particle=\(e^{-}\)] -- [fermion] a -- [fermion] af [particle=\(e^{+}\)],
+    a  -- [photon] b1 -- [fermion, semi-left] b2 -- [fermion, semi-left] b1,
+    b2 -- [photon] c,
+    ci [particle=\(e^{+}\)] -- [fermion] c -- [fermion] cf [particle=\(e^{-}\)];
+  };
+\end{tikzpicture}\end{codeexample}
+
+\begin{codeexample}[]
+\begin{tikzpicture}
+  \graph [feynman, horizontal=b1 to b3]
+  {
+    ai -- [fermion] a -- [fermion] af,
+    a  -- [photon] b1,
+    b3 -- [photon] c,
+    ci -- [fermion] c -- [fermion] cf;
+    {[edges={fermion, looseness=1}]
+      b1
+      -- [out=90, in=180] b2
+      -- [out=0, in=90] b3
+      -- [out=-90, in=0] b4
+      -- [out=180, in=-90] b1,
+    };
+  };
+  \draw[gluon] (b2) -- (b4);
+\end{tikzpicture}\end{codeexample}
+
+\begin{codeexample}[]
+\begin{tikzpicture}
+  \graph [feynman, vertical=e to f]
+  {
+    a -- [fermion] b -- [photon] c -- [fermion] d,
+    b -- [fermion] e -- [fermion] c,
+    e -- [gluon]  f,
+    h -- [fermion] f -- [fermion] i;
+  };
+\end{tikzpicture}\end{codeexample}
+
+\begin{codeexample}[]
+\begin{tikzpicture}[feynman]
+  \graph [feynman layered layout, grow=right, edges={fermion}] {
+    a -- b -- c -- d -- e
+  };
+  \vertex (v) [below=of c] {};
+  \vertex (h) [below=of v] {};
+
+  \draw[charged scalar] (b) to [out=-90, in=180] (v);
+  \draw[charged scalar] (v) to [out=0, in=-90] (d);
+  \draw[scalar] (v) to (h);
+\end{tikzpicture}\end{codeexample}
+
+\begin{codeexample}[]
+\begin{tikzpicture}
+  \graph [feynman electrical layout, horizontal=a to b] {
+    { [edges={charged scalar}]
+      a -- b -- c -- d -- a
+    },
+    a1 --[fermion] a,
+    b1 --[anti fermion] b,
+    c1 --[fermion] c,
+    d1 --[anti fermion] d;
+  };
+\end{tikzpicture}\end{codeexample}
+
+\begin{codeexample}[]
+\begin{tikzpicture}[feynman]
+  \vertex (a1) {};
+  \vertex (a2) [right=of a1] {};
+  \vertex (a3) [right=4cm of a2] {};
+  \vertex (b2) [above=1cm of a3] {};
+  \vertex (b1) [left=2.5cm of b2] {};
+  \vertex (c)  [above=0.5cm of b2] {};
+  \vertex (s1) [below=0.5cm of a1] {};
+  \vertex (s2) [below=0.5cm of a3] {};
+
+  \graph {
+    {[edges={fermion}]
+      (a1) -- (a2) -- (a3),
+      (b1) -- (b2),
+      (b1) -- (c),
+      (s1) -- (s2),
+    },
+    (a2) -- [scalar] (b1),
+  };
+\end{tikzpicture}\end{codeexample}
+
+\begin{codeexample}[]
+\begin{tikzpicture}[feynman]
+  \vertex (a1) {};
+  \vertex (a2) [right=of a1] {};
+  \vertex (a3) [right=4cm of a2] {};
+  \vertex (b2) [below=0.5cm of a3] {};
+  \vertex (b1) [below left=0.75cm and 3cm of b2] {};
+  \vertex (b3) [below=1.5cm of b2] {};
+  \vertex (s1) [below=2.5cm of a1] {};
+  \vertex (s2) [below=2.5cm of a3] {};
+
+  \graph {
+    {[edges={fermion}]
+      (a1) -- (a2) -- (a3),
+      (b1) -- (b2),
+      (b1) -- (b3),
+      (s1) -- (s2),
+    },
+    (a2) -- [scalar] (b1),
+  };
+\end{tikzpicture}\end{codeexample}
+
+\begin{codeexample}[]
+\begin{tikzpicture}[feynman]
+  \vertex (a1) {};
+  \vertex (a2) [below=4cm of a1] {};
+  \vertex (b1) [below right=1cm and 2cm of a1] {};
+  \vertex (b2) [above right=1cm and 2cm of a2] {};
+  \vertex (c1) [right=5cm of a1] {};
+  \vertex (c2) [right=5cm of a2] {};
+
+  \graph {
+    { [edges=fermion]
+      (a1) -- (b1),
+      (c2) -- (b1),
+      (b2) -- (a2),
+      (b2) -- (c1),
+    },
+    (b1) -- [photon] (b2),
+  };
+\end{tikzpicture}\end{codeexample}
+\end{center}
+
+
+\clearpage
+\section{Documentation}
+\label{sec:documentation}
+
+\begin{key}{/tikz/feynman}
+  Sets certain options within the scope to be so that they work consistently
+  across the various positioning methods.  Note that any |\graph|
+
+  Sets the |below=of name| spacing to values consistent with the way graphs will
+  place the nodes.
+\end{key}
+
+
+\subsection{Graph Drawing}
+\label{subsec:graph_drawing}
+
+The following keys are defined for the |\graph| command.  Please refer to the
+graphdrawing documentation in the main \tikzname~manual for additional information.
+
+\begin{key}{/tikz/graphs/feynman}
+  The default style for Feynman diagrams; simply a shorthand for |feynman spring layout|.
+\end{key}
+
+\begin{key}{/tikz/graphs/every feynman}
+  Provides the basic underlying style to all Feynman diagrams created using
+  |\graph|.
+
+\begin{codeexample}[]
+\tikzset{graphs/every feynman/.append style={edges={red, thick}}}
+% ...
+\tikz \graph [feynman, horizontal=c to d] {
+  {a, b} -- c -- [photon] d -- {e, f}
+};
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/graphs/feynman spring layout}
+  Models each edge as a spring when determining the final placement of the
+  vertices.  This requires \LuaTeX.
+
+\begin{codeexample}[]
+\tikz \graph [feynman spring layout, horizontal=c to d] {
+  {a, b} -- c -- [photon] d -- {e, f}
+};
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/graphs/feynman electrical layout}
+  Models each edge as a spring and gives each vertex a charge when determining
+  the final placement of the vertices.  This requires \LuaTeX.
+
+\begin{codeexample}[]
+\tikz \graph [feynman electrical layout, horizontal=c to d] {
+  {a, b} -- c -- [photon] d -- {e, f}
+};
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/graphs/feynman layered layout}
+  Models each edge as a spring and gives each vertex a charge when determining
+  the final placement of the vertices.  This requires \LuaTeX.
+
+\begin{codeexample}[]
+\tikz \graph [feynman layered layout, grow=right] {
+  {a, b} -- c -- [photon] d -- {e, f}
+};
+\end{codeexample}
+\end{key}
+
+
+\subsection{Edge Styles}
+\label{subsec:edge_styles}
+
+\begin{key}{/tikz/with arrow}
+  Adds an arrow in the middle of edge.
+
+\begin{codeexample}[]
+\tikz \draw[with arrow] (0, 0) -- (2, 0);
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/with reversed arrow}
+  Adds an arrow in the middle of edge pointing backwards.
+
+\begin{codeexample}[]
+\tikz \draw[with reversed arrow] (0, 0) -- (2, 0);
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/photon}
+  Sinusoidal line for photons.
+
+\begin{codeexample}[]
+\tikz \draw[photon] (0, 0) -- (2, 0);
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/scalar}
+  Dashed line for scalars.
+
+\begin{codeexample}[]
+\tikz \draw[scalar] (0, 0) -- (2, 0);
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/charged scalar}
+  Dashed line with an arrow for charged scalars.
+
+\begin{codeexample}[]
+\tikz \draw[charged scalar] (0, 0) -- (2, 0);
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/anti charged scalar}
+  Dashed line with an reversed arrow for charged scalars.
+
+\begin{codeexample}[]
+\tikz \draw[anti charged scalar] (0, 0) -- (2, 0);
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/fermion}
+  Solid line with an arrow for fermions.
+
+\begin{codeexample}[]
+\tikz \draw[fermion] (0, 0) -- (2, 0);
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/anti fermion}
+  Solid line with a reversed arrow for fermions.
+
+\begin{codeexample}[]
+\tikz \draw[anti fermion] (0, 0) -- (2, 0);
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/gluon}
+  Coils for gluons.
+
+\begin{codeexample}[]
+\tikz \draw[gluon] (0, 0) -- (2, 0);
+\end{codeexample}
+\end{key}
+
+
+\subsubsection{Edge Modifiers}
+\label{subsubsec:edge_modifiers}
+
+\begin{key}{/tikz/semi-left}
+  Causes the edge to turn left and complete a semicircle until it reaches the
+  next node.
+
+\begin{codeexample}[]
+\tikz \graph[horizontal=a to b] { a --[semi-left] b --[semi-left] a };
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/semi-right}
+  Same as |/tikz/semi-left|, but going around the other way.
+\end{key}
+
+
+\subsection{Vertex Styles}
+\label{subsec:vertex_styles}
+
+\begin{key}{/tikz/vertex}
+  The base node style used in Feynman diagram.
+\end{key}
+
+\begin{key}{/tikz/every vertex}
+  A style applied to all vertices in a Feynman diagram.
+
+\begin{codeexample}[]
+\tikzset{every vertex/.style={red, shape=circle}}
+% ...
+\tikz \graph[feynman, horizontal=a to b] {a -- b};
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/particle=\meta{name}}
+  Place the particle \meta{name} at the location of the vertex.  This should
+  only be used for terminal vertices.
+
+\begin{codeexample}[]
+\tikz \graph[feynman, horizontal=a to b] {
+  a [particle=\(e^{-}\)] -- [fermion] b [particle=\(e^{-}\)]
+};
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/blob}
+  Style the vertex as a blob.
+
+\begin{codeexample}[]
+\tikz \graph[feynman layered layout, grow=right] {
+  {a, b} -- c [blob] -- {d, e, f}
+};
+\end{codeexample}
+\end{key}
+
+\printindex
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

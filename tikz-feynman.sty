@@ -1,0 +1,232 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Feynman Diagrams with TikZ
+% Copyright (C) 2014  Joshua Ellis
+%
+% Allows Feynman diagrams to be used with TikZ.
+%
+% Many thanks must go to Jake for his answer on tex.se upon which this is built.
+% http://tex.stackexchange.com/a/87395/26980
+%
+%
+% This work may be distributed and/or modified under the conditions of the LaTeX
+% Project Public License, either version 1.3 of this license or (at your option)
+% any later version.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Joshua Ellis.
+%
+% This program is distributed in the hope that it will be useful, but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+% FOR A PARTICULAR PURPOSE.  See the LaTeX Project Public License for more
+% details.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{tikz-feynman}
+
+%% Key values
+\RequirePackage{tikz}
+\RequirePackage{ifluatex}
+
+\usetikzlibrary{
+    arrows.meta,
+    decorations,
+    decorations.markings,
+    decorations.pathmorphing,
+    graphs,
+    patterns,
+    positioning,
+    shapes.geometric,
+}
+\ifluatex
+    \usetikzlibrary{
+        graphdrawing
+    }
+    \usegdlibrary{
+        circular,
+        force,
+        layered,
+        trees
+    }
+\fi
+
+\pgfdeclaredecoration{complete sines}{initial}{
+    \state{initial}[
+        width=+0pt,
+        next state=sine,
+        persistent precomputation={
+            \pgfmathsetmacro\matchinglength{
+                \pgfdecoratedinputsegmentlength /
+                int(\pgfdecoratedinputsegmentlength/\pgfdecorationsegmentlength)
+            }
+            \setlength{\pgfdecorationsegmentlength}{\matchinglength pt}
+        }
+    ] {}
+
+    \state{sine}[width=\pgfdecorationsegmentlength] {
+        \pgfpathsine{\pgfpoint{0.25\pgfdecorationsegmentlength}{0.5\pgfdecorationsegmentamplitude}}
+        \pgfpathcosine{\pgfpoint{0.25\pgfdecorationsegmentlength}{-0.5\pgfdecorationsegmentamplitude}}
+        \pgfpathsine{\pgfpoint{0.25\pgfdecorationsegmentlength}{-0.5\pgfdecorationsegmentamplitude}}
+        \pgfpathcosine{\pgfpoint{0.25\pgfdecorationsegmentlength}{0.5\pgfdecorationsegmentamplitude}}
+    }
+
+    \state{final}{}
+}
+
+%% Setup all the keys.
+
+\tikzgraphsset{
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Graph Specifications
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % These options provide sane default values to \graph.
+    %
+    %
+    every feynman/.style={
+        nodes={vertex},
+    },
+    % The basic graph, uses `spring layout` as its underlying algorithm
+    feynman spring layout/.style={
+        spring layout,
+        every feynman,
+        node distance=2cm,
+    },
+    %
+    % Uses `spring electrical layout` which differs only slightly from the
+    % simple `spring layout`
+    feynman electrical layout/.style={
+        spring electrical layout,
+        every feynman,
+        node distance=1.5cm,
+    },
+    %
+    % This places nodes on `layers`, see example below.
+    feynman layered layout/.style={
+        layered layout,
+        every feynman,
+        sibling distance=1.5cm,
+        level distance=2cm,
+    },
+    % We'll also set the default `feynman` key to use the spring layout
+    feynman/.style=feynman spring layout,
+}
+
+\tikzset{
+    feynman/.style={
+        node distance=2cm,
+    },
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Node Specifications
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %
+    every vertex/.style={},
+    vertex/.style={
+        shape=coordinate,
+        graphs/as={},
+        every vertex,
+    },
+    blob/.style={
+        circle,
+        draw,
+        fill,
+        pattern=north west lines,
+        minimum size=1cm,
+    },
+    %
+    % If a node has a name, we display it.  
+    % This should only be used on end vertices.
+    particle/.style={
+        graphs/as={#1},
+        shape=circle,
+        draw=none,
+    },
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Path specifications
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    with arrow/.style={
+        decoration={
+            markings,
+            mark=at position 0.5 with {
+                \node[
+                    transform shape,
+                    xshift=-0.5mm,
+                    fill=black,
+                    inner sep=1pt,
+                    draw,
+                    isosceles triangle
+                ] { };
+            },
+        },
+        postaction=decorate,
+    },
+    with reversed arrow/.style={
+        decoration={
+            markings,
+            mark=at position 0.5 with {
+                \node[
+                    transform shape,
+                    xshift=-0.5mm,
+                    rotate=180,
+                    fill=black,
+                    inner sep=1pt,
+                    draw,
+                    isosceles triangle
+                ] { };
+            },
+        },
+        postaction=decorate
+    },
+    photon/.style={
+        decoration={
+            complete sines,
+            amplitude=1mm,
+            segment length=2mm
+        },
+        decorate,
+    },
+    scalar/.style={
+        dashed,
+    },
+    charged scalar/.style={
+        scalar,
+        with arrow,
+    },
+    anti charged scalar/.style={
+        scalar,
+        with reversed arrow,
+    },
+    fermion/.style={
+        with arrow,
+    },
+    anti fermion/.style={
+        with reversed arrow,
+    },
+    gluon/.style={
+        decoration={
+            coil,
+            aspect=0.75,
+            mirror,
+            segment length=1.5mm
+        },
+        decorate
+    },
+   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Modifiers 
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % For particles to bend left and right by HALF CIRCLES
+    semi-left/.style={
+        bend left=90,
+        looseness=1.5,
+    },
+    semi-right/.style={
+        bend right=90,
+        looseness=1.5,
+   },
+}
+
+% \tikzaddtikzonlycommandshortcutlet{\vertex}{\node[vertex, red]}
+\def\vertex{\node[vertex]}
+
+\endinput
