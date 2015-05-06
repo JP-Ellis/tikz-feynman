@@ -662,6 +662,16 @@ graphdrawing documentation in the main \tikzname~manual for additional informati
 \end{codeexample}
 \end{key}
 
+\begin{key}{/tikz/dot}
+  Style the vertex as a dot.
+
+\begin{codeexample}[]
+\tikz \graph[feynman layered layout, grow=right] {
+  {a, b} -- c [dot] -- [photon] d [dot] -- { e, f }
+};
+\end{codeexample}
+\end{key}
+
 \begin{key}{/tikz/blob}
   Style the vertex as a blob.
 
