@@ -32,6 +32,7 @@
 
 \usetikzlibrary{
     arrows.meta,
+    calc,
     decorations,
     decorations.markings,
     decorations.pathmorphing,
@@ -153,6 +154,55 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Path specifications
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % store of parameters
+    momentum/distance/.store in=\paradist,
+    momentum/shorten/.store in=\parashorten,
+    momentum/label distance/.store in=\paralabdist,
+    % default values
+    momentum/distance=3mm,
+    momentum/shorten=4mm,          % to shorten parallel arrows
+    momentum/label distance=2.5mm, % distance of label from link
+    % main style
+    momentum/.default={},
+    momentum/.style args={#1}{
+      to path={
+        \pgfextra{
+          \pgfinterruptpath
+          % middle point
+          \coordinate (m) at ($(\tikztostart)!.5!(\tikztotarget)$);
+          % arrow
+          \draw[-stealth,shorten >=\parashorten,shorten <=\parashorten]
+          ($(\tikztostart)!\paradist!-90:(\tikztotarget)$) -- ($(\tikztotarget)!\paradist!90:(\tikztostart)$)
+          % middle of arrow
+          coordinate[pos=.5] (m from);
+          % label of arrow
+          \node[font=\small] at ($(m)!\paralabdist+\paradist!(m from)$){#1};
+          \endpgfinterruptpath
+        }
+        % link
+        (\tikztostart) -- (\tikztotarget)
+      },
+    },
+    momentum'/.default={},
+    momentum'/.style args={#1}{
+      to path={
+        \pgfextra{
+          \pgfinterruptpath
+          % middle point
+          \coordinate (m) at ($(\tikztostart)!.5!(\tikztotarget)$);
+          % arrow
+          \draw[-stealth,shorten >=\parashorten,shorten <=\parashorten]
+          ($(\tikztostart)!-\paradist!-90:(\tikztotarget)$) -- ($(\tikztotarget)!-\paradist!90:(\tikztostart)$)
+          % middle of arrow
+          coordinate[pos=.5] (m from);
+          % label of arrow
+          \node[font=\small] at ($(m)!+\paralabdist+\paradist!(m from)$){#1};
+          \endpgfinterruptpath
+        }
+        % link
+        (\tikztostart) -- (\tikztotarget)
+      },
+    },
     with arrow/.style={
         decoration={
             markings,

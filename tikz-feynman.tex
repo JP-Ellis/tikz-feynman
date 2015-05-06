@@ -158,7 +158,7 @@ directory}{}}
 {\Large\bfseries Feynman diagrams with \tikzname}
 
 \vspace{0.7em}
-{Version 0.1 \qquad 1 May 2014}
+{Version 0.1.2 \qquad \today}
 
 \vspace{1.3em}
 {by  Joshua Ellis}
@@ -172,7 +172,7 @@ directory}{}}
   \graph [feynman, node distance=2.5cm, edges={thick}, vertical= e to f]
   {
     a -- [fermion] b -- [photon] c -- [fermion] d,
-    b -- [fermion] e -- [fermion] c,
+    b -- [fermion, momentum=\(p_{1}\)] e -- [fermion, momentum=\(p_{2}\)] c,
     e -- [gluon]  f,
     h -- [fermion] f -- [fermion] i;
   };
@@ -548,7 +548,7 @@ graphdrawing documentation in the main \tikzname~manual for additional informati
   Adds an arrow in the middle of edge.
 
 \begin{codeexample}[]
-\tikz \draw[with arrow] (0, 0) -- (2, 0);
+\tikz \draw[with arrow] (0, 0) to (2, 0);
 \end{codeexample}
 \end{key}
 
@@ -556,7 +556,7 @@ graphdrawing documentation in the main \tikzname~manual for additional informati
   Adds an arrow in the middle of edge pointing backwards.
 
 \begin{codeexample}[]
-\tikz \draw[with reversed arrow] (0, 0) -- (2, 0);
+\tikz \draw[with reversed arrow] (0, 0) to (2, 0);
 \end{codeexample}
 \end{key}
 
@@ -564,7 +564,7 @@ graphdrawing documentation in the main \tikzname~manual for additional informati
   Sinusoidal line for photons.
 
 \begin{codeexample}[]
-\tikz \draw[photon] (0, 0) -- (2, 0);
+\tikz \draw[photon] (0, 0) to (2, 0);
 \end{codeexample}
 \end{key}
 
@@ -572,7 +572,7 @@ graphdrawing documentation in the main \tikzname~manual for additional informati
   Dashed line for scalars.
 
 \begin{codeexample}[]
-\tikz \draw[scalar] (0, 0) -- (2, 0);
+\tikz \draw[scalar] (0, 0) to (2, 0);
 \end{codeexample}
 \end{key}
 
@@ -580,7 +580,7 @@ graphdrawing documentation in the main \tikzname~manual for additional informati
   Dashed line with an arrow for charged scalars.
 
 \begin{codeexample}[]
-\tikz \draw[charged scalar] (0, 0) -- (2, 0);
+\tikz \draw[charged scalar] (0, 0) to (2, 0);
 \end{codeexample}
 \end{key}
 
@@ -588,7 +588,7 @@ graphdrawing documentation in the main \tikzname~manual for additional informati
   Dashed line with an reversed arrow for charged scalars.
 
 \begin{codeexample}[]
-\tikz \draw[anti charged scalar] (0, 0) -- (2, 0);
+\tikz \draw[anti charged scalar] (0, 0) to (2, 0);
 \end{codeexample}
 \end{key}
 
@@ -596,7 +596,7 @@ graphdrawing documentation in the main \tikzname~manual for additional informati
   Solid line with an arrow for fermions.
 
 \begin{codeexample}[]
-\tikz \draw[fermion] (0, 0) -- (2, 0);
+\tikz \draw[fermion] (0, 0) to (2, 0);
 \end{codeexample}
 \end{key}
 
@@ -604,7 +604,7 @@ graphdrawing documentation in the main \tikzname~manual for additional informati
   Solid line with a reversed arrow for fermions.
 
 \begin{codeexample}[]
-\tikz \draw[anti fermion] (0, 0) -- (2, 0);
+\tikz \draw[anti fermion] (0, 0) to (2, 0);
 \end{codeexample}
 \end{key}
 
@@ -612,9 +612,67 @@ graphdrawing documentation in the main \tikzname~manual for additional informati
   Coils for gluons.
 
 \begin{codeexample}[]
-\tikz \draw[gluon] (0, 0) -- (2, 0);
+\tikz \draw[gluon] (0, 0) to (2, 0);
 \end{codeexample}
 \end{key}
+
+
+\subsubsection{Momentum Arrows}
+\label{subsubsec:momentum_arrows}
+
+\begin{key}{/tikz/momentum=\meta{label} (default empty)}
+  Draw an arrow parallel to the edge with \meta{label} if specified.  
+
+  The separation between the edge and the arrow, and the label and the arrow can
+  be changed through the |momentum/distance| and |momentum/label distance|
+  keys.  Similarly, the distance by which the arrows are shortened compared to
+  the edge is specified in |momentum/shorten|.
+
+\begin{codeexample}[]
+\tikz \draw[momentum=\(p_1\)]  (0, 0) to (2, 0);
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/momentum'=\meta{label} (default empty)}
+  Same as |momentum| but placing the arrow on the other side of the edge.
+
+\begin{codeexample}[]
+\tikz \draw[momentum'=\(p_1\)] (0, 0) to (2, 0);
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/momentum/distance=\meta{distance} (default 3mm)}
+  Specify the distance separating the arrow and edge
+
+\begin{codeexample}[]
+\begin{tikzpicture}
+  \draw[momentum/distance=5mm, momentum] (0, 1) to (2, 1);
+  \draw[momentum/distance=1mm, momentum] (0, 0) to (2, 0);
+\end{tikzpicture} \end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/momentum/shorten=\meta{distance} (default 4mm)}
+  Specify the amount by which the momentum arrows are shortened compared to the
+  end.
+
+\begin{codeexample}[]
+\begin{tikzpicture}
+  \draw[momentum/shorten=4mm, momentum] (0, 1) to (2, 1);
+  \draw[momentum/shorten=1mm, momentum] (0, 0) to (2, 0);
+\end{tikzpicture} \end{codeexample}
+\end{key}
+
+\begin{key}{/tikz/momentum/label distance=\meta{distance} (default 2.5mm)}
+  Specify the distance separating the momentum arrow label and the momentum
+  arrow.
+
+\begin{codeexample}[]
+\begin{tikzpicture}
+  \draw[momentum/label distance=3mm, momentum=\(p_1\)] (0, 1) to (2, 1);
+  \draw[momentum/label distance=1mm, momentum=\(p_1\)] (0, 0) to (2, 0);
+\end{tikzpicture} \end{codeexample}
+\end{key}
+
 
 
 \subsubsection{Edge Modifiers}
