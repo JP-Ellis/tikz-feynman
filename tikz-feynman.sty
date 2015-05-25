@@ -172,9 +172,9 @@
           \coordinate (m) at ($(\tikztostart)!.5!(\tikztotarget)$);
           % arrow
           \draw[-stealth,shorten >=\parashorten,shorten <=\parashorten]
-          ($(\tikztostart)!\paradist!-90:(\tikztotarget)$) -- ($(\tikztotarget)!\paradist!90:(\tikztostart)$)
-          % middle of arrow
-          coordinate[pos=.5] (m from);
+              ($(\tikztostart)!\paradist!-90:(\tikztotarget)$) -- ($(\tikztotarget)!\paradist!90:(\tikztostart)$)
+              % middle of arrow
+              coordinate[pos=.5] (m from);
           % label of arrow
           \node[font=\small] at ($(m)!\paralabdist+\paradist!(m from)$){#1};
           \endpgfinterruptpath
@@ -192,9 +192,9 @@
           \coordinate (m) at ($(\tikztostart)!.5!(\tikztotarget)$);
           % arrow
           \draw[-stealth,shorten >=\parashorten,shorten <=\parashorten]
-          ($(\tikztostart)!-\paradist!-90:(\tikztotarget)$) -- ($(\tikztotarget)!-\paradist!90:(\tikztostart)$)
-          % middle of arrow
-          coordinate[pos=.5] (m from);
+              ($(\tikztostart)!-\paradist!-90:(\tikztotarget)$) -- ($(\tikztotarget)!-\paradist!90:(\tikztostart)$)
+              % middle of arrow
+              coordinate[pos=.5] (m from);
           % label of arrow
           \node[font=\small] at ($(m)!+\paralabdist+\paradist!(m from)$){#1};
           \endpgfinterruptpath
@@ -203,6 +203,48 @@
         (\tikztostart) -- (\tikztotarget)
       },
     },
+    reversed momentum/.default={},
+    reversed momentum/.style args={#1}{
+      to path={
+        \pgfextra{
+          \pgfinterruptpath
+          % middle point
+          \coordinate (m) at ($(\tikztostart)!.5!(\tikztotarget)$);
+          % arrow
+          \draw[stealth-,shorten >=\parashorten,shorten <=\parashorten]
+              ($(\tikztostart)!\paradist!-90:(\tikztotarget)$) -- ($(\tikztotarget)!\paradist!90:(\tikztostart)$)
+              % middle of arrow
+              coordinate[pos=.5] (m from);
+          % label of arrow
+          \node[font=\small] at ($(m)!\paralabdist+\paradist!(m from)$){#1};
+          \endpgfinterruptpath
+        }
+        % link
+        (\tikztostart) -- (\tikztotarget)
+      },
+    },
+    rmomentum/.style args={#1}{reversed momentum={#1}},
+    reversed momentum'/.default={},
+    reversed momentum'/.style args={#1}{
+      to path={
+        \pgfextra{
+          \pgfinterruptpath
+          % middle point
+          \coordinate (m) at ($(\tikztostart)!.5!(\tikztotarget)$);
+          % arrow
+          \draw[stealth-,shorten >=\parashorten,shorten <=\parashorten]
+              ($(\tikztostart)!-\paradist!-90:(\tikztotarget)$) -- ($(\tikztotarget)!-\paradist!90:(\tikztostart)$)
+              % middle of arrow
+              coordinate[pos=.5] (m from);
+          % label of arrow
+          \node[font=\small] at ($(m)!+\paralabdist+\paradist!(m from)$){#1};
+          \endpgfinterruptpath
+        }
+        % link
+        (\tikztostart) -- (\tikztotarget)
+      },
+    },
+    rmomentum'/.style args={#1}{reversed momentum'={#1}},
     with arrow/.style={
         decoration={
             markings,

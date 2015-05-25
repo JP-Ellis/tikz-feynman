@@ -544,21 +544,16 @@ graphdrawing documentation in the main \tikzname~manual for additional informati
 \subsection{Edge Styles}
 \label{subsec:edge_styles}
 
-\begin{key}{/tikz/with arrow}
-  Adds an arrow in the middle of edge.
+\begin{keylist}{/tikz/with arrow,/tikz/with reversed arrow}
+  Adds an arrow in the middle pointing forwards in the case of |with arrow|, or
+  pointing backward in the case of |with reversed arrow|.
 
 \begin{codeexample}[]
-\tikz \draw[with arrow] (0, 0) to (2, 0);
-\end{codeexample}
-\end{key}
-
-\begin{key}{/tikz/with reversed arrow}
-  Adds an arrow in the middle of edge pointing backwards.
-
-\begin{codeexample}[]
-\tikz \draw[with reversed arrow] (0, 0) to (2, 0);
-\end{codeexample}
-\end{key}
+\begin{tikzpicture}
+  \draw[with arrow]          (0, 1) to (2, 1);
+  \draw[with reversed arrow] (0, 0) to (2, 0);
+\end{tikzpicture} \end{codeexample}
+\end{keylist}
 
 \begin{key}{/tikz/photon}
   Sinusoidal line for photons.
@@ -576,37 +571,27 @@ graphdrawing documentation in the main \tikzname~manual for additional informati
 \end{codeexample}
 \end{key}
 
-\begin{key}{/tikz/charged scalar}
-  Dashed line with an arrow for charged scalars.
+\begin{keylist}{/tikz/charged scalar,/tikz/anti charged scalar}
+  Dashed line with an arrow for charged scalars.  The arrow is reversed for 
+  |anti charged scalar|.
 
 \begin{codeexample}[]
-\tikz \draw[charged scalar] (0, 0) to (2, 0);
-\end{codeexample}
-\end{key}
+\begin{tikzpicture}
+  \draw[charged scalar]      (0, 1) to (2, 1);
+  \draw[anti charged scalar] (0, 0) to (2, 0);
+\end{tikzpicture} \end{codeexample}
+\end{keylist}
 
-\begin{key}{/tikz/anti charged scalar}
-  Dashed line with an reversed arrow for charged scalars.
-
-\begin{codeexample}[]
-\tikz \draw[anti charged scalar] (0, 0) to (2, 0);
-\end{codeexample}
-\end{key}
-
-\begin{key}{/tikz/fermion}
-  Solid line with an arrow for fermions.
+\begin{keylist}{/tikz/fermion,/tikz/anti fermion}
+  Solid line with an arrow for fermions.  The arrow is reversed for 
+  |anti fermion|.
 
 \begin{codeexample}[]
-\tikz \draw[fermion] (0, 0) to (2, 0);
-\end{codeexample}
-\end{key}
-
-\begin{key}{/tikz/anti fermion}
-  Solid line with a reversed arrow for fermions.
-
-\begin{codeexample}[]
-\tikz \draw[anti fermion] (0, 0) to (2, 0);
-\end{codeexample}
-\end{key}
+\begin{tikzpicture}
+  \draw[fermion]      (0, 1) to (2, 1);
+  \draw[anti fermion] (0, 0) to (2, 0);
+\end{tikzpicture} \end{codeexample}
+\end{keylist}
 
 \begin{key}{/tikz/gluon}
   Coils for gluons.
@@ -620,8 +605,11 @@ graphdrawing documentation in the main \tikzname~manual for additional informati
 \subsubsection{Momentum Arrows}
 \label{subsubsec:momentum_arrows}
 
-\begin{key}{/tikz/momentum=\meta{label} (default empty)}
-  Draw an arrow parallel to the edge with \meta{label} if specified.  
+\begin{keylist}{
+    /tikz/momentum=\meta{label} (default empty),
+    /tikz/momentum'=\meta{label} (default empty)}
+  Draw an arrow parallel to the edge with \meta{label} if specified.  The
+  alternative |momentum'| places the arrow on the other side of the edge.
 
   The separation between the edge and the arrow, and the label and the arrow can
   be changed through the |momentum/distance| and |momentum/label distance|
@@ -629,17 +617,26 @@ graphdrawing documentation in the main \tikzname~manual for additional informati
   the edge is specified in |momentum/shorten|.
 
 \begin{codeexample}[]
-\tikz \draw[momentum=\(p_1\)]  (0, 0) to (2, 0);
-\end{codeexample}
-\end{key}
+\begin{tikzpicture}
+  \draw[momentum'=\(p_1\)]  (0, 0.5) to (2, 0.5);
+  \draw[momentum=\(p_2\)]   (0, 0) to (2, 0);
+\end{tikzpicture} \end{codeexample}
+\end{keylist}
 
-\begin{key}{/tikz/momentum'=\meta{label} (default empty)}
-  Same as |momentum| but placing the arrow on the other side of the edge.
+\begin{keylist}{
+    /tikz/reversed momentum=\meta{label} (default empty),
+    /tikz/reversed momentum'=\meta{label} (default empty),
+    /tikz/rmomentum=\meta{label} (default empty),
+    /tikz/rmomentum'=\meta{label} (default empty)}
+  The same as |momentum| and |momentum'| respectively, with the arrow direction
+  reversed.  The |rmomentum| and |rmomentum'| keys are simply abbreviations.
 
 \begin{codeexample}[]
-\tikz \draw[momentum'=\(p_1\)] (0, 0) to (2, 0);
-\end{codeexample}
-\end{key}
+\begin{tikzpicture}
+  \draw[reversed momentum'=\(p_1\)]  (0, 0.5) to (2, 0.5);
+  \draw[reversed momentum=\(p_2\)]   (0, 0) to (2, 0);
+\end{tikzpicture} \end{codeexample}
+\end{keylist}
 
 \begin{key}{/tikz/momentum/distance=\meta{distance} (default 3mm)}
   Specify the distance separating the arrow and edge
