@@ -1,0 +1,16 @@
+--- a/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua
++++ b/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua
+@@ -263,6 +263,13 @@ end
+
+ function InterfaceToDisplay.createVertex(name, shape, path, height, binding_infos, anchors)
+
++  -- The path should never be empty, so we create a trivial path if the provided
++  -- path is empty.  This occurs with the `coordinate` shape for example.
++  if #path == 0 then
++    path:appendMoveto(0, 0)
++    path:appendClosepath()
++  end
++
+   -- Setup
+   local scope = InterfaceCore.topScope()
+   local binding = InterfaceCore.binding

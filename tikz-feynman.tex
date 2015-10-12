@@ -223,24 +223,7 @@ does not seem to affect the usual \tikzname~drawing library.  If you wish to use
 |\graph| command with any of the options that require Lua, you will need to
 apply the following patch:
 
-\begin{minted}[fontsize=\footnotesize, bgcolor=codebackground]{diff}
---- a/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua
-+++ b/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua
-@@ -263,6 +263,13 @@ end
-
- function InterfaceToDisplay.createVertex(name, shape, path, height, binding_infos, anchors)
-
-+  -- The path should never be empty, so we create a trivial path in the provided
-+  -- path is empty.  This occurs with the `coordinate` shape for example.
-+  if #path == 0 then
-+    path:appendMoveto(0, 0)
-+    path:appendClosepath()
-+  end
-+
-   -- Setup
-   local scope = InterfaceCore.topScope()
-   local binding = InterfaceCore.binding
-\end{minted}
+\inputminted[fontsize=\footnotesize, bgcolor=codebackground]{diff}{pgf.patch}
 
 
 \newpage
