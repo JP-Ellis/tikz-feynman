@@ -4,7 +4,7 @@
 
  function InterfaceToDisplay.createVertex(name, shape, path, height, binding_infos, anchors)
 
-+  -- The path should never be empty, so we create a trivial path in the provided
++  -- The path should never be empty, so we create a trivial path if the provided
 +  -- path is empty.  This occurs with the `coordinate` shape for example.
 +  if #path == 0 then
 +    path:appendMoveto(0, 0)
