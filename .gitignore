@@ -28,6 +28,7 @@
 *.unq
 /pgf-img/
 /_minted*/
+tikz-feynman.pdf
 
 # Ignore AUCTeX folder and files
 /auto/
