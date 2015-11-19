@@ -36,3 +36,6 @@
 # Ignore backup files and temporary files
 *~
 *#
+
+# Ignore pages
+/pages/

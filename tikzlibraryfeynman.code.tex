@@ -1,0 +1,265 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% TikZ-Feynman
+% Feynman Diagrams with TikZ
+% Copyright (C) 2015  Joshua Ellis
+%
+%
+% This work may be distributed and/or modified under the conditions of the LaTeX
+% Project Public License, either version 1.3 of this license or (at your option)
+% any later version.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is Joshua Ellis.
+%
+% This program is distributed in the hope that it will be useful, but WITHOUT
+% ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+% FOR A PARTICULAR PURPOSE.  See the LaTeX Project Public License for more
+% details.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Pre-requisites
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usetikzlibrary{
+  arrows.meta,
+  calc,
+  decorations,
+  decorations.markings,
+  decorations.pathmorphing,
+  decorations.pathreplacing,
+  graphs,
+  patterns,
+  positioning,
+  shapes.geometric,
+}
+\ifluatex
+  \usetikzlibrary{
+    graphdrawing
+  }
+  \usegdlibrary{
+    circular,
+    force,
+    layered,
+    trees
+  }
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Function definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Key Manager
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Setup the tikz-feynman key family
+\pgfkeys{/tikzfeynman/.is family}
+
+%% |\tikzfeynmanset| allows keys that belong with tikz-feynman to be easily set.
+\def\tikzfeynmanset{\pgfqkeys{/tikzfeynman}}
+
+%% Luatex Waring
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Check if we are using luatex
+\newif\iftikzfeynman@warn@luatex%
+\tikzfeynmanset{warn luatex/.is if=tikzfeynman@warn@luatex}
+\tikzfeynmanset{warn luatex=true}
+
+\AtBeginDocument{
+  \ifluatex\else
+    \iftikzfeynman@warn@luatex
+      \PackageWarning{tikz-feynman}{LuaTeX is required if you wish to have vertices automatically placed.  You can disable this warning by setting /tikzfeynman/warn luatex=false}
+    \fi
+  \fi
+}
+
+%% Feynman Environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Provide `\begin{feynman} ... \end{feynman}` within TikZ pictures.
+\tikzaddtikzonlycommandshortcutlet\feynman\tikzfeynman@environment@feynman
+\tikzaddtikzonlycommandshortcutlet\endfeynman\endtikzfeynman@environment@feynman
+
+%% \begin{feynman}...\end{feynman}
+\def\tikzfeynman@environment@feynman{%
+  \pgfutil@ifnextchar[{\tikzfeynman@environment@feynman@opt}
+  {\tikzfeynman@environment@feynman@opt[]}}
+
+\def\tikzfeynman@environment@feynman@opt[#1]{%
+  \begingroup
+  %% Local overrides
+  \let\tikz@@scan@fig=\tikzfeynman@scan@fig
+  \let\tikzfeynman@orig@graph=\graph
+  %% Local commands
+  \let\vertex=\tikzfeynman@commands@vertex
+  \let\diagram=\tikzfeynman@commands@diagram
+  \let\graph=\tikzfeynman@commands@graph
+  %% Opening hooks
+  \scope
+  \tikzfeynman@tikz@search@tikzfeynman
+  \pgfkeys{
+    /tikzfeynman/every feynman@@,
+    /tikzfeynman/every feynman,
+    #1}
+  \pgfkeysvalueof{/tikzfeynman/execute at begin feynman@@}%
+  \pgfkeysvalueof{/tikzfeynman/execute at begin feynman}%
+}
+
+\def\endtikzfeynman@environment@feynman{%
+  %% Closing hooks
+  \pgfkeysvalueof{/tikzfeynman/execute at end feynman}%
+  \pgfkeysvalueof{/tikzfeynman/execute at end feynman@@}%
+  \endscope
+  \endgroup
+}
+
+%% \feynmandiagram
+\def\feynmandiagram{%
+  \pgfutil@ifnextchar[{\feynmandiagram@opt}
+  {\feynmandiagram@opt[]}}
+\def\feynmandiagram@opt[#1]{%
+  \pgfutil@ifnextchar[{\feynmandiagram@opt@opt[#1]}
+  {\feynmandiagram@opt@opt[#1][#1]}}
+\def\feynmandiagram@opt@opt[#1][#2]{%
+  \tikz [/tikzfeynman/.cd, .search also={/tikz}, #1]
+  \graph [/tikzfeynman/every diagram@@, /tikzfeynman/every diagram, /tikz/graphs/spring layout, #2]}
+
+%% Allow empty nodes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newif\iftikzfeynmanallowemptynode
+\newif\iftikzfeynmanvertex
+\def\tikzfeynman@scan@fig{%
+  \pgfutil@ifnextchar a{\tikz@fig@scan@at}
+  {\pgfutil@ifnextchar({\tikz@fig@scan@name}
+    {\pgfutil@ifnextchar[{\tikz@fig@scan@options}%
+      {\pgfutil@ifnextchar\bgroup{\tikz@fig@main}%
+      {\iftikzfeynmanvertex%
+         \tikzset{
+           /tikzfeynman/every vertex@@,
+           /tikzfeynman/every vertex}%
+         \iftikzfeynmanallowemptynode%
+         \else%
+           \tikzset{/tikzfeynman/particle}%
+         \fi%
+       \fi%
+       \tikz@fig@main{}}}}}}%}}
+
+%% Include /tikzfeynman in the search path
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\tikzfeynman@tikz@search@tikzfeynman{%
+  \pgfkeys{/tikz/.unknown/.code=%
+    \let\tikz@key\pgfkeyscurrentname%
+    %% Is it a tikzfeynman key?
+    \pgfkeys{/pgf/\tikz@key/.try={##1}}%
+    \ifpgfkeyssuccess%
+    \else%
+      %% Is it a pgf key?
+      \pgfkeys{/pgf/\tikz@key/.try={##1}}%
+      \ifpgfkeyssuccess%
+      \else%
+        \expandafter\pgfutil@in@\expandafter!\expandafter{\tikz@key}%
+        \ifpgfutil@in@%
+          %% this is a color!
+          \expandafter\tikz@addoption\expandafter{\expandafter\tikz@compat@color@set\expandafter{\tikz@key}}%
+          \edef\tikz@textcolor{\tikz@key}%
+        \else%
+          \pgfutil@doifcolorelse{\tikz@key}
+          {%
+            \expandafter\tikz@addoption\expandafter{\expandafter\tikz@compat@color@set\expandafter{\tikz@key}}%
+            \edef\tikz@textcolor{\tikz@key}%
+          }%
+          {%
+            %% Ok, second chance: This might be an arrow specification:
+            \expandafter\pgfutil@in@\expandafter-\expandafter{\tikz@key}%
+            \ifpgfutil@in@%
+              %% Ah, an arrow spec!
+              \expandafter\tikz@processarrows\expandafter{\tikz@key}%
+            \else%
+              %% Ok, third chance: A shape!
+              \expandafter\ifx\csname pgf@sh@s@\tikz@key\endcsname\relax%
+                \pgfkeys{/errors/unknown key/.expand
+                once=\expandafter{\expandafter/\expandafter t\expandafter
+                i\expandafter k\expandafter z\expandafter/\tikz@key}{##1}}%
+              \else%
+                \edef\tikz@shape{\tikz@key}%
+              \fi%
+            \fi%
+          }%
+        \fi%
+      \fi%
+    \fi%
+  }
+}
+
+
+%% Vertex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Adapted from |\coordinate| code
+\def\tikzfeynman@commands@vertex{
+  \path \pgfextra{\tikzfeynmanallowemptynodetrue}
+        \pgfextra{\tikzfeynmanvertextrue}
+        node}
+
+%% Diagram
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\tikzfeynman@commands@diagram{\@ifstar
+  \tikzfeynman@commands@diagram@star%
+  \tikzfeynman@commands@diagram@nostar}
+
+\def\tikzfeynman@commands@diagram@nostar{%
+  \pgfutil@ifnextchar[{\tikzfeynman@commands@diagram@nostar@opt}
+  {\tikzfeynman@commands@diagram@nostar@opt[]}}
+\def\tikzfeynman@commands@diagram@nostar@opt[#1]{%
+  \tikzfeynman@orig@graph [/tikzfeynman/every diagram@@, /tikzfeynman/every diagram, /tikz/graphs/spring layout, #1]}
+
+\def\tikzfeynman@commands@diagram@star{%
+  \pgfutil@ifnextchar[{\tikzfeynman@commands@diagram@star@opt}
+  {\tikzfeynman@commands@diagram@star@opt[]}}
+\def\tikzfeynman@commands@diagram@star@opt[#1]{%
+  \tikzfeynman@orig@graph [/tikzfeynman/every diagram@@, /tikzfeynman/every diagram, #1]}
+
+%% Graph
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\tikzfeynman@commands@graph{%
+  \pgfutil@ifnextchar[{\tikzfeynman@commands@graph@opt}
+  {\tikzfeynman@commands@graph@opt[]}}
+\def\tikzfeynman@commands@graph@opt[#1]{%
+  \PackageWarning{tikz-feynman}{It is not recommended to use \string\graph.  Use \string\diagram\space or \string\diagram* instead.}
+  \tikzfeynman@orig@graph [/tikzfeynman/every diagram@@, /tikzfeynman/every diagram, #1]}
+
+%% Momentum
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\tikzfeynman@momentum@opt#1[#2]#3\pgfeov{%
+  \tikzfeynmanset{#1={[#2]#3}}}
+
+\def\tikzfeynman@momentum@std{%
+  \pgfutil@ifnextchar[{\tikzfeynman@momentum@opt{momentum@@}}
+  {\tikzfeynman@momentum@opt{momentum@@}[]}}
+\pgfkeyslet{/tikzfeynman/momentum/.@cmd}{\tikzfeynman@momentum@std}
+
+\def\tikzfeynman@momentum@stdp{%
+  \pgfutil@ifnextchar[{\tikzfeynman@momentum@opt{momentum'@@}}
+  {\tikzfeynman@momentum@opt{momentum'@@}[]}}
+\pgfkeyslet{/tikzfeynman/momentum'/.@cmd}{\tikzfeynman@momentum@stdp}
+
+\def\tikzfeynman@momentum@stdr{%
+  \pgfutil@ifnextchar[{\tikzfeynman@momentum@opt{reversed momentum@@}}
+  {\tikzfeynman@momentum@opt{reversed momentum@@}[]}}
+\pgfkeyslet{/tikzfeynman/reversed momentum/.@cmd}{\tikzfeynman@momentum@stdr}
+\pgfkeyslet{/tikzfeynman/rmomentum/.@cmd}{\tikzfeynman@momentum@stdr}
+
+\def\tikzfeynman@momentum@stdrp{%
+  \pgfutil@ifnextchar[{\tikzfeynman@momentum@opt{reversed momentum'@@}}
+  {\tikzfeynman@momentum@opt{reversed momentum'@@}[]}}
+\pgfkeyslet{/tikzfeynman/reversed momentum'/.@cmd}{\tikzfeynman@momentum@stdrp}
+\pgfkeyslet{/tikzfeynman/rmomentum'/.@cmd}{\tikzfeynman@momentum@stdrp}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Styles
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input tikzfeynman.keys.code.tex
+
+\endinput
