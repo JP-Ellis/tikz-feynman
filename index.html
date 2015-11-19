@@ -16,66 +16,23 @@
     <div class="share-button"></div>
     <section class="page-header">
       <img class="project-name" src="logo.png">
-      <!-- <h1 class="project-name">Ti<i>k</i>Z-Feynman</h1> -->
-      <h2 class="project-tagline">Feynman diagrams in Ti<i>k</i>Z</h2>
+      <h2 class="project-tagline">Feynman diagrams with Ti<i>k</i>Z</h2>
       <a href="https://github.com/JP-Ellis/tikz-feynman" class="btn">View on GitHub</a>
-      <a href="https://github.com/JP-Ellis/tikz-feynman/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/JP-Ellis/tikz-feynman/tarball/master" class="btn">Download .tar.gz</a>
+      <a href="https://github.com/JP-Ellis/tikz-feynman/releases/latest" class="btn">Latest Release</a>
     </section>
 
     <section class="main-content">
       <h1>
 <a id="tikz-feynman" class="anchor" href="#tikz-feynman" aria-hidden="true"><span class="octicon octicon-link"></span></a>Ti<i>k</i>Z-Feynman</h1>
 
-<p>This package provides a set of pre-defined styles in order to draw Feynman
-diagrams using <a href="https://www.ctan.org/pkg/pgf">Ti<i>k</i>Z</a> more easily and
-consistently.  The set of styles defined here were originally inspired by
-<a href="http://tex.stackexchange.com/a/87395/26980">this answer</a> on
-<a href="http://tex.stackexchange.com">tex.stackexchange.com</a>, so due credit must go to Jake.</p>
+      <p><a href="https://www.ctan.org/pkg/pgf">Ti<i>k</i>Z</a> is a fantastic and very powerful drawing package and Ti<i>k</i>Z-Feynman builds upon this to provide an easy way to produce Feynman diagrams.</p>
 
-<p>If you have any suggestions or have found any bugs, please feel free create a
-new issue or pull request here on Github.</p>
+      <p>I must thank <a href="http://tex.stackexchange.com/users/2552">Jake</a> for providing <a href="http://tex.stackexchange.com/a/87395/26980">this answer</a> on <a href="http//tex.stackexchange.com">tex.se</a> which initially inspired me to write this package.</p>
 
-<h2>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+      <p>If you have any suggestions or have found any bugs, please feel free create a
+    new issue or pull request here on Github.</p>
 
-<p>This package is <em>not</em> currently offered on <a href="https://www.ctan.org">CTAN</a> as it is
-just a personal project of mine; however, if enough people find it useful, I
-will look into making it available through CTAN.</p>
-
-<p>In order to use this as it is, simply download <a href="https://github.com/JP-Ellis/tikz-feynman/raw/master/tikz-feynman.sty"><code>tikz-feynman.sty</code></a> and place it
-in the same directory as your TeX file and include it using the usual
-<code>\usepackage{tikz-feynman}</code>.  Alternatively, it is also possible to install
-<code>tikz-feynman</code> system-wide by placing it inside TeX's search path
-(which will vary based on your operating system).</p>
-
-<p>In v3.0.0 of Ti<i>k</i>Z, there is a bug in the Lua component of the graphdrawing
-library which prevents it from handling coordinate nodes properly.  This bug
-  does not seem to affect the usual Ti<i>k</i>Z drawing library.  If you wish to use
-the <code>\graph</code> command with any of the options that require Lua, you will need to
-apply the following patch:</p>
-
-<div class="highlight highlight-diff"><pre><span class="pl-md">--- a/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua</span>
-<span class="pl-mi1">+++ b/generic/pgf/graphdrawing/lua/pgf/gd/interface/InterfaceToDisplay.lua</span>
-<span class="pl-mdr">@@ -263,6 +263,13 @@</span> end
-
- function InterfaceToDisplay.createVertex(name, shape, path, height, binding_infos, anchors)
-
-<span class="pl-mi1">+  -- The path should never be empty, so we create a trivial path in the provided</span>
-<span class="pl-mi1">+  -- path is empty.  This occurs with the `coordinate` shape for example.</span>
-<span class="pl-mi1">+  if #path == 0 then</span>
-<span class="pl-mi1">+    path:appendMoveto(0, 0)</span>
-<span class="pl-mi1">+    path:appendClosepath()</span>
-<span class="pl-mi1">+  end</span>
-<span class="pl-mi1">+</span>
-   -- Setup
-   local scope = InterfaceCore.topScope()
-   local binding = InterfaceCore.binding</pre></div>
-
-<h2>
-<a id="usage-and-documentation" class="anchor" href="#usage-and-documentation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage and Documentation</h2>
-
-<p>Please see <a href="https://jp-ellis.github.com/tikz-feynman/tikz-feynman.pdf">tikz-feynman.pdf</a>.</p>
+      <p>All the documentation can be found in <a href="https://jp-ellis.github.com/tikz-feynman/tikz-feynman.pdf">tikz-feynman.pdf</a>.</p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/JP-Ellis/tikz-feynman">Ti<i>k</i>Z-Feynman</a> is maintained by <a href="https://github.com/JP-Ellis">JP-Ellis</a>.</span>
@@ -83,13 +40,14 @@ apply the following patch:</p>
 
     </section>
     <script type="text/javascript">
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+     // Google analytics
+     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-62514224-1', 'auto');
-      ga('send', 'pageview');
+     ga('create', 'UA-62514224-3', 'auto');
+     ga('send', 'pageview');
     </script>
     <script type="text/javascript">
       var share = new Share(".share-button", {
