@@ -7,7 +7,7 @@ echo "Cleaning LaTeX output."
 latexmk -c
 echo "Regenerating LaTeX output."
 latexmk tikz-feynman
-if [[ $? -neq 0 ]]; then
+if [[ $? -ne 0 ]]; then
     echo "LatexMk exited with code $?" >&2
     exit $?
 fi
