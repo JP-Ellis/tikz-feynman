@@ -20,15 +20,6 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\def\tikzfeynmanset{\pgfqkeys{/tikzfeynman}}
-
-\def\tikzfeynman@search@also@tikz{%
-  % make sure the search path is set.
-  \pgfkeysifdefined{/tikzfeynman/.unknown/.@cmd}%
-    {\relax}%
-    {\pgfkeysalso{/tikzfeynman/.search also=/tikz}}%
-}%
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Decorations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
