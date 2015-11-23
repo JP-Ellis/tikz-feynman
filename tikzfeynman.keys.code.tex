@@ -21,6 +21,57 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Shapes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Crossed Circle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pgfdeclareshape{crossed circle}
+{
+  \inheritsavedanchors[from=circle]
+  \inheritanchorborder[from=circle]
+  \inheritanchor[from=circle]{north}
+  \inheritanchor[from=circle]{north west}
+  \inheritanchor[from=circle]{north east}
+  \inheritanchor[from=circle]{center}
+  \inheritanchor[from=circle]{west}
+  \inheritanchor[from=circle]{east}
+  \inheritanchor[from=circle]{mid}
+  \inheritanchor[from=circle]{mid west}
+  \inheritanchor[from=circle]{mid east}
+  \inheritanchor[from=circle]{base}
+  \inheritanchor[from=circle]{base west}
+  \inheritanchor[from=circle]{base east}
+  \inheritanchor[from=circle]{south}
+  \inheritanchor[from=circle]{south west}
+  \inheritanchor[from=circle]{south east}
+
+  \inheritbackgroundpath[from=circle]
+
+  \foregroundpath{
+    % Compute south west
+    \centerpoint
+    \pgf@xc=\radius
+    \advance\pgf@x by-0.707107\pgf@xc
+    \advance\pgf@y by-0.707107\pgf@xc
+    \pgf@xa=\pgf@x \pgf@ya=\pgf@y  % Store coordinates
+    % Compute north east point
+    \centerpoint
+    \pgf@xc=\radius
+    \advance\pgf@x by0.707107\pgf@xc
+    \advance\pgf@y by0.707107\pgf@xc
+    \pgf@xb=\pgf@x \pgf@yb=\pgf@y  % Store coordinates
+    \pgfpathmoveto{\pgfqpoint{\pgf@xa}{\pgf@ya}}
+    \pgfpathlineto{\pgfqpoint{\pgf@xb}{\pgf@yb}}
+    \pgfpathmoveto{\pgfqpoint{\pgf@xa}{\pgf@yb}}
+    \pgfpathlineto{\pgfqpoint{\pgf@xb}{\pgf@ya}}
+    \pgfsetarrowsstart{}
+    \pgfsetarrowsend{}
+ }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Decorations
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -129,6 +180,7 @@
     /graph drawing/level distance=1cm,
     /graph drawing/sibling distance=1.5cm,
     /tikzfeynman/every dot@@/.append style={/tikz/minimum size=1mm},
+    /tikzfeynman/every crossed dot@@/.append style={/tikz/minimum size=2mm},
     /tikzfeynman/every blob@@/.append style={/tikz/minimum size=0.5cm},
     /tikzfeynman/arrow size=1.2pt,
   },
@@ -145,6 +197,7 @@
     /graph drawing/sibling distance=3cm,
     /tikz/graphs/edges={thick},
     /tikzfeynman/every dot@@/.append style={/tikz/minimum size=2mm},
+    /tikzfeynman/every crossed dot@@/.append style={/tikz/minimum size=4mm},
     /tikzfeynman/every blob@@/.append style={/tikz/minimum size=1cm},
     /tikzfeynman/arrow size=1.6pt,
   },
@@ -172,6 +225,38 @@
   dot/.style={
     /tikzfeynman/every dot@@,
     /tikzfeynman/every dot,
+  },
+  every square dot@@/.style={
+    /tikz/shape=rectangle,
+  },
+  every square dot/.style={},
+  square dot/.style={
+    /tikzfeynman/every dot@@,
+    /tikzfeynman/every dot,
+    /tikzfeynman/every square dot@@,
+    /tikzfeynman/every square dot,
+  },
+  every empty dot@@/.style={
+    /tikz/fill=none,
+  },
+  every empty dot/.style={},
+  empty dot/.style={
+    /tikzfeynman/every dot@@,
+    /tikzfeynman/every dot,
+    /tikzfeynman/every empty dot@@,
+    /tikzfeynman/every empty dot,
+  },
+  every crossed dot@@/.style={
+    /tikz/fill=none,
+    /tikz/shape=crossed circle,
+    /tikz/minimum size=3mm,
+  },
+  every crossed dot/.style={},
+  crossed dot/.style={
+    /tikzfeynman/every dot@@,
+    /tikzfeynman/every dot,
+    /tikzfeynman/every crossed dot@@,
+    /tikzfeynman/every crossed dot,
   },
   every blob@@/.style={
     /tikz/shape=circle,

@@ -1021,6 +1021,36 @@ refer to the \pgfmanual{}.
 \end{codeexample}
 \end{key}
 
+\begin{key}{/tikzfeynman/square dot}
+  Modifies the vertex so that it has a small filled square.
+
+\begin{codeexample}[]
+\feynmandiagram [small] {
+  a -- b [square dot] -- {c, d}
+};
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikzfeynman/empty dot}
+  Modifies the vertex so that it has a small empty circle.
+
+\begin{codeexample}[]
+\feynmandiagram [small] {
+  a -- b [empty dot] -- {c, d}
+};
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikzfeynman/crossed dot}
+  Modifies the vertex so that it has a small circle with a cross inside.
+
+\begin{codeexample}[]
+\feynmandiagram [small] {
+  a -- b [crossed dot] -- {c, d}
+};
+\end{codeexample}
+\end{key}
+
 \begin{key}{/tikzfeynman/blob}
   Modifies the vertex so that it is a large blob, usually used to denote an
   effective operator.
