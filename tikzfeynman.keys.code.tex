@@ -75,34 +75,6 @@
   }
 }
 
-\pgfdeclaredecoration{old complete sines}{initial}{
-  %% Begin by computing the overall path length and find how many sine waves we
-  %% can fit in.  Nothing happens beyond the computation.
-  \state{initial}[
-    width=0pt,
-    next state=sine,
-    persistent precomputation={
-      % \pgfmathsetmacro\matchinglength{
-      \pgfmathsetmacro\tikzfeynman@matching@length{
-        \pgfdecoratedinputsegmentlength / int(\pgfdecoratedinputsegmentlength/\pgfdecorationsegmentlength)}
-      \setlength{\pgfdecorationsegmentlength}{\tikzfeynman@matching@length pt}
-      },
-  ]{}
-  %% Start drawing the sine waves
-  \state{sine}[
-    width=\pgfdecorationsegmentlength,
-  ]{
-    \pgfpathsine{\pgfpoint{0.25\pgfdecorationsegmentlength}{0.5\pgfdecorationsegmentamplitude}}
-    \pgfpathcosine{\pgfpoint{0.25\pgfdecorationsegmentlength}{-0.5\pgfdecorationsegmentamplitude}}
-    \pgfpathsine{\pgfpoint{0.25\pgfdecorationsegmentlength}{-0.5\pgfdecorationsegmentamplitude}}
-    \pgfpathcosine{\pgfpoint{0.25\pgfdecorationsegmentlength}{0.5\pgfdecorationsegmentamplitude}}
-  }
-  %% Final state (nothing special happens)
-  \state{final}{
-    \pgfkeys{/pgf/decoration/amplitude=0pt}
-  }
-}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Keys
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
