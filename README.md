@@ -28,7 +28,9 @@ Licence
 -------
 
 TikZ-Feynman
+
 Feynman Diagrams with TikZ
+
 Copyright (C) 2015  Joshua Ellis
 
 
