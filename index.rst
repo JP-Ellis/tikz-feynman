@@ -7,6 +7,7 @@ TikZ-Feynman
 :slug: tikz-feynman
 :date: 2015-12-09
 :template: page_index
+:share: True
 :github: https://github.com/JP-Ellis/tikz-feynman/
 :release: True
 
