@@ -1454,11 +1454,11 @@ more practical examples..
     \vertex[right=2cm of a1] (a2);
     \vertex[right=2cm of a2] (a3) {\(\overline u\)};
 
-    \vertex[below=0cm of a1] (b1) {\(d\)};
-    \vertex[below=0cm of a3] (b2) {\(d\)};
+    \vertex[below=2em of a1] (b1) {\(d\)};
+    \vertex[below=2em of a3] (b2) {\(d\)};
 
-    \vertex[above=0.5cm of a3] (c1) {\(u\)};
-    \vertex[above=0cm of c1] (c3) {\(\overline d\)};
+    \vertex[above=of a3] (c1) {\(u\)};
+    \vertex[above=2em of c1] (c3) {\(\overline d\)};
     \vertex at ($(c1)!0.5!(c3) - (1cm, 0)$) (c2);
 
     \diagram* {
@@ -1489,14 +1489,14 @@ more practical examples..
     \vertex[right=1cm of a4] (a5);
     \vertex[right=2cm of a5] (a6) {\(u\)};
 
-    \vertex[below=0cm of a1] (b1) {\(d\)};
+    \vertex[below=2em of a1] (b1) {\(d\)};
     \vertex[right=1cm of b1] (b2);
     \vertex[right=1cm of b2] (b3);
     \vertex[right=1cm of b3] (b4) {\(\overline d\)};
-    \vertex[right=3cm of b4] (b5) {\(\overline d\)};
+    \vertex[below=2em of a6] (b5) {\(\overline d\)};
 
-    \vertex[above=0.5cm of a6] (c1) {\(\overline u\)};
-    \vertex[above=0cm of c1] (c3) {\(d\)};
+    \vertex[above=of a6] (c1) {\(\overline u\)};
+    \vertex[above=2em of c1] (c3) {\(d\)};
     \vertex at ($(c1)!0.5!(c3) - (1cm, 0)$) (c2);
 
     \diagram* {
@@ -1531,11 +1531,11 @@ more practical examples..
     \vertex[right=0.5cm of a3] (a4);
     \vertex[right=2cm of a4] (a5) {\(\overline s\)};
 
-    \vertex[below=1.5cm of a1] (b1) {\(d\)};
-    \vertex[below=1.5cm of a5] (b2) {\(d\)};
+    \vertex[below=2cm of a1] (b1) {\(d\)};
+    \vertex[below=2cm of a5] (b2) {\(d\)};
 
-    \vertex[below=0cm of a5] (c1) {\(s\)};
-    \vertex[above=0cm of b2] (c3) {\(\overline s\)};
+    \vertex[below=1.5em of a5] (c1) {\(s\)};
+    \vertex[above=1.5em of b2] (c3) {\(\overline s\)};
     \vertex at ($(c1)!0.5!(c3) - (1cm, 0)$) (c2);
 
     \diagram* {
