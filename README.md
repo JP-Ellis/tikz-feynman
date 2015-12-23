@@ -1,5 +1,5 @@
-[Ti*k*Z-Feynman](http://jp-ellis.github.io/tikz-feynman)
-=======================================================
+[Ti*k*Z-Feynman](http://www.jpellis.me/projects/tikz-feynman)
+=============================================================
 
 [Ti*k*Z](https://www.ctan/org/pkg/pgf) is a fantastic and very powerful
 drawing package and Ti*k*Z-Feynman builds upon this to provide an easy way
@@ -14,7 +14,7 @@ If you have any suggestions or have found any bugs, please feel free to create a
 new issue or pull request here on the Github.
 
 All the documentation can be found in
-[tikz-feynman.pdf](https://jp-ellis.github.com/tikz-feynman/tikz-feynman.pdf).
+[tikz-feynman.pdf](https://www.jpellis.me/tikz-feynman/tikz-feynman.pdf).
 
 Updates
 -------
