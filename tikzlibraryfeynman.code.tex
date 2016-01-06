@@ -229,30 +229,39 @@
   \PackageWarning{tikz-feynman}{It is not recommended to use \string\graph.  Use \string\diagram\space or \string\diagram* instead.}
   \tikzfeynman@orig@graph [/tikzfeynman/every diagram@@, /tikzfeynman/every diagram, #1]}
 
-%% Momentum
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\tikzfeynman@momentum@opt#1[#2]#3\pgfeov{%
+%% Optional argument in style key
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\tikzfeynman@key@opt#1[#2]#3\pgfeov{%
   \tikzfeynmanset{#1={[#2]#3}}}
 
+%% Insertion
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\tikzfeynman@insertion{%
+  \pgfutil@ifnextchar[{\tikzfeynman@key@opt{insertion@@}}
+  {\tikzfeynman@key@opt{insertion@@}[]}}
+\pgfkeyslet{/tikzfeynman/insertion/.@cmd}{\tikzfeynman@insertion}
+
+%% Momentum
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\tikzfeynman@momentum@std{%
-  \pgfutil@ifnextchar[{\tikzfeynman@momentum@opt{momentum@@}}
-  {\tikzfeynman@momentum@opt{momentum@@}[]}}
+  \pgfutil@ifnextchar[{\tikzfeynman@key@opt{momentum@@}}
+  {\tikzfeynman@key@opt{momentum@@}[]}}
 \pgfkeyslet{/tikzfeynman/momentum/.@cmd}{\tikzfeynman@momentum@std}
 
 \def\tikzfeynman@momentum@stdp{%
-  \pgfutil@ifnextchar[{\tikzfeynman@momentum@opt{momentum'@@}}
-  {\tikzfeynman@momentum@opt{momentum'@@}[]}}
+  \pgfutil@ifnextchar[{\tikzfeynman@key@opt{momentum'@@}}
+  {\tikzfeynman@key@opt{momentum'@@}[]}}
 \pgfkeyslet{/tikzfeynman/momentum'/.@cmd}{\tikzfeynman@momentum@stdp}
 
 \def\tikzfeynman@momentum@stdr{%
-  \pgfutil@ifnextchar[{\tikzfeynman@momentum@opt{reversed momentum@@}}
-  {\tikzfeynman@momentum@opt{reversed momentum@@}[]}}
+  \pgfutil@ifnextchar[{\tikzfeynman@key@opt{reversed momentum@@}}
+  {\tikzfeynman@key@opt{reversed momentum@@}[]}}
 \pgfkeyslet{/tikzfeynman/reversed momentum/.@cmd}{\tikzfeynman@momentum@stdr}
 \pgfkeyslet{/tikzfeynman/rmomentum/.@cmd}{\tikzfeynman@momentum@stdr}
 
 \def\tikzfeynman@momentum@stdrp{%
-  \pgfutil@ifnextchar[{\tikzfeynman@momentum@opt{reversed momentum'@@}}
-  {\tikzfeynman@momentum@opt{reversed momentum'@@}[]}}
+  \pgfutil@ifnextchar[{\tikzfeynman@key@opt{reversed momentum'@@}}
+  {\tikzfeynman@key@opt{reversed momentum'@@}[]}}
 \pgfkeyslet{/tikzfeynman/reversed momentum'/.@cmd}{\tikzfeynman@momentum@stdrp}
 \pgfkeyslet{/tikzfeynman/rmomentum'/.@cmd}{\tikzfeynman@momentum@stdrp}
 

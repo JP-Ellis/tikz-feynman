@@ -183,6 +183,7 @@
     /tikzfeynman/every crossed dot@@/.append style={/tikz/minimum size=2mm},
     /tikzfeynman/every blob@@/.append style={/tikz/minimum size=0.5cm},
     /tikzfeynman/arrow size=1.2pt,
+    /tikzfeynman/insertion/size=2pt,
   },
   medium/.style={
     /tikz/node distance=1.5cm,
@@ -200,6 +201,7 @@
     /tikzfeynman/every crossed dot@@/.append style={/tikz/minimum size=4mm},
     /tikzfeynman/every blob@@/.append style={/tikz/minimum size=1cm},
     /tikzfeynman/arrow size=1.6pt,
+    /tikzfeynman/insertion/size=4pt,
   },
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % Vertices
@@ -443,6 +445,27 @@
   gluon/.style={
     /tikzfeynman/every gluon@@,
     /tikzfeynman/every gluon,
+  },
+  %% Insertions
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  %% Parameters
+  insertion/size/.store in=\tikzfeynman@insertion@size,
+  insertion/size=3pt,
+  insertion/style/.store in=\tikzfeynman@insertion@style,
+  insertion/style={},
+  %% Styles
+  insertion@@/.style args={[#1]#2}{
+    /tikz/decoration={
+      markings,
+      mark=at position #2 with {
+        \tikzfeynmanset{insertion/.cd, insertion/.search also={/tikz}, #1}
+        \draw [\tikzfeynman@insertion@style] (-\tikzfeynman@insertion@size, -\tikzfeynman@insertion@size) -- (\tikzfeynman@insertion@size, \tikzfeynman@insertion@size);
+        \draw [\tikzfeynman@insertion@style] (-\tikzfeynman@insertion@size, \tikzfeynman@insertion@size) -- (\tikzfeynman@insertion@size, -\tikzfeynman@insertion@size);
+      },
+    },
+    /tikz/postaction={
+      /tikz/decorate=true,
+    },
   },
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   % Momentum arrows

@@ -1235,6 +1235,39 @@ but not |scalar| whilst styles in |every scalar| will apply to all three.
   switches which side of the edge the label is placed.
 \end{keylist}
 
+\begin{key}{/tikzfeynman/insertion=\opt{\oarg{options}}\meta{distance}}
+  Places an insertion (for mass or momentum insertion) along an edge.  The
+  distance specifies how far along the edge the insertion should be placed such
+  that |0| and |1| respectively correspond to the start and the end of the edge.
+
+  Multiple insertions can be placed along a single edge by repeating the style
+  key.
+
+  Through the \meta{options} argument, the insertion size and style can be
+  changed.
+
+\begin{codeexample}[]
+\feynmandiagram [horizontal=a to b] {a -- [insertion=0.33, insertion=0.67] b};
+\end{codeexample}
+
+  \begin{key}{/tikzfeynman/insertion/size=\meta{distance} (initially 3pt)}
+    Specifies how big the insertion should be.  The length of each edge starting
+    from the center will be \(\sqrt{2} \times \meta{distance}\).
+
+\begin{codeexample}[]
+\feynmandiagram [horizontal=a to b] {a -- [insertion={[size=10pt]0.4}] b};
+\end{codeexample}
+  \end{key}
+
+  \begin{key}{/tikzfeynman/insertion/style=\meta{distance} (initially \normalfont empty)}
+    Specifies additional styles to applying to the lines of the insertion.
+
+\begin{codeexample}[]
+\feynmandiagram [horizontal=a to b] {a -- [insertion={[style=red]0.4}] b};
+\end{codeexample}
+  \end{key}
+\end{key}
+
 \subsubsection{Momentum Keys}
 \label{subsubsec:momentum_keys}
 
