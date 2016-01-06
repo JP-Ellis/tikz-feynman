@@ -1032,6 +1032,25 @@ refer to the \pgfmanual{}.
   that is, a null shape with no size or width.
 \end{key}
 
+\begin{stylekey}{/tikzfeynman/every \meta{vertex shape} (initially \normalfont empty)}
+  The style of specific vertices can be modified by changing the appropriate
+  |every |\meta{vertex shape} key.  For example, in order to change the style of
+  every |dot|-styled vertex, you can modify the |every dot| key, or to modify
+  every vertex globally, the |every vertex| key can be modified.
+
+\begin{codeexample}[]
+\tikzfeynmanset{
+  every vertex/.style={red, dot},
+  every particle/.style={blue},
+  every blob/.style={draw=green!40!black, pattern color=green!40!black},
+}
+\feynmandiagram [horizontal=a to b] {
+  a [particle={\(\gamma, Z\)}] -- [boson] b [blob],
+  c -- [fermion] b -- [fermion] d,
+};
+\end{codeexample}
+\end{stylekey}
+
 \begin{key}{/tikzfeynman/dot}
   Modifies the vertex so that it has a small filled circle.
 
@@ -1102,25 +1121,6 @@ refer to the \pgfmanual{}.
 \end{codeexample}
 \end{key}
 
-\begin{stylekey}{/tikzfeynman/every \meta{vertex shape} (initially \normalfont empty)}
-  The style of specific vertices can be modified by changing the appropriate
-  |every |\meta{vertex shape} key.  For example, in order to change the style of
-  every |dot|-styled vertex, you can modify the |every dot| key, or to modify
-  every vertex globally, the |every vertex| key can be modified.
-
-\begin{codeexample}[]
-\tikzfeynmanset{
-  every vertex/.style={red, dot},
-  every particle/.style={blue},
-  every blob/.style={draw=green!40!black, pattern color=green!40!black},
-}
-\feynmandiagram [horizontal=a to b] {
-  a [particle={\(\gamma, Z\)}] -- [boson] b [blob],
-  c -- [fermion] b -- [fermion] d,
-};
-\end{codeexample}
-\end{stylekey}
-
 
 \subsubsection{Edge Keys}
 \label{subsubsec:edge_keys}
@@ -1134,6 +1134,24 @@ but not |scalar| whilst styles in |every scalar| will apply to all three.
 
 \begin{stylekey}{/tikzfeynman/every edge (initially \normalfont empty)}
   A style to apply to every edge initially.
+\end{stylekey}
+
+\begin{stylekey}{/tikzfeynman/every \meta{edge style} (initially \normalfont empty)}
+  The style of specific edges can be modified by changing the appropriate
+  |every |\meta{edge style} key.  For example, in order to make a global change
+  to every |boson|, you can modify the |every boson| key.
+
+\begin{codeexample}[]
+\tikzfeynmanset{
+  every edge/.style={fermion},
+  every boson/.style={red},
+  every photon/.style={blue},
+}
+\feynmandiagram [small] {
+  a [particle=\(a\)] -- [boson] o -- [photon] b [particle=\(b\)],
+  f1 [particle=\(c\)] -- o -- f2 [particle=\(d\)],
+};
+\end{codeexample}
 \end{stylekey}
 
 \begin{key}{/tikzfeynman/boson}
@@ -1209,24 +1227,6 @@ but not |scalar| whilst styles in |every scalar| will apply to all three.
 \feynmandiagram [horizontal=a to b] {a -- [gluon] b};
 \end{codeexample}
 \end{key}
-
-\begin{stylekey}{/tikzfeynman/every \meta{edge style} (initially \normalfont empty)}
-  The style of specific edges can be modified by changing the appropriate
-  |every |\meta{edge style} key.  For example, in order to make a global change
-  to every |boson|, you can modify the |every boson| key.
-
-\begin{codeexample}[]
-\tikzfeynmanset{
-  every edge/.style={fermion},
-  every boson/.style={red},
-  every photon/.style={blue},
-}
-\feynmandiagram [small] {
-  a [particle=\(a\)] -- [boson] o -- [photon] b [particle=\(b\)],
-  f1 [particle=\(c\)] -- o -- f2 [particle=\(d\)],
-};
-\end{codeexample}
-\end{stylekey}
 
 \begin{keylist}{%
   /tikz/edge label=\meta{text},
