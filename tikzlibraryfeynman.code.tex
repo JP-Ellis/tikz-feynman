@@ -98,6 +98,29 @@
   \fi
 }
 
+%% Override Lua code if necessary
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\tikzfeynman@apply@patch{
+  \directlua{dofile("tikzfeynman.patch.lua")}
+}
+
+%% Version 3.0.0, 3.0.1 and 3.0.1a need to be patched.
+\ifluatex
+  \def\tikzfeynman@temp{3.0.0}
+  \ifx\pgfversion\tikzfeynman@temp
+    \tikzfeynman@apply@patch
+  \else
+    \def\tikzfeynman@temp{3.0.1}
+    \ifx\pgfversion\tikzfeynman@temp
+      \tikzfeynman@apply@patch
+    \else
+      \def\tikzfeynman@temp{3.0.1a}
+      \ifx\pgfversion\tikzfeynman@temp
+        \tikzfeynman@apply@patch
+      \fi
+    \fi
+  \fi
+\fi
 
 %% Feynman Environment
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

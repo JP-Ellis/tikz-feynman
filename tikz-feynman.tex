@@ -284,9 +284,12 @@ drawing package and \tikzfeynmanname{} builds upon this to provide an easy way
 to produce Feynman diagrams.
 
 I must thank \href{http://tex.stackexchange.com/users/2552}{Jake} for providing
-\href{http://tex.stackexchange.com/a/87395/26980}{this answer} on
-\href{http://tex.stackexchange.com}{tex.se} which initially inspired me to write
-this package.
+\href{http://tex.stackexchange.com/a/87395/26980}{his answer on tex.se} which
+initially inspired me to write this package.
+
+This package can be installed through
+\href{https://www.ctan.org/pkg/tikz-feynman}{\textsc{ctan}} and is available at
+\url{https://www.ctan.org/pkg/tikz-feynman}.
 
 If you have any suggestions or have found any bugs, please feel free to create a
 new issue or pull request on the Github page:
@@ -310,31 +313,8 @@ The Current Maintainer of this work is Joshua Ellis.
 
 This package is distributed in the hope that it will be useful, but
 \textsc{without any warranty}; without even the implied warranty of
-\textsc{merchantability} or \textsc{fitness for a particular purposE}.
+\textsc{merchantability} or \textsc{fitness for a particular purpose}.
 
-\subsection{Installation}
-\label{subsec:installation}
-
-This package is \emph{not} currently offered on
-\href{https://www.ctan.org}{\textsc{ctan}} as it is just a personal project of
-mine; however, if enough people find it useful, I will look into making it
-available through \textsc{ctan}.
-
-To install this package, download the latest version from
-\url{https://github.com/JP-Ellis/tikz-feynman/releases} and place it in your
-|texmf| tree.  On Linux, you can find where the location of your user |texmf|
-tree with |kpsewhich -var-value=TEXMFHOME| which is by default set to |~/texmf|.
-For Windows and OS X users, there should be something analogous.  The |texmf|
-directory expects a specific directory structure, so you will need to extract
-the \tikzfeynmanname{} files into |<TEXMF>/tex/latex/tikz-feynman|.
-
-In v3.0.0 and v3.0.1 of \tikzname, there is a bug in the Lua component of the
-graphdrawing library which prevents it from handling coordinate nodes properly.
-As a result, the automatic placement of nodes does not work unless the following
-patch is applied.  This bug does not affect other parts of this package, so you
-can still use it for the pre-defined styles if you wish. \\
-
-\inputminted[fontsize=\footnotesize, bgcolor=codebackground]{diff}{pgf.patch}
 
 \clearpage
 \section{Tutorial}
@@ -343,9 +323,8 @@ can still use it for the pre-defined styles if you wish. \\
 \subsection{Loading the Package}
 \label{sibsec:loading_the_package}
 
-After installing the package and applying the patch (if needed), the
-\tikzfeynmanname{} package can be loaded with |\usepackage{tikz-feynman}| in the
-preamble.
+After installing the package, the \tikzfeynmanname{} package can be loaded with
+|\usepackage{tikz-feynman}| in the preamble.
 
 \subsection{A First Diagram}
 \label{subsec:a_first_diagram}
