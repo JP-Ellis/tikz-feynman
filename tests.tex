@@ -1,7 +1,10 @@
 \documentclass{article}
 
+\usepackage[papersize={30cm,20cm},margin={0cm, 2cm}]{geometry}
 \usepackage{tikz-feynman}
-\tikzfeynmanset{compat=1.0.1}
+\makeatletter
+\tikzfeynmanset{compat=\tikzfeynman@version}
+\makeatother
 
 \begin{document}
 
@@ -22,7 +25,7 @@
 }
 
 \foreach \size in {small, medium, large} {
-  \size
+  Edge style (\size)
   \begin{center}
     \feynmandiagram [\size, layered layout, horizontal=0 to 1] {
       0 -- [edge label=01, momentum'=01] 1
@@ -35,6 +38,18 @@
         -- [edge label=78, momentum'=78, fermion] 8
         -- [edge label=89, momentum'=89, anti fermion] 9
         -- [edge label=9a, momentum'=9a, gluon] a,
+    };
+  \end{center}
+}
+\clearpage
+
+\foreach \size in {small, medium, large} {
+  Insertions (\size)
+  \begin{center}
+    \feynmandiagram [\size, layered layout, horizontal=0 to 1] {
+      0 -- [insertion=0.5] 1,
+      1 -- [insertion=0.33, insertion=0.66] 2,
+      2 -- [insertion=0.25, insertion=0.5, insertion=0.75] 3,
     };
   \end{center}
 }
