@@ -51,6 +51,10 @@
 %% Function definitions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%% Miscellaneous functions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\tikzfeynman@empty{}
+
 %% Key Manager
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Setup the tikz-feynman key family
@@ -63,8 +67,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Check if we are using luatex
 \newif\iftikzfeynman@warn@luatex%
-\tikzfeynmanset{warn luatex/.is if=tikzfeynman@warn@luatex}
-\tikzfeynmanset{warn luatex=true}
+\tikzfeynmanset{
+  warn luatex/.is if=tikzfeynman@warn@luatex,
+  warn luatex=true,
+}
 
 \AtBeginDocument{
   \ifluatex\else
@@ -73,6 +79,25 @@
     \fi
   \fi
 }
+
+%% Version check
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Check which version is expected and which is installed
+\tikzfeynmanset{
+  compat/.estore in=\tikzfeynman@compat,
+  compat=\tikzfeynman@empty,
+}
+
+\AtBeginDocument{
+  \ifx\tikzfeynman@version\tikzfeynman@compat\else
+    \ifx\tikzfeynman@compat\tikzfeynman@empty
+      \PackageWarning{tikz-feynman}{Consider adding \string\tikzfeynmanset{compat=\tikzfeynman@version} to your preamble.}
+    \else
+      \PackageWarning{tikz-feynman}{The preamble requested version \tikzfeynman@compat, but the system version is \tikzfeynman@version.  This may lead to some changes in the output.}
+    \fi
+  \fi
+}
+
 
 %% Feynman Environment
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
