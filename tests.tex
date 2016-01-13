@@ -1,0 +1,42 @@
+\documentclass{article}
+
+\usepackage{tikz-feynman}
+\tikzfeynmanset{compat=1.0.1}
+
+\begin{document}
+
+\foreach \layout in {spring layout, spring electrical layout, layered layout, tree layout} {
+  \foreach \size in {small, medium, large} {
+    \textbf{\layout\ (\size)}
+    \begin{center}
+      \feynmandiagram [horizontal=a to b, \size, \layout] {
+        i1 [particle=\(e^{-}\)] -- [fermion] a [blob],
+        i2 [particle=\(e^{+}\)] -- [anti fermion] a,
+        a -- [photon, edge label=\(\gamma\)] b [dot],
+        b -- [anti fermion] f1 [particle=\(\mu^{-}\)],
+        b -- [fermion] f2 [particle=\(\mu^{+}\)],
+      };
+    \end{center}
+  }
+  \clearpage
+}
+
+\foreach \size in {small, medium, large} {
+  \size
+  \begin{center}
+    \feynmandiagram [\size, layered layout, horizontal=0 to 1] {
+      0 -- [edge label=01, momentum'=01] 1
+        -- [edge label=12, momentum'=12, boson] 2
+        -- [edge label=23, momentum'=23, photon] 3
+        -- [edge label=34, momentum'=34, scalar] 4
+        -- [edge label=45, momentum'=45, charged scalar] 5
+        -- [edge label=56, momentum'=56, anti charged scalar] 6
+        -- [edge label=67, momentum'=67, ghost] 7
+        -- [edge label=78, momentum'=78, fermion] 8
+        -- [edge label=89, momentum'=89, anti fermion] 9
+        -- [edge label=9a, momentum'=9a, gluon] a,
+    };
+  \end{center}
+}
+
+\end{document}
