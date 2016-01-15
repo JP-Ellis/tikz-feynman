@@ -200,7 +200,7 @@
   \pgfkeys{/tikz/.unknown/.code=%
     \let\tikz@key\pgfkeyscurrentname%
     %% Is it a tikzfeynman key?
-    \pgfkeys{/pgf/\tikz@key/.try={##1}}%
+    \pgfkeys{/tikzfeynman/\tikz@key/.try={##1}}%
     \ifpgfkeyssuccess%
     \else%
       %% Is it a pgf key?
