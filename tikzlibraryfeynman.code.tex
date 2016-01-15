@@ -101,7 +101,7 @@
 %% Override Lua code if necessary
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\tikzfeynman@apply@patch{
-  \directlua{dofile("tikzfeynman.patch.lua")}
+  \directlua{require("tikzfeynman.patch.lua")}
 }
 
 %% Version 3.0.0, 3.0.1 and 3.0.1a need to be patched.
