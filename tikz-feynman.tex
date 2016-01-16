@@ -85,7 +85,7 @@
 \usepackage{tikz}       % Powerful drawing language
 \usepackage{tikz-feynman}
 \makeatletter
-\tikzfeynmanset{compat=\tikzfeynman@version}
+\tikzfeynmanset{compat=\tikzfeynman@version@major.\tikzfeynman@version@minor.\tikzfeynman@version@patch}
 \makeatother
 
 %% TikZ pictures and plots can significantly increase the time it takes to
@@ -294,6 +294,17 @@ This package can be installed through
 If you have any suggestions or have found any bugs, please feel free to create a
 new issue or pull request on the Github page:
 \url{https://github.com/JP-Ellis/tikz-feynman}.
+
+This package's versioning will approximately \href{http://semverg.org}{semantic
+  versioning}.  This means that changes in the third number (|1.0.0| to |1.0.1|)
+will consist of bug fixes and other very minor changes.  Changes in the second
+number (|1.0.0| to |1.1.0|) will consist of new features, and should leave the
+syntax essentially unchanged.  Finally, changes in the first number (|1.0.0| to
+|2.0.0|) indicates a major change in the package.  The intended version of this
+package to use should be indicated in the preamble with
+|\tikzfeynmanset{compat=x.y.z}| so the user may be informed of any discrepancy.
+If needed, earlier versions may be downloaded from
+\href{http://github.com/JP-Ellis/tikz-feynman/releases}{Github}.
 
 \subsubsection{Licence}
 \label{subsubsec:licence}

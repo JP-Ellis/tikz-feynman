@@ -83,17 +83,31 @@
 %% Version check
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Check which version is expected and which is installed
-\tikzfeynmanset{
-  compat/.estore in=\tikzfeynman@compat,
-  compat=\tikzfeynman@empty,
+\def\tikzfeynman@compat@parse#1.#2.#3\pgfeov{
+  \edef\tikzfeynman@compat@major{#1}
+  \edef\tikzfeynman@compat@minor{#2}
+  \edef\tikzfeynman@compat@patch{#3}
+  \edef\tikzfeynman@compat{#1.#2.#3}
 }
+\def\tikzfeynman@compat{\tikzfeynman@empty}
+\pgfkeyslet{/tikzfeynman/compat/.@cmd}{\tikzfeynman@compat@parse}
 
 \AtBeginDocument{
   \ifx\tikzfeynman@version\tikzfeynman@compat\else
     \ifx\tikzfeynman@compat\tikzfeynman@empty
-      \PackageWarning{tikz-feynman}{Consider adding \string\tikzfeynmanset{compat=\tikzfeynman@version} to your preamble.}
+      \PackageWarning{tikz-feynman}{Consider adding \string\tikzfeynmanset{compat=\tikzfeynman@version} to your preamble so that you can be warned if TikZ-Feynman changes.}
     \else
-      \PackageWarning{tikz-feynman}{The preamble requested version \tikzfeynman@compat, but the system version is \tikzfeynman@version.  This may lead to some changes in the output.}
+      \ifx\tikzfeynman@compat@major\tikzfeynman@version@major
+        \ifx\tikzfeynman@compat@minor\tikzfeynman@version@minor
+          \ifx\tikzfeynman@compat@patch\tikzfeynman@version@patch\else
+            \PackageInfo{tikz-feynman}{The preamble requested version \tikzfeynman@compat, but the system version is \tikzfeynman@version.  This should cause no issue.}
+          \fi
+        \else
+          \PackageWarning{tikz-feynman}{The preamble requested version \tikzfeynman@compat, but the system version is \tikzfeynman@version.  This may change some diagrams.}
+        \fi
+      \else
+        \PackageError{tikz-feynman}{The preamble requested version \tikzfeynman@compat, but the system version is \tikzfeynman@version.  They are most likely incompatible.  Please download the appropriate version at github.com/JP-Ellis/tikz-feynman.}
+      \fi
     \fi
   \fi
 }
