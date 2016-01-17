@@ -1,4 +1,4 @@
-[Ti*k*Z-Feynman](http://www.jpellis.me/projects/tikz-feynman)
+[Ti*k*Z-Feynman](http://www.jpellis.me/projects/tikz-feynman) [![Travis](https://img.shields.io/travis/JP-Ellis/tikz-feynman.svg)](https://travis-ci.org/JP-Ellis/tikz-feynman)
 =============================================================
 
 [Ti*k*Z](https://www.ctan/org/pkg/pgf) is a fantastic and very powerful
