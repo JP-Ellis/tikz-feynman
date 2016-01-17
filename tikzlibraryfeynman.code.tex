@@ -89,7 +89,7 @@
   \edef\tikzfeynman@compat@patch{#3}
   \edef\tikzfeynman@compat{#1.#2.#3}
 }
-\def\tikzfeynman@compat{\tikzfeynman@empty}
+\let\tikzfeynman@compat=\tikzfeynman@empty
 \pgfkeyslet{/tikzfeynman/compat/.@cmd}{\tikzfeynman@compat@parse}
 
 \AtBeginDocument{
