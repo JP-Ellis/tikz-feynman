@@ -222,6 +222,19 @@ directory}{}}
   \end{center}
 }
 
+%% Center codeexample
+\makeatletter
+\let\codeexample@orig=\codeexample
+\let\endcodeexample@orig=\endcodeexample
+\def\codeexample{
+  \begin{center}
+    \codeexample@orig
+}
+\def\endcodeexample{
+    \endcodeexample@orig
+  \end{center}
+}
+
 %% Document Information
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -269,7 +282,6 @@ directory}{}}
 
   \vfill
 
-  \begin{center}
 \begin{codeexample}[graphic=white]
 \feynmandiagram [large, vertical=e to f] {
   a -- [fermion] b -- [photon, momentum=\(k\)] c -- [fermion] d,
@@ -278,7 +290,6 @@ directory}{}}
   h -- [fermion] f -- [fermion] i;
 };
 \end{codeexample}
-  \end{center}
 
   \vfill
 
@@ -378,7 +389,6 @@ analogous to the |\tikz| command from \tikzname~and requires a final semi-colon
 (|;|) to finish the environment.  For example, a simple \(s\)-channel diagram
 is:
 
-\begin{center}
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {
   i1 -- [fermion] a -- [fermion] i2,
@@ -386,7 +396,6 @@ is:
   f1 -- [fermion] b -- [fermion] f2,
 };
 \end{codeexample}
-\end{center}
 
 Let's go through this example line by line:
 \begin{description}
@@ -427,7 +436,6 @@ algorithm re-arranges everything\footnote{It is possible for the algorithm to
 fermion lines all at once, as with the following example (note also that the way
 we named vertices is completely different):
 
-\begin{center}
 \begin{codeexample}[]
 \feynmandiagram [horizontal=f2 to f3] {
   f1 -- [fermion] f2 -- [fermion] f3 -- [fermion] f4,
@@ -435,7 +443,6 @@ we named vertices is completely different):
   f3 -- [photon] p2,
 };
 \end{codeexample}
-\end{center}
 
 \subsection{Adding Styles}
 \label{subsec:adding_styles}
@@ -448,7 +455,6 @@ in the case of end vertices, the particle can be labelled with
 |particle=|\meta{text}.  As an example, we take the generic \(s\)-channel
 diagram from \cref{subsec:a_first_diagram} and make it a \(e^{+}e^{-} \to
 \mu^{+}\mu^{-}\) diagram:
-\begin{center}
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {
   i1 [particle=\(e^{-}\)] -- [fermion] a -- [fermion] i2 [particle=\(e^{+}\)],
@@ -456,10 +462,8 @@ diagram from \cref{subsec:a_first_diagram} and make it a \(e^{+}e^{-} \to
   f1 [particle=\(\mu^{+}\)] -- [fermion] b -- [fermion] f2 [particle=\(\mu^{-}\)],
 };
 \end{codeexample}
-\end{center}
 In addition to the style keys documented below, style keys from \tikzname{} can
 be used as well:
-\begin{center}
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {
   i1 [particle=\(e^{-}\)] -- [fermion, very thick] a -- [fermion, opacity=0.2] i2 [particle=\(e^{+}\)],
@@ -467,7 +471,6 @@ be used as well:
   f1 [particle=\(\mu^{+}\)] -- [fermion, opacity=0.2] b -- [fermion, very thick] f2 [particle=\(\mu^{-}\)],
 };
 \end{codeexample}
-\end{center}
 For a list of all the various styles that \tikzname{} provides, have a look at
 the \pgfmanual; it is extremely thorough and provides many usage examples.
 
@@ -511,7 +514,6 @@ states remain closer together than they would have otherwise as illustrated in
 the following example (note that |opacity=0.2| is used instead of |draw=none| to
 illustrate where exactly the edge is located).
 
-\begin{center}
 \begin{codeexample}[]
 % No invisible to keep the two photons together
 \feynmandiagram [small, horizontal=a to t1] {
@@ -529,7 +531,6 @@ illustrate where exactly the edge is located).
   p1 -- [opacity=0.2] p2,
 };
 \end{codeexample}
-\end{center}
 
 \subsubsection{Alternative Algorithms}
 \label{subsubsec:alternative_algorithms}
@@ -542,7 +543,6 @@ to spread everything out as much as possible which, in most cases, gives a nice
 diagram; however, there are certain cases where this does not work.  A good
 example where the |spring layout| doesn't work are decays where we have the
 decaying particle on the left and all the daughter particles on the right.
-\begin{center}
 \begin{codeexample}[]
 % Using the default spring layout
 \feynmandiagram [horizontal=a to b] {
@@ -560,7 +560,6 @@ decaying particle on the left and all the daughter particles on the right.
   c -- [fermion] f3 [particle=\(e^{-}\)],
 };
 \end{codeexample}
-\end{center}
 You may notice that in addition to adding the |layered layout| style to
 |\feynmandiagram|, we also changed the order in which we specify the vertices.
 This is because the |layered layout| algorithm does pay attention to the order
@@ -607,7 +606,6 @@ to refer to an existing node, the node must be given in parentheses.
 This whole process of specifying the nodes and then drawing the edges between
 them is shown below for the muon decay:
 
-\begin{center}
 \begin{codeexample}[]
 \begin{tikzpicture}
   \begin{feynman}
@@ -627,7 +625,6 @@ them is shown below for the muon decay:
   \end{feynman}
 \end{tikzpicture}
 \end{codeexample}
-\end{center}
 
 \clearpage
 \section{Documentation}
