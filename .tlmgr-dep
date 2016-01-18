@@ -2,6 +2,9 @@ amsmath
 autonum
 babel
 babel-english
+biber
+biblatex
+biblatex-phys
 booktabs
 boondox
 cleveref
@@ -24,8 +27,10 @@ hyperref
 ifplatform
 isodate
 latex-bin
+latexmk
 lineno
 listings
+logreq
 lualibs
 luaotfload
 luatexbase
