@@ -206,6 +206,22 @@ directory}{}}
   pdfborder=0 0 0,
 }
 
+%% Change the abstract style
+\renewenvironment{abstract}{
+  \begin{center}
+    \begin{minipage}{0.9\textwidth}
+      \begin{center}
+        \Large
+        Abstract
+      \end{center}\vspace*{-1em}
+      \rule{\textwidth}{1pt}
+}{
+      \par\noindent
+      \rule{\textwidth}{1pt}
+    \end{minipage}
+  \end{center}
+}
+
 %% Document Information
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -276,6 +292,17 @@ directory}{}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 \pagenumbering{arabic}
+
+\begin{abstract}
+  \tikzfeynmanname{} is a \LaTeX{} package allowing Feynman diagrams to be
+  easily generated within \LaTeX{} with minimal user instructions and without
+  the need of external programs.  It builds upon the \tikzname{} package and
+  leverages the graph placement algorithms from \tikzname{} in order to automate
+  the placement of many vertices.  \tikzfeynmanname{} still allows fine-tuned
+  placement of vertices so that even complex diagrams can be still be generated
+  with ease.
+\end{abstract}
+
 \section{Introduction}
 \label{sec:introduction}
 
