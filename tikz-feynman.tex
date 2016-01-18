@@ -152,6 +152,19 @@
 
 \usepackage{autonum}
 
+%% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% hyperref should be loaded first
+\usepackage[
+    backend=biber,
+    autocite=inline,
+    style=phys,
+    biblabel=brackets,
+]{biblatex}
+
+\addbibresource{references.bib}
+
 %% Other modifications
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -322,12 +335,13 @@ drawing package and \tikzfeynmanname{} builds upon this to provide an easy way
 to produce Feynman diagrams.
 
 I must thank \href{http://tex.stackexchange.com/users/2552}{Jake} for providing
-\href{http://tex.stackexchange.com/a/87395/26980}{his answer on tex.se} which
+\href{http://tex.stackexchange.com/a/87395/26980}{his answer on
+  tex.se}\footnote{\url{http://tex.stackexchange.com/a/87395/26980}} which
 initially inspired me to write this package.
 
 This package can be installed through
-\href{https://www.ctan.org/pkg/tikz-feynman}{\textsc{ctan}} and is available at
-\url{https://www.ctan.org/pkg/tikz-feynman}.
+\href{https://www.ctan.org/pkg/tikz-feynman}{\textsc{ctan}} and can also be
+downloaded from \href{https://github.com/JP-Ellis/tikz-feynman}{Github}.
 
 If you have any suggestions or have found any bugs, please feel free to create a
 new issue or pull request on the Github page:
@@ -338,17 +352,76 @@ This package's versioning will approximately follow
 third number (|1.0.0| to |1.0.1|) will consist of bug fixes and very minor
 changes but they should not change the output otherwise\footnote{That is, with
   the exception of the bug that they are fixing.}.  Changes in the second number
-(|1.0.x| to |1.1.y|) will consist of new features, minor changes to the output,
-but everything should be backwards compatible.  Finally, changes in the first
-number (|1.x.y| to |2.a.b|) indicates a major change in the package and code
-written for |1.x.y| is not guaranteed to work on |2.a.b|.  The intended version
-of this package to use should be indicated in the preamble with
-|\tikzfeynmanset{compat=x.y.z}| so the user may be informed of any discrepancy.
-If needed, earlier versions may be downloaded from
-\href{http://github.com/JP-Ellis/tikz-feynman/releases}{Github}.
+(|1.0.0| to |1.1.0|) will consist of new features but everything should be
+backwards compatible.  Finally, changes in the first number (|1.0.0| to |2.0.0|)
+indicates a major change in the package and code written for |1.0.0| is not
+guaranteed to work on |2.0.0|.  The intended version of this package to use
+should be indicated in the preamble with |\tikzfeynmanset{compat=x.y.z}| so the
+user may be informed of any discrepancy.  If needed, earlier versions may be
+downloaded from \href{http://github.com/JP-Ellis/tikz-feynman/releases}{Github}.
 
-\subsubsection{Licence}
-\label{subsubsec:licence}
+\subsection*{Motivation}
+\label{subsec:motivation}
+
+The two most popular methods of drawing Feynman diagrams in \LaTeX{} are
+\href{https://www.ctan.org/pkg/feynmf}{|feynMF|/|feynMP|} \cite{feynmf} and
+\href{https://www.ctan.org/pkg/axodraw}{|AxoDraw|} \cite{axodraw}, with the
+latter also featuring a \textsc{gui} front-end called
+\href{http://jaxodraw.sourceforge.net}{|JaxoDraw|} \cite{jaxodrawV1,jaxodrawV2}.
+
+Both |feynMF|/|feynMP| and |AxoDraw| have quite complicated syntax.  As an
+example, the code to generate an \(\ell\ell \to \ell\ell\) scattering Feynman
+diagram in each package is:
+\begin{center}
+  \begin{tabular}{p{0.3\linewidth} p{0.27\linewidth} p{0.34\linewidth}}
+    |AxoDraw| & |feynMF|/|feynMP| & \tikzfeynmanname{} \\[-2em]
+\begin{codeexample}[execute code=false]
+\begin{picture}
+\ArrowLine(190,270)(160,300)
+\ArrowLine(160,240)(190,270)
+\ArrowLine(270,300)(240,270)
+\ArrowLine(240,270)(270,240)
+\Photon(190,270)(240,270){4}{4.5}
+\Vertex(190,270){1.5}
+\Vertex(240,270){1.5}
+\end{picture}
+\end{codeexample}
+              &
+\begin{codeexample}[execute code=false]
+\begin{fmfchar*}(40,30)
+\fmfpen{thick}
+\fmfleft{i1,i2}
+\fmfright{o1,o2}
+\fmf{fermion}{i1,v1,o1}
+\fmf{fermion}{i2,v2,o2}
+\fmf{photon,label=$q$}{v1,v2}
+\fmfdot{v1,v2}
+\end{fmfchar*}
+\end{codeexample}
+                                  &
+\begin{codeexample}[execute code=false]
+\feynmandiagram [horizontal=a to b] {
+  i1 -- [fermion] a -- [fermion] i2,
+  a -- [photon] b,
+  f1 -- [fermion] b -- [fermion] f2,
+};
+\end{codeexample} \\[-2em]
+  \end{tabular}
+\end{center}
+The learning curves for both |AxoDraw| and |feynMF|/|feynMP| are quite steep,
+and although this is partly resolved by using |JaxoDraw|, this requires an
+external program.  In addition, the creation of Feynman diagrams in
+|feynMF|/|feynMP| requires further processing outside of \LaTeX{}.
+
+\tikzfeynmanname{} on the other hand uses a clear syntax and delegates the
+positioning of vertices to an algorithm.  It also builds on the power of
+\tikzname{} \cite{tikz} making \tikzfeynmanname{} easy to extend to accommodate
+individual needs.  In order to produce more complicated diagrams, relative or
+absolute positioning of vertices can also be used in \tikzfeynmanname{} so that
+any diagram can be generated with relative ease.
+
+\subsection*{Licence}
+\label{subsec:licence}
 
 This \emph{documentation} may be redistributed and/or modified under the terms
 of the \textsc{gnu} General Public License as published by the Free Software
@@ -963,8 +1036,9 @@ diagrams.  For a more complete description of how these algorithm work, please
 refer to the \pgfmanual{}.
 
 \begin{key}{/graph drawing/spring layout=\opt{\meta{string}}}
-  Uses Hu's 2006 spring layout.  This models each edge as springs and attempts
-  to spread everything out as much as possible.  This is the default layout.
+  Uses Hu's spring layout \cite{hu2005} as implemented by Pohlmann
+  \cite{pohlmann2011}.  This models each edge as springs and attempts to spread
+  everything out as much as possible.  This is the default layout.
 
 \begin{codeexample}[]
 \feynmandiagram [nodes=circle, small, horizontal=c to d] {
@@ -974,10 +1048,10 @@ refer to the \pgfmanual{}.
 \end{key}
 
 \begin{key}{/graph drawing/spring electrical layout=\opt{\meta{string}}}
-  Uses Hu's 2006 spring electrical layout.  This models each edge as springs
-  and gives each vertex a charge.  This algorithm allows for the charge of a
-  particular vertex to be adjusted using the |electric charge| key (the default
-  is |1|).
+  Uses Hu's spring electrical layout \cite{hu2005} as implemented by Pohlmann
+  \cite{pohlmann2011}.  This models each edge as springs and gives each vertex a
+  charge.  This algorithm allows for the charge of a particular vertex to be
+  adjusted using the |electric charge| key (the default is |1|).
 
 \begin{codeexample}[]
 \feynmandiagram [nodes=circle,
@@ -990,7 +1064,8 @@ refer to the \pgfmanual{}.
 \end{key}
 
 \begin{key}{/graph drawing/layered layout=\opt{\meta{string}}}
-  Uses the Sugiyama layout algorithm in order to place the node.
+  Uses the Sugiyama layout algorithm \cite{eades1991} as implemented by Pohlmann
+  \cite{pohlmann2011} in order to place the node.
 
   When an edge is specified, the first vertex is always located on the layer
   above the second vertex.  This creates a hierarchy of vertices which is
@@ -1619,8 +1694,16 @@ more practical examples..
 
 \end{description}
 
+%% Index
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 \printindex
+
+%% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\pagestyle{plain}
+\printbibliography
 
 \end{document}
 
