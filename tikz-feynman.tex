@@ -322,13 +322,16 @@ If you have any suggestions or have found any bugs, please feel free to create a
 new issue or pull request on the Github page:
 \url{https://github.com/JP-Ellis/tikz-feynman}.
 
-This package's versioning will approximately \href{http://semverg.org}{semantic
-  versioning}.  This means that changes in the third number (|1.0.0| to |1.0.1|)
-will consist of bug fixes and other very minor changes.  Changes in the second
-number (|1.0.0| to |1.1.0|) will consist of new features, and should leave the
-syntax essentially unchanged.  Finally, changes in the first number (|1.0.0| to
-|2.0.0|) indicates a major change in the package.  The intended version of this
-package to use should be indicated in the preamble with
+This package's versioning will approximately follow
+\href{http://semverg.org}{semantic versioning}.  This means that changes in the
+third number (|1.0.0| to |1.0.1|) will consist of bug fixes and very minor
+changes but they should not change the output otherwise\footnote{That is, with
+  the exception of the bug that they are fixing.}.  Changes in the second number
+(|1.0.x| to |1.1.y|) will consist of new features, minor changes to the output,
+but everything should be backwards compatible.  Finally, changes in the first
+number (|1.x.y| to |2.a.b|) indicates a major change in the package and code
+written for |1.x.y| is not guaranteed to work on |2.a.b|.  The intended version
+of this package to use should be indicated in the preamble with
 |\tikzfeynmanset{compat=x.y.z}| so the user may be informed of any discrepancy.
 If needed, earlier versions may be downloaded from
 \href{http://github.com/JP-Ellis/tikz-feynman/releases}{Github}.
