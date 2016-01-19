@@ -330,47 +330,23 @@ directory}{}}
   the need of external programs.  It builds upon the \tikzname{} package and
   leverages the graph placement algorithms from \tikzname{} in order to automate
   the placement of many vertices.  \tikzfeynmanname{} still allows fine-tuned
-  placement of vertices so that even complex diagrams can be still be generated
-  with ease.
+  placement of vertices so that even complex diagrams can still be generated with
+  ease.
 \end{abstract}
 
 \section{Introduction}
 \label{sec:introduction}
 
-\href{https://www.ctan.org/pkg/pgf}{\tikzname} is a fantastic and very powerful
-drawing package and \tikzfeynmanname{} builds upon this to provide an easy way
-to produce Feynman diagrams.
+\tikzfeynmanname{} provides a new way to draw Feynman diagrams in \LaTeX{} that
+does not rely on external programs and uses a clear extensible syntax.
 
-I must thank \href{http://tex.stackexchange.com/users/2552}{Jake} for providing
-\href{http://tex.stackexchange.com/a/87395/26980}{his answer on
-  tex.se}\footnote{\url{http://tex.stackexchange.com/a/87395/26980}} which
-initially inspired me to write this package.
-
-This package can be installed through
-\href{https://www.ctan.org/pkg/tikz-feynman}{\textsc{ctan}} and can also be
-downloaded from \href{https://github.com/JP-Ellis/tikz-feynman}{Github}.
-
-If you have any suggestions or have found any bugs, please feel free to create a
-new issue or pull request on the Github page:
-\url{https://github.com/JP-Ellis/tikz-feynman}.
-
-This package's versioning will approximately follow
-\href{http://semverg.org}{semantic versioning}.  This means that changes in the
-third number (|1.0.0| to |1.0.1|) will consist of bug fixes and very minor
-changes but they should not change the output otherwise\footnote{That is, with
-  the exception of the bug that they are fixing.}.  Changes in the second number
-(|1.0.0| to |1.1.0|) will consist of new features but everything should be
-backwards compatible.  Finally, changes in the first number (|1.0.0| to |2.0.0|)
-indicates a major change in the package and code written for |1.0.0| is not
-guaranteed to work on |2.0.0|.  The intended version of this package to use
-should be indicated in the preamble with |\tikzfeynmanset{compat=x.y.z}| so the
-user may be informed of any discrepancy.  If needed, earlier versions may be
-downloaded from \href{http://github.com/JP-Ellis/tikz-feynman/releases}{Github}.
-
-\subsection*{Motivation}
-\label{subsec:motivation}
-
-The two most popular methods of drawing Feynman diagrams in \LaTeX{} are
+Feynman diagrams provide a description of interactions of subatomic particles in
+a form that is clearer and more succinct than the corresponding mathematical
+description.  They were introduced by \citeauthor{PhysRev.76.769} and first
+appear in his paper \citetitle{PhysRev.76.769} \cite{PhysRev.76.769}.  Since
+then, \LaTeX{} has become the standard type-setting software used to produce
+scientific papers and currently, the two most popular methods of drawing Feynman
+diagrams in \LaTeX{} are
 \href{https://www.ctan.org/pkg/feynmf}{|feynMF|/|feynMP|} \cite{feynmf} and
 \href{https://www.ctan.org/pkg/axodraw}{|AxoDraw|} \cite{axodraw}, with the
 latter also featuring a \textsc{gui} front-end called
@@ -421,11 +397,38 @@ external program.  In addition, the creation of Feynman diagrams in
 |feynMF|/|feynMP| requires further processing outside of \LaTeX{}.
 
 \tikzfeynmanname{} on the other hand uses a clear syntax and delegates the
-positioning of vertices to an algorithm.  It also builds on the power of
-\tikzname{} \cite{tikz} making \tikzfeynmanname{} easy to extend to accommodate
-individual needs.  In order to produce more complicated diagrams, relative or
-absolute positioning of vertices can also be used in \tikzfeynmanname{} so that
-any diagram can be generated with relative ease.
+positioning of vertices to algorithms originally developed by
+\citeauthor{hu2005} \cite{hu2005}, and \citeauthor{eades1991} \cite{eades1991},
+both of which were implemented into \tikzname{} by \citeauthor{pohlmann2011}
+\cite{pohlmann2011}.  Since \tikzfeynmanname{} is built on \tikzname{}, users
+can harness the power and extensibilty of \tikzname{} \cite{tikz} making it easy
+to extend to accommodate individual needs.  In order to produce more complicated
+diagrams, relative or absolute positioning of vertices can also be used in
+\tikzfeynmanname{} so that any diagram can be generated with relative ease.
+
+\tikzfeynmanname{} is made available
+\href{https://ctan.org/pkg/tikz-feynman}{Comprehensive \TeX{} Archive Network
+  (\textsc{ctan})}\footnote{\url{https://ctan.org/pkg/tikz-feynman}} and can
+also be downloaded from the
+\href{http://www.jpellis.me/projects/tikz-feynman}{project
+  page}\footnote{\url{http://www.jpellis.me/projects/tikz-feynman}}.  The
+project is open source and contributions are welcome.  The management of bugs
+and feature requests is done at
+\href{https://github.com/JP-Ellis/tikz-feynman}{Github}.
+
+\tikzfeynmanname{}'s versioning will approximately follow
+\href{http://semverg.org}{semantic versioning}.  This means that changes in the
+third number (|1.0.0| to |1.0.1|) will consist of bug fixes and very minor
+changes but they should not change the output otherwise\footnote{That is, with
+  the exception of the bug that they are fixing.}.  Changes in the second number
+(|1.0.0| to |1.1.0|) will consist of new features but everything should be
+backwards compatible.  Finally, changes in the first number (|1.0.0| to |2.0.0|)
+indicates a major change in the package and code written for |1.0.0| is not
+guaranteed to work on |2.0.0|.  The intended version of this package to use
+should be indicated in the preamble with |\tikzfeynmanset{compat=x.y.z}| so the
+user may be informed of any discrepancy.  If needed, earlier versions may be
+downloaded from the \href{http://www.jpellis.me/projects/tikz-feynman}{project
+  page}\footnote{\url{http://www.jpellis.me/projects/tikz-feynman}}.
 
 \subsection*{Licence}
 \label{subsec:licence}
@@ -446,6 +449,18 @@ The Current Maintainer of this work is Joshua Ellis.
 This package is distributed in the hope that it will be useful, but
 \textsc{without any warranty}; without even the implied warranty of
 \textsc{merchantability} or \textsc{fitness for a particular purpose}.
+
+\subsection*{Acknowledgements}
+\label{subsec:acknowledgements}
+
+The original proof-of-concept for using \tikzname{} to draw Feynman diagrams was
+done by the user `\href{http://tex.stackexchange.com/users/2552}{Jake}' on the
+\TeX{} StackExchange.  His original answer can be viewed at:
+\url{http://tex.stackexchange.com/a/87395/26980}.
+
+I must also thank all the people who have used the development versions of
+\tikzfeynmanname{} and offered suggestions to improve it and found bugs for me
+to fix.
 
 
 \clearpage
