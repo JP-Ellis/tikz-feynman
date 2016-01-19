@@ -1337,6 +1337,24 @@ but not |scalar| whilst styles in |every scalar| will apply to all three.
 \end{codeexample}
 \end{key}
 
+\begin{key}{/tikzfeynman/majorana}
+  Draws a solid line with two arrows pointing to the center to denote an
+  Majorana particle.
+
+\begin{codeexample}[]
+\feynmandiagram [horizontal=a to b] {a -- [majorana] b};
+\end{codeexample}
+\end{key}
+
+\begin{key}{/tikzfeynman/anti majorana}
+  Draws a solid line with two arrows pointing to the ends to denote a Majorana
+  particle.
+
+\begin{codeexample}[]
+\feynmandiagram [horizontal=a to b] {a -- [anti majorana] b};
+\end{codeexample}
+\end{key}
+
 \begin{key}{/tikzfeynman/gluon}
   Draws a coiled line to denote a gluon.
 

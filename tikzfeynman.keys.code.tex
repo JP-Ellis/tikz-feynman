@@ -298,7 +298,7 @@
   with arrow/.style={
     /tikz/decoration={
       markings,
-      mark=at position 0.5 with {
+      mark=at position #1 with {
         \node[
           transform shape,
           xshift=-0.5mm,
@@ -316,7 +316,7 @@
   with reversed arrow/.style={
     /tikz/decoration={
       markings,
-      mark=at position 0.5 with {
+      mark=at position #1 with {
         \node[
           transform shape,
           xshift=-0.5mm,
@@ -383,7 +383,7 @@
     /tikzfeynman/every scalar,
   },
   every charged scalar@@/.style={
-    /tikzfeynman/with arrow,
+    /tikzfeynman/with arrow=0.5,
   },
   every charged scalar/.style={},
   charged scalar/.style={
@@ -392,7 +392,7 @@
     /tikzfeynman/every charged scalar,
   },
   every anti charged scalar@@/.style={
-    /tikzfeynman/with reversed arrow,
+    /tikzfeynman/with reversed arrow=0.5,
   },
   every anti charged scalar/.style={},
   anti charged scalar/.style={
@@ -411,7 +411,7 @@
     /tikzfeynman/every ghost,
   },
   every fermion@@/.style={
-    /tikzfeynman/with arrow,
+    /tikzfeynman/with arrow=0.5,
   },
   every fermion/.style={},
   fermion/.style={
@@ -419,13 +419,31 @@
     /tikzfeynman/every fermion,
   },
   every anti fermion@@/.style={
-    /tikzfeynman/with reversed arrow,
+    /tikzfeynman/with reversed arrow=0.5,
   },
   every anti fermion/.style={},
   anti fermion/.style={
     /tikzfeynman/every fermion,
     /tikzfeynman/every anti fermion@@,
     /tikzfeynman/every anti fermion,
+  },
+  every majorana@@/.style={
+    /tikzfeynman/with arrow=0.33,
+    /tikzfeynman/with reversed arrow=0.73,
+  },
+  every majorana/.style={},
+  majorana/.style={
+    /tikzfeynman/every majorana@@,
+    /tikzfeynman/every majorana,
+  },
+  every anti majorana@@/.style={
+    /tikzfeynman/with reversed arrow=0.33,
+    /tikzfeynman/with arrow=0.73,
+  },
+  every anti majorana/.style={},
+  anti majorana/.style={
+    /tikzfeynman/every anti majorana@@,
+    /tikzfeynman/every anti majorana,
   },
   every gluon@@/.style={
     /tikz/draw=none,
