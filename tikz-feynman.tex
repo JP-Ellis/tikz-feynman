@@ -254,6 +254,8 @@ directory}{}}
 \makeatletter
 \newcommand{\@keywords}{}
 \newcommand{\keywords}[1]{\renewcommand{\@keywords}{#1}}
+\newcommand{\@institution}{}
+\newcommand{\institution}[1]{\renewcommand{\@institution}{#1}}
 
 \AtBeginDocument{
   \hypersetup{
@@ -266,7 +268,11 @@ directory}{}}
 
 \title{\tikzfeynmanname}
 \author{Joshua \textsc{Ellis}}
-\keywords{Feynman diagram; TeX; LaTeX; TikZ; pgf; TikZ-Feynman}
+\institution{
+  ARC Centre of Excellence for Particle Physics at the Terascale \\
+  School of Physics, The University of Melbourne, Australia
+}
+\keywords{Feynman diagram, TeX, LaTeX, TikZ, pgf, TikZ-Feynman}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% DOCUMENT
@@ -289,7 +295,8 @@ directory}{}}
     {Version \texttt{\tikzfeynman@version} \qquad \origdate\printdateTeX{\tikzfeynman@date}}
 
     \vspace{1.3em}
-    {by \@author}
+    {by \@author} \\[1em]
+    {\@institution}
   \end{center}
   \makeatother
 
