@@ -54,7 +54,7 @@
 \titleformat*{\subsubsection}{\large\scshape}
 \titleformat*{\paragraph}{\scshape}
 
-\usepackage[symbol*,perpage]{footmisc}
+\usepackage[perpage]{footmisc}
 \usepackage{enumitem}    % Easily customize lists
 \setlist[description]{font=\normalfont\scshape}
 
@@ -235,6 +235,26 @@ directory}{}}
   \end{center}
 }
 
+%% Put the abstract only on the arXiv version
+\newif\ifarxiv
+\arxivfalse
+
+%% Acknowledgements go in two different places depending on whether it is the
+%% arXiv version or not.  Have the common code here.
+\def\acknowledgements{
+  \subsection*{Acknowledgements}
+  \label{subsec:acknowledgements}
+
+  The original proof-of-concept for using \tikzname{} to draw Feynman diagrams
+  was done by the user `\href{http://tex.stackexchange.com/users/2552}{Jake}' on
+  the \TeX{} StackExchange.  His original answer can be viewed at:
+  \url{http://tex.stackexchange.com/a/87395/26980}.
+
+  I must also thank all the people who have used the development versions of
+  \tikzfeynmanname{} and offered suggestions to improve it and found bugs for me
+  to fix.
+}
+
 %% Center codeexample
 \makeatletter
 \let\codeexample@orig=\codeexample
@@ -324,6 +344,7 @@ directory}{}}
 \clearpage
 \pagenumbering{arabic}
 
+\ifarxiv
 \begin{abstract}
   \tikzfeynmanname{} is a \LaTeX{} package allowing Feynman diagrams to be
   easily generated within \LaTeX{} with minimal user instructions and without
@@ -333,6 +354,7 @@ directory}{}}
   placement of vertices so that even complex diagrams can still be generated with
   ease.
 \end{abstract}
+\fi
 
 \section{Introduction}
 \label{sec:introduction}
@@ -449,17 +471,9 @@ This package is distributed in the hope that it will be useful, but
 \textsc{without any warranty}; without even the implied warranty of
 \textsc{merchantability} or \textsc{fitness for a particular purpose}.
 
-\subsection*{Acknowledgements}
-\label{subsec:acknowledgements}
-
-The original proof-of-concept for using \tikzname{} to draw Feynman diagrams was
-done by the user `\href{http://tex.stackexchange.com/users/2552}{Jake}' on the
-\TeX{} StackExchange.  His original answer can be viewed at:
-\url{http://tex.stackexchange.com/a/87395/26980}.
-
-I must also thank all the people who have used the development versions of
-\tikzfeynmanname{} and offered suggestions to improve it and found bugs for me
-to fix.
+\ifarxiv\else
+\acknowledgements
+\fi
 
 
 \clearpage
@@ -1755,10 +1769,15 @@ more practical examples..
 \clearpage
 \printindex
 
-%% Bibliography
+%% Bibliography (and acknowledgements)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \clearpage
 \pagestyle{plain}
+
+\ifarxiv
+\acknowledgements
+\fi
+
 \printbibliography
 
 \end{document}
