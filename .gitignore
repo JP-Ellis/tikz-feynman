@@ -24,16 +24,16 @@
 *.snm
 *.synctex
 *.synctex.gz
+*.synctex.gz(busy)
 *.toc
 *.unq
 /pgf-img/
 /_minted*/
-/tikz-feynman.pdf
-/tests.pdf
+*.pdf
 
 # Ignore AUCTeX folder and files
-/auto/
-/_region_.*
+auto/
+_region_.*
 
 # Ignore backup files and temporary files
 *~
