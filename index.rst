@@ -11,13 +11,6 @@ TikZ-Feynman
 :share: True
 :github: https://github.com/JP-Ellis/tikz-feynman/
 :release: True
-:summary: |TikZ|-Feynman is a LaTeX package allowing Feynman diagrams to be
-          easily generated within LaTeX with minimal user instructions and
-          without the need of external programs.  It builds upon the |TikZ|
-          package and leverages the graph placement algorithms from |TikZ| in
-          order to automate the placement of many vertices.  |TikZ|-Feynman still
-          allows fine-tuned placement of vertices so that even complex diagrams
-          can still be generated with ease.
 
 |TikZ|-Feynman is a LaTeX package allowing Feynman diagrams to be easily
 generated within LaTeX with minimal user instructions and without the need of
@@ -26,12 +19,18 @@ placement algorithms from |TikZ| in order to automate the placement of many
 vertices.  |TikZ|-Feynman still allows fine-tuned placement of vertices so that
 even complex diagrams can still be generated with ease.
 
+.. PELICAN_END_SUMMARY
+
 __ https://ctan.org/pkg/pgf
 
 |TikZ|-Feynman is made available through the `Comprehensive TeX Archive Network
 (CTAN) <https://ctan.org/pkg/tikz-feynman>`_ and comes with some thorough
 `documentation <{attach}/pages/projects/tikz-feynman/tikz-feynman.pdf>`_
-containing a tutorial and many examples.
+containing a tutorial and many examples.  I have also submitted the
+documentation for ``v1.0.0`` on `the arXiv`__ so if you find this package
+useful, please consider adding a citation.
+
+__ http://arxiv.org/abs/1601.05437
 
 |TikZ|-Feynman is open source and contribution are welcome.  If you have any
 suggestions, feature requests, or have found any bugs, feel free to create a new
