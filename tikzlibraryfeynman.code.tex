@@ -91,11 +91,12 @@
 }
 \let\tikzfeynman@compat=\tikzfeynman@empty
 \pgfkeyslet{/tikzfeynman/compat/.@cmd}{\tikzfeynman@compat@parse}
+\ProcessPgfPackageOptions{/tikzfeynman}
 
 \AtBeginDocument{
   \ifx\tikzfeynman@version\tikzfeynman@compat\else
     \ifx\tikzfeynman@compat\tikzfeynman@empty
-      \PackageWarning{tikz-feynman}{Consider adding \string\tikzfeynmanset{compat=\tikzfeynman@version} to your preamble so that you can be warned if TikZ-Feynman changes.}
+      \PackageWarning{tikz-feynman}{Consider loading TikZ-Feynman with \string\usepackage[compat=\tikzfeynman@version]{tikz-feynman} so that you can be warned if TikZ-Feynman changes.}
     \else
       \ifx\tikzfeynman@compat@major\tikzfeynman@version@major
         \ifx\tikzfeynman@compat@minor\tikzfeynman@version@minor

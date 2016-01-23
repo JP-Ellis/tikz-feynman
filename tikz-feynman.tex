@@ -446,9 +446,10 @@ changes but they should not change the output otherwise\footnote{That is, with
 backwards compatible.  Finally, changes in the first number (|1.0.0| to |2.0.0|)
 indicates a major change in the package and code written for |1.0.0| is not
 guaranteed to work on |2.0.0|.  The intended version of this package to use
-should be indicated in the preamble with |\tikzfeynmanset{compat=x.y.z}| so the
-user may be informed of any discrepancy.  If needed, earlier versions may be
-downloaded from the \href{http://www.jpellis.me/projects/tikz-feynman}{project
+should be indicated when the package is loaded with
+|\usepackage[compat=x.y.z]{tikz-feynman}| so the user may be informed of any
+discrepancyx.  If needed, earlier versions may be downloaded from the
+\href{http://www.jpellis.me/projects/tikz-feynman}{project
   page}\footnote{\url{http://www.jpellis.me/projects/tikz-feynman}}.
 
 \subsection*{Licence}
@@ -485,9 +486,10 @@ This package is distributed in the hope that it will be useful, but
 
 After installing the package, the \tikzfeynmanname{} package can be loaded with
 |\usepackage{tikz-feynman}| in the preamble.  It is recommend that you also
-place |\tikzfeynmanset{compat=1.0.0}| in the preamble to ensure that a new
-versions of \tikzfeynmanname{} do not produce any undesirable changes without
-warning.
+specify the version of \tikzfeynmanname{} to use with the optional package
+argument |compat|: |\usepackage[compat=1.0.0]{tikz-feynman}|.  This ensures that
+any new versions of \tikzfeynmanname{} do not produce any undesirable changes
+without warning.
 
 \subsection{A First Diagram}
 \label{subsec:a_first_diagram}
