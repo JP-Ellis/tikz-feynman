@@ -38,6 +38,3 @@ _region_.*
 # Ignore backup files and temporary files
 *~
 *#
-
-# Ignore pages
-/pages/
