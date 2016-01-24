@@ -554,6 +554,12 @@ we named vertices is completely different):
 };
 \end{codeexample}
 
+As a final remark, the calculation of where vertices should be placed is usually
+done through an algorithm written in Lua.  As a result, \LuaTeX{} is required in
+order to make use of these algorithms.  If \LuaTeX{} is not used,
+\tikzfeynmanname{} will default to a more rudimentary algorithm and will warn
+the user instead.
+
 \subsection{Adding Styles}
 \label{subsec:adding_styles}
 
@@ -1070,7 +1076,10 @@ There are several algorithms which are available to place the vertices which are
 all provided within the |graph drawing| library from \tikzname.  Below are
 listed a few of these layouts which are more relevant for drawing Feynman
 diagrams.  For a more complete description of how these algorithm work, please
-refer to the \pgfmanual{}.
+refer to the \pgfmanual{}.  Please note that most graph drawing algorithms are
+implemented in Lua and thus require \LuaTeX{} in order to work.  If \LuaTeX{} is
+not used, \tikzfeynmanname{} will default to a more rudimentary algorithm and
+will warn the user instead.
 
 \begin{key}{/graph drawing/spring layout=\opt{\meta{string}}}
   Uses Hu's spring layout \cite{hu2005} as implemented by Pohlmann
