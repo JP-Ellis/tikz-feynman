@@ -27,10 +27,13 @@ __ https://ctan.org/pkg/pgf
 (CTAN) <https://ctan.org/pkg/tikz-feynman>`_ and comes with some thorough
 `documentation <{attach}/pages/projects/tikz-feynman/tikz-feynman.pdf>`_
 containing a tutorial and many examples.  I have also submitted the
-documentation for ``v1.0.0`` on `the arXiv`__ so if you find this package
-useful, please consider adding a citation.
+documentation for ``v1.0.0`` on `the arXiv`__.  If you use |TikZ|-Feynman,
+please cite:
 
 __ http://arxiv.org/abs/1601.05437
+
+    Joshua Ellis. ‘TikZ-Feynman: Feynman diagrams with TikZ’. arXiv: `1601.05437
+    [hep-ph] <http://arxiv.org/abs/1601.05437>`_
 
 |TikZ|-Feynman is open source and contribution are welcome.  If you have any
 suggestions, feature requests, or have found any bugs, feel free to create a new
