@@ -115,23 +115,23 @@
 
 %% Override Lua code if necessary
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\tikzfeynman@apply@patch{
-  \directlua{require("tikzfeynman.patch.lua")}
+\def\tikzfeynman@apply@patch#1{
+  \directlua{require("tikzfeynman.patch.#1.lua")}
 }
 
 %% Version 3.0.0, 3.0.1 and 3.0.1a need to be patched.
 \ifluatex
   \def\tikzfeynman@temp{3.0.0}
   \ifx\pgfversion\tikzfeynman@temp
-    \tikzfeynman@apply@patch
+    \tikzfeynman@apply@patch{3.0.0}
   \else
     \def\tikzfeynman@temp{3.0.1}
     \ifx\pgfversion\tikzfeynman@temp
-      \tikzfeynman@apply@patch
+      \tikzfeynman@apply@patch{3.0.1}
     \else
       \def\tikzfeynman@temp{3.0.1a}
       \ifx\pgfversion\tikzfeynman@temp
-        \tikzfeynman@apply@patch
+        \tikzfeynman@apply@patch{3.0.1}
       \fi
     \fi
   \fi
