@@ -158,9 +158,12 @@
 %% hyperref should be loaded first
 \usepackage[
     backend=biber,
-    autocite=inline,
     style=phys,
+    autocite=inline,
     biblabel=brackets,
+    eprint=true,
+    doi=true,
+    isbn=true,
 ]{biblatex}
 
 \addbibresource{references.bib}
@@ -361,6 +364,13 @@ directory}{}}
 
 \tikzfeynmanname{} provides a new way to draw Feynman diagrams in \LaTeX{} that
 does not rely on external programs and uses a clear extensible syntax.
+
+\ifarxiv\else
+If you use \tikzfeynmanname{} in an academic setting, please cite:
+\begin{quote}
+  \fullcite{tikz-feynman}
+\end{quote}
+\fi
 
 Feynman diagrams provide a description of interactions of subatomic particles in
 a form that is clearer and more succinct than the corresponding mathematical
