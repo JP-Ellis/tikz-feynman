@@ -162,10 +162,7 @@
   \scope
   \tikz@lib@ignore@sizetrue
   \tikzfeynman@tikz@search@tikzfeynman
-  \pgfkeys{
-    /tikzfeynman/every feynman@@,
-    /tikzfeynman/every feynman,
-    #1}
+  \pgfkeys{/tikzfeynman/every feynman@@,/tikzfeynman/every feynman,#1}
   \pgfkeysvalueof{/tikzfeynman/execute at begin feynman@@}%
   \pgfkeysvalueof{/tikzfeynman/execute at begin feynman}%
 }
@@ -186,8 +183,8 @@
   \pgfutil@ifnextchar[{\feynmandiagram@opt@opt[#1]}
   {\feynmandiagram@opt@opt[#1][#1]}}
 \def\feynmandiagram@opt@opt[#1][#2]{%
-  \tikz [/tikzfeynman/.cd, .search also={/tikz}, #1]
-  \graph [/tikzfeynman/every diagram@@, /tikzfeynman/every diagram, /tikz/graphs/spring layout, #2]}
+  \tikz [/tikzfeynman/.cd,.search also={/tikz},#1]
+  \graph [/tikzfeynman/every diagram@@,/tikzfeynman/every diagram,/tikz/graphs/spring layout,#2]}
 
 %% Allow empty nodes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
