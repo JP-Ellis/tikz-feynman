@@ -61,6 +61,8 @@
 \pgfkeys{
   /tikzfeynman/.is family,
   /tikzfeynman/.search also={/tikz},
+  /tikzfeynman/graphs/.search also={/tikz/graphs},
+  /tikz/graphs/graphs/redirect unknown to tikz/.forward to=/tikz/graphs/redirect unknown to tikz,
 }
 
 %% |\tikzfeynmanset| allows keys that belong with tikz-feynman to be easily set.
@@ -157,6 +159,7 @@
   %% Local overrides
   \let\tikz@@scan@fig=\tikzfeynman@scan@fig
   \let\tikzfeynman@orig@graph=\graph
+  \let\tikzset=\tikzfeynmanset
   %% Local commands
   \let\vertex=\tikzfeynman@commands@vertex
   \let\diagram=\tikzfeynman@commands@diagram
@@ -164,7 +167,6 @@
   %% Opening hooks
   \scope
   \tikz@lib@ignore@sizetrue
-  \tikzfeynman@tikz@search@tikzfeynman
   \pgfkeys{/tikzfeynman/every feynman@@,/tikzfeynman/every feynman,#1}
   \pgfkeysvalueof{/tikzfeynman/execute at begin feynman@@}%
   \pgfkeysvalueof{/tikzfeynman/execute at begin feynman}%
@@ -208,54 +210,6 @@
          \fi%
        \fi%
        \tikz@fig@main{}}}}}}%}}
-
-%% Include /tikzfeynman in the search path
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\tikzfeynman@tikz@search@tikzfeynman{%
-  \pgfkeys{/tikz/.unknown/.code=%
-    \let\tikz@key\pgfkeyscurrentname%
-    %% Is it a tikzfeynman key?
-    \pgfkeys{/tikzfeynman/\tikz@key/.try={##1}}%
-    \ifpgfkeyssuccess%
-    \else%
-      %% Is it a pgf key?
-      \pgfkeys{/pgf/\tikz@key/.try={##1}}%
-      \ifpgfkeyssuccess%
-      \else%
-        \expandafter\pgfutil@in@\expandafter!\expandafter{\tikz@key}%
-        \ifpgfutil@in@%
-          %% this is a color!
-          \expandafter\tikz@addoption\expandafter{\expandafter\tikz@compat@color@set\expandafter{\tikz@key}}%
-          \edef\tikz@textcolor{\tikz@key}%
-        \else%
-          \pgfutil@doifcolorelse{\tikz@key}
-          {%
-            \expandafter\tikz@addoption\expandafter{\expandafter\tikz@compat@color@set\expandafter{\tikz@key}}%
-            \edef\tikz@textcolor{\tikz@key}%
-          }%
-          {%
-            %% Ok, second chance: This might be an arrow specification:
-            \expandafter\pgfutil@in@\expandafter-\expandafter{\tikz@key}%
-            \ifpgfutil@in@%
-              %% Ah, an arrow spec!
-              \expandafter\tikz@processarrows\expandafter{\tikz@key}%
-            \else%
-              %% Ok, third chance: A shape!
-              \expandafter\ifx\csname pgf@sh@s@\tikz@key\endcsname\relax%
-                \pgfkeys{/errors/unknown key/.expand
-                once=\expandafter{\expandafter/\expandafter t\expandafter
-                i\expandafter k\expandafter z\expandafter/\tikz@key}{##1}}%
-              \else%
-                \edef\tikz@shape{\tikz@key}%
-              \fi%
-            \fi%
-          }%
-        \fi%
-      \fi%
-    \fi%
-  }
-}
-
 
 %% Vertex
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
