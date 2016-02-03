@@ -58,7 +58,10 @@
 %% Key Manager
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Setup the tikz-feynman key family
-\pgfkeys{/tikzfeynman/.is family}
+\pgfkeys{
+  /tikzfeynman/.is family,
+  /tikzfeynman/.search also={/tikz},
+}
 
 %% |\tikzfeynmanset| allows keys that belong with tikz-feynman to be easily set.
 \def\tikzfeynmanset{\pgfqkeys{/tikzfeynman}}
@@ -183,8 +186,8 @@
   \pgfutil@ifnextchar[{\feynmandiagram@opt@opt[#1]}
   {\feynmandiagram@opt@opt[#1][#1]}}
 \def\feynmandiagram@opt@opt[#1][#2]{%
-  \tikz [/tikzfeynman/.cd,.search also={/tikz},#1]
-  \graph [/tikzfeynman/every diagram@@,/tikzfeynman/every diagram,/tikz/graphs/spring layout,#2]}
+  \tikz [/tikzfeynman/.cd,#1]
+  \graph [/tikzfeynman/.cd,/tikzfeynman/every diagram@@,/tikzfeynman/every diagram,/tikz/graphs/spring layout,#2]}
 
 %% Allow empty nodes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

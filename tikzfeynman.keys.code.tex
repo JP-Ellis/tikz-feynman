@@ -138,7 +138,6 @@
   every feynman/.style={},
   every feynman@@/.style={
     /tikzfeynman/.cd,
-    .search also={/tikz},
     /tikzfeynman/medium,
   },
   execute at begin feynman@@/.code={}                     %% Internal version
@@ -476,6 +475,7 @@
   },
   %% Insertions
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  insertion/.search also={/tikzfeynman,/tikz},
   %% Parameters
   insertion/size/.store in=\tikzfeynman@insertion@size,
   insertion/size=3pt,
@@ -486,7 +486,7 @@
     /tikz/decoration={
       markings,
       mark=at position #2 with {
-        \tikzfeynmanset{insertion/.cd,insertion/.search also={/tikzfeynman,/tikz},#1}
+        \tikzfeynmanset{insertion/.cd,#1}
         \draw [\tikzfeynman@insertion@style] (-\tikzfeynman@insertion@size, -\tikzfeynman@insertion@size) -- (\tikzfeynman@insertion@size, \tikzfeynman@insertion@size);
         \draw [\tikzfeynman@insertion@style] (-\tikzfeynman@insertion@size, \tikzfeynman@insertion@size) -- (\tikzfeynman@insertion@size, -\tikzfeynman@insertion@size);
       },
@@ -498,6 +498,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %% Momentum arrows
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  momentum/.search also={/tikzfeynman,/tikz},
   %% Parameters
   momentum/label distance/.store in=\tikzfeynman@momentum@label@distance,
   momentum/label distance=0pt,
@@ -516,7 +517,7 @@
         show path construction,
         moveto code={},
         lineto code={
-          \tikzfeynmanset{momentum/.cd,momentum/.search also={/tikzfeynman,/tikz}, #1}
+          \tikzfeynmanset{momentum/.cd,#1}
           \path (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast)
                 coordinate [pos=\tikzfeynman@momentum@arrow@shorten] (tf@m@1)
                 coordinate [pos=1 - \tikzfeynman@momentum@arrow@shorten] (tf@m@2);
