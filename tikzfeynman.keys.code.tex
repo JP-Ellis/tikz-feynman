@@ -129,14 +129,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Keys
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\pgfkeys{
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  %% Family
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  /tikzfeynman/search path for tikz/.search also={/tikz,/tikzfeynman},
-  /tikzfeynman/.is family,
-}
-
 \tikzfeynmanset{
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %% Hooks
@@ -494,7 +486,7 @@
     /tikz/decoration={
       markings,
       mark=at position #2 with {
-        \tikzfeynmanset{insertion/.cd, insertion/.search also={/tikz}, #1}
+        \tikzfeynmanset{insertion/.cd,insertion/.search also={/tikzfeynman,/tikz},#1}
         \draw [\tikzfeynman@insertion@style] (-\tikzfeynman@insertion@size, -\tikzfeynman@insertion@size) -- (\tikzfeynman@insertion@size, \tikzfeynman@insertion@size);
         \draw [\tikzfeynman@insertion@style] (-\tikzfeynman@insertion@size, \tikzfeynman@insertion@size) -- (\tikzfeynman@insertion@size, -\tikzfeynman@insertion@size);
       },
@@ -524,7 +516,7 @@
         show path construction,
         moveto code={},
         lineto code={
-          \tikzfeynmanset{momentum/.cd, momentum/.search also={/tikz}, #1}
+          \tikzfeynmanset{momentum/.cd,momentum/.search also={/tikzfeynman,/tikz}, #1}
           \path (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast)
                 coordinate [pos=\tikzfeynman@momentum@arrow@shorten] (tf@m@1)
                 coordinate [pos=1 - \tikzfeynman@momentum@arrow@shorten] (tf@m@2);
@@ -536,7 +528,7 @@
                       \tikzfeynman@momentum@label@style] {#2};
         },
         curveto code={
-          \tikzfeynmanset{momentum/.cd, #1}
+          \tikzfeynmanset{momentum/.cd,#1}
           \path (\tikzinputsegmentfirst)
                 .. controls (\tikzinputsegmentsupporta) and (\tikzinputsegmentsupportb)
                 .. (\tikzinputsegmentlast)
@@ -557,7 +549,7 @@
                 -- ($(tf@m@50)!\tikzfeynman@momentum@arrow@distance!-90:(tf@m@49)$);
         },
         closepath code={
-          \tikzfeynmanset{momentum/.cd, #1}
+          \tikzfeynmanset{momentum/.cd,#1}
           \path (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast)
                 coordinate [pos=\tikzfeynman@momentum@arrow@shorten] (tf@m@1)
                 coordinate [pos=1 - \tikzfeynman@momentum@arrow@shorten] (tf@m@2);
@@ -578,7 +570,7 @@
         show path construction,
         moveto code={},
         lineto code={
-          \tikzfeynmanset{momentum/.cd, #1}
+          \tikzfeynmanset{momentum/.cd,#1}
           \path (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast)
                 coordinate [pos=\tikzfeynman@momentum@arrow@shorten] (tf@m@1)
                 coordinate [pos=1 - \tikzfeynman@momentum@arrow@shorten] (tf@m@2);
@@ -590,7 +582,7 @@
                       \tikzfeynman@momentum@label@style] {#2};
         },
         curveto code={
-          \tikzfeynmanset{momentum/.cd, #1}
+          \tikzfeynmanset{momentum/.cd,#1}
           \path (\tikzinputsegmentfirst)
                 .. controls (\tikzinputsegmentsupporta) and (\tikzinputsegmentsupportb)
                 .. (\tikzinputsegmentlast)
@@ -611,7 +603,7 @@
                 -- ($(tf@m@50)!\tikzfeynman@momentum@arrow@distance!90:(tf@m@49)$);
         },
         closepath code={
-          \tikzfeynmanset{momentum/.cd, #1}
+          \tikzfeynmanset{momentum/.cd,#1}
           \path (\tikzinputsegmentfirst) -- (\tikzinputsegmentlast)
                 coordinate [pos=\tikzfeynman@momentum@arrow@shorten] (tf@m@1)
                 coordinate [pos=1 - \tikzfeynman@momentum@arrow@shorten] (tf@m@2);
@@ -632,7 +624,7 @@
         show path construction,
         moveto code={},
         lineto code={
-          \tikzfeynmanset{momentum/.cd, #1}
+          \tikzfeynmanset{momentum/.cd,#1}
           \path (\tikzinputsegmentlast) -- (\tikzinputsegmentfirst)
                 coordinate [pos=\tikzfeynman@momentum@arrow@shorten] (tf@m@1)
                 coordinate [pos=1 - \tikzfeynman@momentum@arrow@shorten] (tf@m@2);
@@ -644,7 +636,7 @@
                       \tikzfeynman@momentum@label@style] {#2};
         },
         curveto code={
-          \tikzfeynmanset{momentum/.cd, #1}
+          \tikzfeynmanset{momentum/.cd,#1}
           \path (\tikzinputsegmentlast)
                 .. controls (\tikzinputsegmentsupportb) and (\tikzinputsegmentsupporta)
                 .. (\tikzinputsegmentfirst)
@@ -665,7 +657,7 @@
                 -- ($(tf@m@50)!\tikzfeynman@momentum@arrow@distance!90:(tf@m@49)$);
         },
         closepath code={
-          \tikzfeynmanset{momentum/.cd, #1}
+          \tikzfeynmanset{momentum/.cd,#1}
           \path (\tikzinputsegmentlast) -- (\tikzinputsegmentfirst)
                 coordinate [pos=\tikzfeynman@momentum@arrow@shorten] (tf@m@1)
                 coordinate [pos=1 - \tikzfeynman@momentum@arrow@shorten] (tf@m@2);
@@ -686,7 +678,7 @@
         show path construction,
         moveto code={},
         lineto code={
-          \tikzfeynmanset{momentum/.cd, #1}
+          \tikzfeynmanset{momentum/.cd,#1}
           \path (\tikzinputsegmentlast) -- (\tikzinputsegmentfirst)
                 coordinate [pos=\tikzfeynman@momentum@arrow@shorten] (tf@m@1)
                 coordinate [pos=1 - \tikzfeynman@momentum@arrow@shorten] (tf@m@2);
@@ -699,7 +691,7 @@
                       \tikzfeynman@momentum@label@style] {#2};
         },
         curveto code={
-          \tikzfeynmanset{momentum/.cd, #1}
+          \tikzfeynmanset{momentum/.cd,#1}
           \path (\tikzinputsegmentlast)
                 .. controls (\tikzinputsegmentsupportb) and (\tikzinputsegmentsupporta)
                 .. (\tikzinputsegmentfirst)
@@ -721,7 +713,7 @@
                 -- ($(tf@m@50)!\tikzfeynman@momentum@arrow@distance!-90:(tf@m@49)$);
         },
         closepath code={
-          \tikzfeynmanset{momentum/.cd, #1}
+          \tikzfeynmanset{momentum/.cd,#1}
           \path (\tikzinputsegmentlast) -- (\tikzinputsegmentfirst)
                 coordinate [pos=\tikzfeynman@momentum@arrow@shorten] (tf@m@1)
                 coordinate [pos=1 - \tikzfeynman@momentum@arrow@shorten] (tf@m@2);
