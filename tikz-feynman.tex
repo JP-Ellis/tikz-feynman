@@ -301,6 +301,26 @@ directory}{}}
 %% DOCUMENT
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+
+\begin{tikzpicture}
+  \begin{feynman}
+    \typeout{STARTING DIAGRAM}
+    \diagram [vertical'=a to b] {
+      i1 [particle=\(e^{-}\)]
+         -- [fermion] a
+         -- [draw=none] f1 [particle=\(e^{+}\)],
+      a -- [photon, edge label'=\(p\)] b,
+      i2 [particle=\(e^{+}\)]
+         -- [anti fermion] b
+         -- [draw=none] f2 [particle=\(e^{-}\)],
+    };
+    \typeout{STARTING DIAGRAM*}
+    \diagram* {
+      (a) -- [fermion] (f2),
+      (b) -- [anti fermion] (f1),
+    };
+  \end{feynman}
+\end{tikzpicture}
 \pagenumbering{roman}
 
 \begin{titlepage}

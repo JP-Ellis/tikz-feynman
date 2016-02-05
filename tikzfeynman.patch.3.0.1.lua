@@ -306,6 +306,7 @@ function InterfaceToDisplay.createVertex(name, shape, path, height, binding_info
   local binding = InterfaceCore.binding
 
   -- Does vertex already exist?
+  print("Name: ", name)
   local v = scope.node_names[name]
   assert (not v or not v.created_on_display_layer, "node already created")
 
