@@ -7,26 +7,36 @@ TikZ-Feynman
 :slug: tikz-feynman
 :date: 2015-01-19
 :modified: 2015-02-05
+:sort: 1
 :template: page_index
 :share: True
 :github: https://github.com/JP-Ellis/tikz-feynman/
 :release: True
 
-|TikZFeynman| is a LaTeX package allowing Feynman diagrams to be easily
+|TikZ|-Feynman is a LaTeX package allowing Feynman diagrams to be easily
 generated within LaTeX with minimal user instructions and without the need of
 external programs.  It builds upon the |TikZ|__ package and leverages the graph
 placement algorithms from |TikZ| in order to automate the placement of many
-vertices.  |TikZFeynman| still allows fine-tuned placement of vertices so that
+vertices.  |TikZ|-Feynman still allows fine-tuned placement of vertices so that
 even complex diagrams can still be generated with ease.
+
+.. PELICAN_END_SUMMARY
 
 __ https://ctan.org/pkg/pgf
 
-|TikZFeynman| is made available through the `Comprehensive TeX Archive Network
+|TikZ|-Feynman is made available through the `Comprehensive TeX Archive Network
 (CTAN) <https://ctan.org/pkg/tikz-feynman>`_ and comes with some thorough
 `documentation <{attach}/pages/projects/tikz-feynman/tikz-feynman.pdf>`_
-containing a tutorial and many examples.
+containing a tutorial and many examples.  I have also submitted the
+documentation for ``v1.0.0`` on `the arXiv`__.  If you use |TikZ|-Feynman,
+please cite:
 
-|TikZFeynman| is open source and contribution are welcome.  If you have any
+__ http://arxiv.org/abs/1601.05437
+
+    Joshua Ellis. ‘TikZ-Feynman: Feynman diagrams with TikZ’. arXiv: `1601.05437
+    [hep-ph] <http://arxiv.org/abs/1601.05437>`_
+
+|TikZ|-Feynman is open source and contribution are welcome.  If you have any
 suggestions, feature requests, or have found any bugs, feel free to create a new
 issue or pull request on `Github <https://github.com/JP-Ellis/tikz-feynman>`_.
 
@@ -108,5 +118,4 @@ extensible it can be.  Many more are given in the
      \end{feynman}
    \end{tikzpicture}
 
-.. |TikZFeynman| replace:: Ti\ *k*\ Z-Feynman
 .. |TikZ| replace:: Ti\ *k*\ Z
