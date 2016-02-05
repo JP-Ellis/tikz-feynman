@@ -163,10 +163,12 @@
   },
   every inline/.style={/tikzfeynman/inline@@/.append style={#1}},
   every inline@@/.style={
-    /tikz/baseline={#1},
     /tikzfeynman/small,
   },
-  inline/.style={/tikzfeynman/every inline@@},
+  inline/.style={
+    /tikz/baseline={#1},
+    /tikzfeynman/every inline@@,
+  },
   every small/.style={/tikzfeynman/small@@/.append style={#1}},
   every small@@/.style={
     /tikz/node distance=1cm,

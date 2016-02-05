@@ -909,7 +909,7 @@ small diagrams which should be blue, then one would add to the preamble:
   every diagram={red},
   every small={blue},
 }
-
+\end{codeexample}
 If you are completely unhappy with a particular inbuilt style, you can define
 your own style with with \meta{key}|/.style={...}| as shown in the
 following example:
@@ -938,14 +938,14 @@ full path with the leading |/tikzfeynman|.
   environment.
 \end{keylist}
 
-\begin{stylekey}{/tikzfeynman/every feynman}
+\begin{key}{/tikzfeynman/every feynman=\meta{styles}}
   Set of styles which are applied to every |{feynman}| environments (and
   consequently, every apply inside all |\feynmandiagram| too).  The style also
   applies to regular \tikzname{} commands used inside the |{feynman}|
   environment.
 
 \begin{codeexample}[]
-\tikzfeynmanset{every feynman/.append style={red}}
+\tikzfeynmanset{every feynman={red}}
 \begin{tikzpicture}
   \node at (0, 0.5) {This is not red};
   \begin{feynman}
@@ -953,7 +953,7 @@ full path with the leading |/tikzfeynman|.
   \end{feynman}
 \end{tikzpicture}
 \end{codeexample}
-\end{stylekey}
+\end{key}
 
 \begin{stylekey}{/tikzfeynman/inline=\meta{node}}
   A style used to display a Feynman diagram inline (typically in an equation),
@@ -1046,19 +1046,19 @@ full path with the leading |/tikzfeynman|.
 \subsubsection{Diagram Keys}
 \label{subsubsec:diagram_keys}
 
-\begin{stylekey}{/tikzfeynman/every diagram}
+\begin{key}{/tikzfeynman/every diagram=\meta{styles}}
   Set of styles which are applied to every diagram; that is, to everything
   inside the |\feynmandiagram|, |\diagram| and |\diagram*| commands but not the
   general |{feynman}| environment (see \cref{subsubsec:feynman_keys} for that).
 
 \begin{codeexample}[]
-\tikzfeynmanset{every diagram/.append style={red}}
+\tikzfeynmanset{every diagram={red}}
 \feynmandiagram [small, horizontal=d to b] {
   a -- [fermion] b -- [fermion] c,
   b -- [boson] d,
 };
 \end{codeexample}
-\end{stylekey}
+\end{key}
 
 \begin{keylist}{%
     /tikzfeynman/small,
@@ -1189,7 +1189,7 @@ will warn the user instead.
   that is, a null shape with no size or width.
 \end{key}
 
-\begin{stylekey}{/tikzfeynman/every \meta{vertex shape} (initially \normalfont empty)}
+\begin{key}{/tikzfeynman/every \meta{vertex shape}=\meta{styles}}
   The style of specific vertices can be modified by changing the appropriate
   |every |\meta{vertex shape} key.  For example, in order to change the style of
   every |dot|-styled vertex, you can modify the |every dot| key, or to modify
@@ -1206,7 +1206,7 @@ will warn the user instead.
   c -- [fermion] b -- [fermion] d,
 };
 \end{codeexample}
-\end{stylekey}
+\end{key}
 
 \begin{key}{/tikzfeynman/dot}
   Modifies the vertex so that it has a small filled circle.
@@ -1293,11 +1293,11 @@ an edge styled with both |boson| and |fermion| will consist of a straight line
 with a wavy line on top and an error.  If not styles are provided, then a simple
 solid line is drawn.
 
-\begin{stylekey}{/tikzfeynman/every edge (initially \normalfont empty)}
+\begin{key}{/tikzfeynman/every edge=\meta{styles}}
   A style to apply to every edge initially.
-\end{stylekey}
+\end{key}
 
-\begin{stylekey}{/tikzfeynman/every \meta{edge style} (initially \normalfont empty)}
+\begin{stylekey}{/tikzfeynman/every \meta{edge style}=\meta{styles}}
   The style of specific edges can be modified by changing the appropriate
   |every |\meta{edge style} key.  For example, in order to make a global change
   to every |boson|, you can modify the |every boson| key.

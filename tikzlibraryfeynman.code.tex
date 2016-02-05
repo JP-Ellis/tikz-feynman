@@ -165,7 +165,7 @@
   \scope
   \tikz@lib@ignore@sizetrue
   \tikzfeynman@tikz@search@tikzfeynman
-  \pgfkeys{/tikzfeynman/every feynman@@,/tikzfeynman/every feynman,#1}
+  \pgfkeys{/tikzfeynman/every feynman@@,#1}
   \pgfkeysvalueof{/tikzfeynman/execute at begin feynman@@}%
   \pgfkeysvalueof{/tikzfeynman/execute at begin feynman}%
 }
@@ -187,7 +187,7 @@
   {\feynmandiagram@opt@opt[#1][#1]}}
 \def\feynmandiagram@opt@opt[#1][#2]{%
   \tikz [/tikzfeynman/.cd,#1]
-  \graph [/tikzfeynman/.cd,/tikzfeynman/every diagram@@,/tikzfeynman/every diagram,/tikz/graphs/spring layout,#2]}
+  \graph [/tikzfeynman/.cd,/tikzfeynman/every diagram@@,/tikz/graphs/spring layout,#2]}
 
 %% Allow empty nodes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -199,9 +199,7 @@
     {\pgfutil@ifnextchar[{\tikz@fig@scan@options}%
       {\pgfutil@ifnextchar\bgroup{\tikz@fig@main}%
       {\iftikzfeynmanvertex%
-         \tikzset{
-           /tikzfeynman/every vertex@@,
-           /tikzfeynman/every vertex}%
+         \tikzset{/tikzfeynman/every vertex@@}%
          \iftikzfeynmanallowemptynode%
          \else%
            \tikzset{/tikzfeynman/particle}%
@@ -275,13 +273,13 @@
   \pgfutil@ifnextchar[{\tikzfeynman@commands@diagram@nostar@opt}
   {\tikzfeynman@commands@diagram@nostar@opt[]}}
 \def\tikzfeynman@commands@diagram@nostar@opt[#1]{%
-  \tikzfeynman@orig@graph [/tikzfeynman/every diagram@@,/tikzfeynman/every diagram,/tikz/graphs/spring layout,#1]}
+  \tikzfeynman@orig@graph [/tikzfeynman/every diagram@@,/tikz/graphs/spring layout,#1]}
 
 \def\tikzfeynman@commands@diagram@star{%
   \pgfutil@ifnextchar[{\tikzfeynman@commands@diagram@star@opt}
   {\tikzfeynman@commands@diagram@star@opt[]}}
 \def\tikzfeynman@commands@diagram@star@opt[#1]{%
-  \tikzfeynman@orig@graph [/tikzfeynman/every diagram@@,/tikzfeynman/every diagram,#1]}
+  \tikzfeynman@orig@graph [/tikzfeynman/every diagram@@,#1]}
 
 %% Graph
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -290,7 +288,7 @@
   {\tikzfeynman@commands@graph@opt[]}}
 \def\tikzfeynman@commands@graph@opt[#1]{%
   \PackageWarning{tikz-feynman}{It is not recommended to use \string\graph.  Use \string\diagram\space or \string\diagram* instead.}
-  \tikzfeynman@orig@graph [/tikzfeynman/every diagram@@, /tikzfeynman/every diagram, #1]}
+  \tikzfeynman@orig@graph [/tikzfeynman/every diagram@@,#1]}
 
 %% Optional argument in style key
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
