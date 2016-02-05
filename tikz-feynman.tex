@@ -600,6 +600,16 @@ be used as well:
 For a list of all the various styles that \tikzname{} provides, have a look at
 the \pgfmanual; it is extremely thorough and provides many usage examples.
 
+\tikzfeynmanname{} also supports combining styles together which can be useful
+in certain new models such as supersymmetry:
+\begin{codeexample}[]
+\feynmandiagram [horizontal=a to b] {
+  i1 [particle=\(\tilde W\)] -- [plain, boson] a -- [anti fermion] i2 [particle=\(q\)],
+  a -- [charged scalar, edge label=\(\tilde q\)] b,
+  f1 [particle=\(\tilde g\)] -- [plain, gluon] b -- [fermion] [particle=\(q\)],
+};
+\end{codeexample}
+
 \subsection{When the Algorithm Isn't Enough}
 \label{subsec:when_the_algorithm_isnt_enough}
 
@@ -1304,6 +1314,17 @@ but not |scalar| whilst styles in |every scalar| will apply to all three.
 };
 \end{codeexample}
 \end{stylekey}
+
+\begin{key}{/tikzfeynman/plain}
+  Draws a simple solid line.  This style is identical to the default style
+  applied if no other style is used, but is provided so that it can be combined
+  with other styles.
+
+\begin{codeexample}[]
+\feynmandiagram [horizontal=a to b] {a -- [plain] b};
+\feynmandiagram [horizontal=a to b] {a -- [plain, gluon] b};
+\end{codeexample}
+\end{key}
 
 \begin{key}{/tikzfeynman/boson}
   Draws a sinusoidal line to denote a boson.
