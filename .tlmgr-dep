@@ -43,6 +43,7 @@ newtx
 oberdiek
 pdftex-def
 pgf
+pgfopts
 siunitx
 substr
 textpos

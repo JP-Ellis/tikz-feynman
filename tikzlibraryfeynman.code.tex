@@ -58,7 +58,10 @@
 %% Key Manager
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Setup the tikz-feynman key family
-\pgfkeys{/tikzfeynman/.is family}
+\pgfkeys{
+  /tikzfeynman/.is family,
+  /tikzfeynman/.search also={/tikz},
+}
 
 %% |\tikzfeynmanset| allows keys that belong with tikz-feynman to be easily set.
 \def\tikzfeynmanset{\pgfqkeys{/tikzfeynman}}
@@ -91,11 +94,12 @@
 }
 \let\tikzfeynman@compat=\tikzfeynman@empty
 \pgfkeyslet{/tikzfeynman/compat/.@cmd}{\tikzfeynman@compat@parse}
+\ProcessPgfPackageOptions{/tikzfeynman}
 
 \AtBeginDocument{
   \ifx\tikzfeynman@version\tikzfeynman@compat\else
     \ifx\tikzfeynman@compat\tikzfeynman@empty
-      \PackageWarning{tikz-feynman}{Consider adding \string\tikzfeynmanset{compat=\tikzfeynman@version} to your preamble so that you can be warned if TikZ-Feynman changes.}
+      \PackageWarning{tikz-feynman}{Consider loading TikZ-Feynman with \string\usepackage[compat=\tikzfeynman@version]{tikz-feynman} so that you can be warned if TikZ-Feynman changes.}
     \else
       \ifx\tikzfeynman@compat@major\tikzfeynman@version@major
         \ifx\tikzfeynman@compat@minor\tikzfeynman@version@minor
@@ -106,7 +110,7 @@
           \PackageWarning{tikz-feynman}{The preamble requested version \tikzfeynman@compat, but the system version is \tikzfeynman@version.  This may change some diagrams.}
         \fi
       \else
-        \PackageError{tikz-feynman}{The preamble requested version \tikzfeynman@compat, but the system version is \tikzfeynman@version.  They are most likely incompatible.  Please download the appropriate version at github.com/JP-Ellis/tikz-feynman.}
+        \PackageError{tikz-feynman}{The preamble requested version \tikzfeynman@compat, but the system version is \tikzfeynman@version.  They are most likely incompatible.  Please download the appropriate version from jpellis.me/projects/tikz-feynman.}
       \fi
     \fi
   \fi
@@ -114,23 +118,23 @@
 
 %% Override Lua code if necessary
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\def\tikzfeynman@apply@patch{
-  \directlua{require("tikzfeynman.patch.lua")}
+\def\tikzfeynman@apply@patch#1{
+  \directlua{require("tikzfeynman.patch.#1.lua")}
 }
 
 %% Version 3.0.0, 3.0.1 and 3.0.1a need to be patched.
 \ifluatex
   \def\tikzfeynman@temp{3.0.0}
   \ifx\pgfversion\tikzfeynman@temp
-    \tikzfeynman@apply@patch
+    \tikzfeynman@apply@patch{3.0.0}
   \else
     \def\tikzfeynman@temp{3.0.1}
     \ifx\pgfversion\tikzfeynman@temp
-      \tikzfeynman@apply@patch
+      \tikzfeynman@apply@patch{3.0.1}
     \else
       \def\tikzfeynman@temp{3.0.1a}
       \ifx\pgfversion\tikzfeynman@temp
-        \tikzfeynman@apply@patch
+        \tikzfeynman@apply@patch{3.0.1}
       \fi
     \fi
   \fi
@@ -161,10 +165,7 @@
   \scope
   \tikz@lib@ignore@sizetrue
   \tikzfeynman@tikz@search@tikzfeynman
-  \pgfkeys{
-    /tikzfeynman/every feynman@@,
-    /tikzfeynman/every feynman,
-    #1}
+  \pgfkeys{/tikzfeynman/every feynman@@,#1}
   \pgfkeysvalueof{/tikzfeynman/execute at begin feynman@@}%
   \pgfkeysvalueof{/tikzfeynman/execute at begin feynman}%
 }
@@ -185,8 +186,8 @@
   \pgfutil@ifnextchar[{\feynmandiagram@opt@opt[#1]}
   {\feynmandiagram@opt@opt[#1][#1]}}
 \def\feynmandiagram@opt@opt[#1][#2]{%
-  \tikz [/tikzfeynman/.cd, .search also={/tikz}, #1]
-  \graph [/tikzfeynman/every diagram@@, /tikzfeynman/every diagram, /tikz/graphs/spring layout, #2]}
+  \tikz [/tikzfeynman/.cd,#1]
+  \graph [/tikzfeynman/.cd,/tikzfeynman/every diagram@@,/tikz/graphs/spring layout,#2]}
 
 %% Allow empty nodes
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -198,9 +199,7 @@
     {\pgfutil@ifnextchar[{\tikz@fig@scan@options}%
       {\pgfutil@ifnextchar\bgroup{\tikz@fig@main}%
       {\iftikzfeynmanvertex%
-         \tikzset{
-           /tikzfeynman/every vertex@@,
-           /tikzfeynman/every vertex}%
+         \tikzset{/tikzfeynman/every vertex@@}%
          \iftikzfeynmanallowemptynode%
          \else%
            \tikzset{/tikzfeynman/particle}%
@@ -274,13 +273,13 @@
   \pgfutil@ifnextchar[{\tikzfeynman@commands@diagram@nostar@opt}
   {\tikzfeynman@commands@diagram@nostar@opt[]}}
 \def\tikzfeynman@commands@diagram@nostar@opt[#1]{%
-  \tikzfeynman@orig@graph [/tikzfeynman/every diagram@@, /tikzfeynman/every diagram, /tikz/graphs/spring layout, #1]}
+  \tikzfeynman@orig@graph [/tikzfeynman/every diagram@@,/tikz/graphs/spring layout,#1]}
 
 \def\tikzfeynman@commands@diagram@star{%
   \pgfutil@ifnextchar[{\tikzfeynman@commands@diagram@star@opt}
   {\tikzfeynman@commands@diagram@star@opt[]}}
 \def\tikzfeynman@commands@diagram@star@opt[#1]{%
-  \tikzfeynman@orig@graph [/tikzfeynman/every diagram@@, /tikzfeynman/every diagram, #1]}
+  \tikzfeynman@orig@graph [/tikzfeynman/every diagram@@,#1]}
 
 %% Graph
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -289,7 +288,7 @@
   {\tikzfeynman@commands@graph@opt[]}}
 \def\tikzfeynman@commands@graph@opt[#1]{%
   \PackageWarning{tikz-feynman}{It is not recommended to use \string\graph.  Use \string\diagram\space or \string\diagram* instead.}
-  \tikzfeynman@orig@graph [/tikzfeynman/every diagram@@, /tikzfeynman/every diagram, #1]}
+  \tikzfeynman@orig@graph [/tikzfeynman/every diagram@@,#1]}
 
 %% Optional argument in style key
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

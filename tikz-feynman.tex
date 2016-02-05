@@ -124,6 +124,8 @@
 %% Page breaks can be avoided at particular places by using \\*
 \allowdisplaybreaks[2]
 
+\DeclarePairedDelimiter{\angles}{\langle}{\rangle}
+
 %% Tables
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -158,9 +160,12 @@
 %% hyperref should be loaded first
 \usepackage[
     backend=biber,
-    autocite=inline,
     style=phys,
+    autocite=inline,
     biblabel=brackets,
+    eprint=true,
+    doi=true,
+    isbn=true,
 ]{biblatex}
 
 \addbibresource{references.bib}
@@ -351,7 +356,7 @@ directory}{}}
   the need of external programs.  It builds upon the \tikzname{} package and
   leverages the graph placement algorithms from \tikzname{} in order to automate
   the placement of many vertices.  \tikzfeynmanname{} still allows fine-tuned
-  placement of vertices so that even complex diagrams can still be generated with
+  placement of vertices so that even complex diagrams can be generated with
   ease.
 \end{abstract}
 \fi
@@ -361,6 +366,13 @@ directory}{}}
 
 \tikzfeynmanname{} provides a new way to draw Feynman diagrams in \LaTeX{} that
 does not rely on external programs and uses a clear extensible syntax.
+
+\ifarxiv\else
+If you use \tikzfeynmanname{} in an academic setting, please cite:
+\begin{quote}
+  \fullcite{tikz-feynman}
+\end{quote}
+\fi
 
 Feynman diagrams provide a description of interactions of subatomic particles in
 a form that is clearer and more succinct than the corresponding mathematical
@@ -446,9 +458,10 @@ changes but they should not change the output otherwise\footnote{That is, with
 backwards compatible.  Finally, changes in the first number (|1.0.0| to |2.0.0|)
 indicates a major change in the package and code written for |1.0.0| is not
 guaranteed to work on |2.0.0|.  The intended version of this package to use
-should be indicated in the preamble with |\tikzfeynmanset{compat=x.y.z}| so the
-user may be informed of any discrepancy.  If needed, earlier versions may be
-downloaded from the \href{http://www.jpellis.me/projects/tikz-feynman}{project
+should be indicated when the package is loaded with
+|\usepackage[compat=x.y.z]{tikz-feynman}| so the user may be informed of any
+discrepancyx.  If needed, earlier versions may be downloaded from the
+\href{http://www.jpellis.me/projects/tikz-feynman}{project
   page}\footnote{\url{http://www.jpellis.me/projects/tikz-feynman}}.
 
 \subsection*{Licence}
@@ -485,9 +498,10 @@ This package is distributed in the hope that it will be useful, but
 
 After installing the package, the \tikzfeynmanname{} package can be loaded with
 |\usepackage{tikz-feynman}| in the preamble.  It is recommend that you also
-place |\tikzfeynmanset{compat=1.0.0}| in the preamble to ensure that a new
-versions of \tikzfeynmanname{} do not produce any undesirable changes without
-warning.
+specify the version of \tikzfeynmanname{} to use with the optional package
+argument |compat|: |\usepackage[compat=1.1.0]{tikz-feynman}|.  This ensures that
+any new versions of \tikzfeynmanname{} do not produce any undesirable changes
+without warning.
 
 \subsection{A First Diagram}
 \label{subsec:a_first_diagram}
@@ -552,6 +566,12 @@ we named vertices is completely different):
 };
 \end{codeexample}
 
+As a final remark, the calculation of where vertices should be placed is usually
+done through an algorithm written in Lua.  As a result, \LuaTeX{} is required in
+order to make use of these algorithms.  If \LuaTeX{} is not used,
+\tikzfeynmanname{} will default to a more rudimentary algorithm and will warn
+the user instead.
+
 \subsection{Adding Styles}
 \label{subsec:adding_styles}
 
@@ -581,6 +601,16 @@ be used as well:
 \end{codeexample}
 For a list of all the various styles that \tikzname{} provides, have a look at
 the \pgfmanual; it is extremely thorough and provides many usage examples.
+
+\tikzfeynmanname{} also supports combining styles together which can be useful
+in certain new models such as supersymmetry:
+\begin{codeexample}[]
+\feynmandiagram [horizontal=a to b] {
+  i1 [particle=\(\tilde W\)] -- [plain, boson] a -- [anti fermion] i2 [particle=\(q\)],
+  a -- [charged scalar, edge label=\(\tilde q\)] b,
+  f1 [particle=\(\tilde g\)] -- [plain, gluon] b -- [fermion] [particle=\(q\)],
+};
+\end{codeexample}
 
 \subsection{When the Algorithm Isn't Enough}
 \label{subsec:when_the_algorithm_isnt_enough}
@@ -870,14 +900,14 @@ which are particularly useful to \tikzfeynmanname{} are documented and these are
 prefixed with |/tikz| or |/graph drawing|.  Please refer to the \pgfmanual{} for
 a more in thorough documentation of the \tikzname{} keys.
 
-If you wish to modify the default \tikzfeynmanname{} styles, the best way to do
-this is to use \meta{key}|/.append style={...}|.  For example, to make every
-diagram red except for small diagrams which remain black, one would add to the
-preamble:
+
+\tikzfeynmanname{} provides many |every |\meta{key} which allow every instance
+of \meta{key} to be modified.  For example, to make every diagram red except for
+small diagrams which should be blue, then one would add to the preamble:
 \begin{codeexample}[execute code=false]
 \tikzfeynmanset{
-  every diagram/.append style={red},
-  small/.append style={black},
+  every diagram={red},
+  every small={blue},
 }
 \end{codeexample}
 If you are completely unhappy with a particular inbuilt style, you can define
@@ -888,16 +918,10 @@ following example:
   myblob/.style={
     shape=circle,
     draw=blue,
-    fill=red}
+    fill=red,
+  }
 }
 \end{codeexample}
-
-All the |every |\meta{key} keys documented here are initially empty, so it is up
-to you whether you use \meta{key}|/.append style| or \meta{key}|/.style|.  The
-predefined style keys (such as |small|, |particle|, |fermion|, etc.) should
-\emph{never} by modified with \meta{key}|/.style| as that will overwrite the
-style entirely.  Instead, modify the appropriate |every |\meta{key} if available
-or use \meta{key}|/.append style|.
 
 All the keys defined here are made available inside the |{feynman}| environment
 and inside |\feynmandiagram|; but if you wish to access them outside of this
@@ -914,14 +938,14 @@ full path with the leading |/tikzfeynman|.
   environment.
 \end{keylist}
 
-\begin{stylekey}{/tikzfeynman/every feynman}
+\begin{key}{/tikzfeynman/every feynman=\meta{styles}}
   Set of styles which are applied to every |{feynman}| environments (and
   consequently, every apply inside all |\feynmandiagram| too).  The style also
   applies to regular \tikzname{} commands used inside the |{feynman}|
   environment.
 
 \begin{codeexample}[]
-\tikzfeynmanset{every feynman/.append style={red}}
+\tikzfeynmanset{every feynman={red}}
 \begin{tikzpicture}
   \node at (0, 0.5) {This is not red};
   \begin{feynman}
@@ -929,7 +953,7 @@ full path with the leading |/tikzfeynman|.
   \end{feynman}
 \end{tikzpicture}
 \end{codeexample}
-\end{stylekey}
+\end{key}
 
 \begin{stylekey}{/tikzfeynman/inline=\meta{node}}
   A style used to display a Feynman diagram inline (typically in an equation),
@@ -1022,19 +1046,19 @@ full path with the leading |/tikzfeynman|.
 \subsubsection{Diagram Keys}
 \label{subsubsec:diagram_keys}
 
-\begin{stylekey}{/tikzfeynman/every diagram}
+\begin{key}{/tikzfeynman/every diagram=\meta{styles}}
   Set of styles which are applied to every diagram; that is, to everything
   inside the |\feynmandiagram|, |\diagram| and |\diagram*| commands but not the
   general |{feynman}| environment (see \cref{subsubsec:feynman_keys} for that).
 
 \begin{codeexample}[]
-\tikzfeynmanset{every diagram/.append style={red}}
+\tikzfeynmanset{every diagram={red}}
 \feynmandiagram [small, horizontal=d to b] {
   a -- [fermion] b -- [fermion] c,
   b -- [boson] d,
 };
 \end{codeexample}
-\end{stylekey}
+\end{key}
 
 \begin{keylist}{%
     /tikzfeynman/small,
@@ -1068,7 +1092,10 @@ There are several algorithms which are available to place the vertices which are
 all provided within the |graph drawing| library from \tikzname.  Below are
 listed a few of these layouts which are more relevant for drawing Feynman
 diagrams.  For a more complete description of how these algorithm work, please
-refer to the \pgfmanual{}.
+refer to the \pgfmanual{}.  Please note that most graph drawing algorithms are
+implemented in Lua and thus require \LuaTeX{} in order to work.  If \LuaTeX{} is
+not used, \tikzfeynmanname{} will default to a more rudimentary algorithm and
+will warn the user instead.
 
 \begin{key}{/graph drawing/spring layout=\opt{\meta{string}}}
   Uses Hu's spring layout \cite{hu2005} as implemented by Pohlmann
@@ -1162,7 +1189,7 @@ refer to the \pgfmanual{}.
   that is, a null shape with no size or width.
 \end{key}
 
-\begin{stylekey}{/tikzfeynman/every \meta{vertex shape} (initially \normalfont empty)}
+\begin{key}{/tikzfeynman/every \meta{vertex shape}=\meta{styles}}
   The style of specific vertices can be modified by changing the appropriate
   |every |\meta{vertex shape} key.  For example, in order to change the style of
   every |dot|-styled vertex, you can modify the |every dot| key, or to modify
@@ -1170,16 +1197,16 @@ refer to the \pgfmanual{}.
 
 \begin{codeexample}[]
 \tikzfeynmanset{
-  every vertex/.style={red, dot},
-  every particle/.style={blue},
-  every blob/.style={draw=green!40!black, pattern color=green!40!black},
+  every vertex={red, dot},
+  every particle={blue},
+  every blob={draw=green!40!black, pattern color=green!40!black},
 }
 \feynmandiagram [horizontal=a to b] {
   a [particle={\(\gamma, Z\)}] -- [boson] b [blob],
   c -- [fermion] b -- [fermion] d,
 };
 \end{codeexample}
-\end{stylekey}
+\end{key}
 
 \begin{key}{/tikzfeynman/dot}
   Modifies the vertex so that it has a small filled circle.
@@ -1258,31 +1285,46 @@ refer to the \pgfmanual{}.
 Just like with the various vertex keys, each edge type has a corresponding
 |every |\meta{edge type}; however, due to the existence of very similar keys
 such as |scalar|, |charged scalar| and |anti charged scalar|, more specific keys
-inherit styles from less specific ones.  For example, styles in
-|every charged scalar| will apply to |charged scalar| and |anti charged scalar|
-but not |scalar| whilst styles in |every scalar| will apply to all three.
+inherit styles from less specific ones.  For example, styles in |every scalar|
+will apply to |charged scalar| and |anti charged scalar|.
 
-\begin{stylekey}{/tikzfeynman/every edge (initially \normalfont empty)}
+The edge styles do not override each other and instead stack.  This means that
+an edge styled with both |boson| and |fermion| will consist of a straight line
+with a wavy line on top and an error.  If not styles are provided, then a simple
+solid line is drawn.
+
+\begin{key}{/tikzfeynman/every edge=\meta{styles}}
   A style to apply to every edge initially.
-\end{stylekey}
+\end{key}
 
-\begin{stylekey}{/tikzfeynman/every \meta{edge style} (initially \normalfont empty)}
+\begin{stylekey}{/tikzfeynman/every \meta{edge style}=\meta{styles}}
   The style of specific edges can be modified by changing the appropriate
   |every |\meta{edge style} key.  For example, in order to make a global change
   to every |boson|, you can modify the |every boson| key.
 
 \begin{codeexample}[]
 \tikzfeynmanset{
-  every edge/.style={fermion},
-  every boson/.style={red},
-  every photon/.style={blue},
+  every edge={green},
+  every boson={red},
+  every photon={blue},
 }
 \feynmandiagram [small] {
   a [particle=\(a\)] -- [boson] o -- [photon] b [particle=\(b\)],
-  f1 [particle=\(c\)] -- o -- f2 [particle=\(d\)],
+  f1 [particle=\(c\)] -- [fermion] o -- [scalar] f2 [particle=\(d\)],
 };
 \end{codeexample}
 \end{stylekey}
+
+\begin{key}{/tikzfeynman/plain}
+  Draws a simple solid line.  This style is identical to the default style
+  applied if no other style is used, but is provided so that it can be combined
+  with other styles.
+
+\begin{codeexample}[]
+\feynmandiagram [horizontal=a to b] {a -- [plain] b};
+\feynmandiagram [horizontal=a to b] {a -- [plain, gluon] b};
+\end{codeexample}
+\end{key}
 
 \begin{key}{/tikzfeynman/boson}
   Draws a sinusoidal line to denote a boson.

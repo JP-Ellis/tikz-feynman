@@ -1,4 +1,4 @@
-[Ti*k*Z-Feynman](http://www.jpellis.me/projects/tikz-feynman) [![ctan.org](https://img.shields.io/ctan/v/tikz-feynman.svg)](https://ctan.org/pkg/tikz-feynman) [![Travis](https://img.shields.io/travis/JP-Ellis/tikz-feynman.svg)](https://travis-ci.org/JP-Ellis/tikz-feynman)
+[Ti*k*Z-Feynman](http://www.jpellis.me/projects/tikz-feynman) [![ctan.org](https://img.shields.io/ctan/v/tikz-feynman.svg)](https://ctan.org/pkg/tikz-feynman) [![Travis](https://img.shields.io/travis/JP-Ellis/tikz-feynman/master.svg)](https://travis-ci.org/JP-Ellis/tikz-feynman)
 =============================================================
 
 Ti*k*Z-Feynman is a LaTeX package allowing Feynman diagrams to be easily
