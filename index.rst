@@ -6,6 +6,7 @@ TikZ-Feynman
 :title: TikZ-Feynman
 :slug: tikz-feynman
 :date: 2015-01-19
+:modified: 2015-02-05
 :template: page_index
 :share: True
 :github: https://github.com/JP-Ellis/tikz-feynman/
