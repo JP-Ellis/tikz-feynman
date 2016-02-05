@@ -124,6 +124,8 @@
 %% Page breaks can be avoided at particular places by using \\*
 \allowdisplaybreaks[2]
 
+\DeclarePairedDelimiter{\angles}{\langle}{\rangle}
+
 %% Tables
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -898,16 +900,16 @@ which are particularly useful to \tikzfeynmanname{} are documented and these are
 prefixed with |/tikz| or |/graph drawing|.  Please refer to the \pgfmanual{} for
 a more in thorough documentation of the \tikzname{} keys.
 
-If you wish to modify the default \tikzfeynmanname{} styles, the best way to do
-this is to use \meta{key}|/.append style={...}|.  For example, to make every
-diagram red except for small diagrams which remain black, one would add to the
-preamble:
+
+\tikzfeynmanname{} provides many |every |\meta{key} which allow every instance
+of \meta{key} to be modified.  For example, to make every diagram red except for
+small diagrams which should be blue, then one would add to the preamble:
 \begin{codeexample}[execute code=false]
 \tikzfeynmanset{
-  every diagram/.append style={red},
-  small/.append style={black},
+  every diagram={red},
+  every small={blue},
 }
-\end{codeexample}
+
 If you are completely unhappy with a particular inbuilt style, you can define
 your own style with with \meta{key}|/.style={...}| as shown in the
 following example:
@@ -916,16 +918,10 @@ following example:
   myblob/.style={
     shape=circle,
     draw=blue,
-    fill=red}
+    fill=red,
+  }
 }
 \end{codeexample}
-
-All the |every |\meta{key} keys documented here are initially empty, so it is up
-to you whether you use \meta{key}|/.append style| or \meta{key}|/.style|.  The
-predefined style keys (such as |small|, |particle|, |fermion|, etc.) should
-\emph{never} by modified with \meta{key}|/.style| as that will overwrite the
-style entirely.  Instead, modify the appropriate |every |\meta{key} if available
-or use \meta{key}|/.append style|.
 
 All the keys defined here are made available inside the |{feynman}| environment
 and inside |\feynmandiagram|; but if you wish to access them outside of this
@@ -1201,9 +1197,9 @@ will warn the user instead.
 
 \begin{codeexample}[]
 \tikzfeynmanset{
-  every vertex/.style={red, dot},
-  every particle/.style={blue},
-  every blob/.style={draw=green!40!black, pattern color=green!40!black},
+  every vertex={red, dot},
+  every particle={blue},
+  every blob={draw=green!40!black, pattern color=green!40!black},
 }
 \feynmandiagram [horizontal=a to b] {
   a [particle={\(\gamma, Z\)}] -- [boson] b [blob],
@@ -1289,9 +1285,13 @@ will warn the user instead.
 Just like with the various vertex keys, each edge type has a corresponding
 |every |\meta{edge type}; however, due to the existence of very similar keys
 such as |scalar|, |charged scalar| and |anti charged scalar|, more specific keys
-inherit styles from less specific ones.  For example, styles in
-|every charged scalar| will apply to |charged scalar| and |anti charged scalar|
-but not |scalar| whilst styles in |every scalar| will apply to all three.
+inherit styles from less specific ones.  For example, styles in |every scalar|
+will apply to |charged scalar| and |anti charged scalar|.
+
+The edge styles do not override each other and instead stack.  This means that
+an edge styled with both |boson| and |fermion| will consist of a straight line
+with a wavy line on top and an error.  If not styles are provided, then a simple
+solid line is drawn.
 
 \begin{stylekey}{/tikzfeynman/every edge (initially \normalfont empty)}
   A style to apply to every edge initially.
@@ -1304,13 +1304,13 @@ but not |scalar| whilst styles in |every scalar| will apply to all three.
 
 \begin{codeexample}[]
 \tikzfeynmanset{
-  every edge/.style={fermion},
-  every boson/.style={red},
-  every photon/.style={blue},
+  every edge={green},
+  every boson={red},
+  every photon={blue},
 }
 \feynmandiagram [small] {
   a [particle=\(a\)] -- [boson] o -- [photon] b [particle=\(b\)],
-  f1 [particle=\(c\)] -- o -- f2 [particle=\(d\)],
+  f1 [particle=\(c\)] -- [fermion] o -- [scalar] f2 [particle=\(d\)],
 };
 \end{codeexample}
 \end{stylekey}

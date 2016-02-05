@@ -135,7 +135,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   execute at begin feynman/.code={},
   execute at end feynman/.code={},
-  every feynman/.style={},
+  every feynman/.style={/tikzfeynman/every feynman@@/.append style={#1}},
   every feynman@@/.style={
     /tikzfeynman/.cd,
     /tikzfeynman/medium,
@@ -145,7 +145,7 @@
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %% Diagrams
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  every diagram/.style={},
+  every diagram/.style={/tikzfeynman/every diagram@@/.append style={#1}},
   every diagram@@/.style={
     /tikzfeynman/.cd,
     .search also={/tikz/graphs, /tikz},
@@ -161,11 +161,14 @@
       /tikzfeynman/every edge},
     /tikzfeynman/medium,
   },
-  inline/.style={
+  every inline/.style={/tikzfeynman/inline@@/.append style={#1}},
+  every inline@@/.style={
     /tikz/baseline={#1},
     /tikzfeynman/small,
   },
-  small/.style={
+  inline/.style={/tikzfeynman/every inline@@},
+  every small/.style={/tikzfeynman/small@@/.append style={#1}},
+  every small@@/.style={
     /tikz/node distance=1cm,
     /graph drawing/node distance=1.25cm,
     /graph drawing/level distance=1cm,
@@ -176,13 +179,17 @@
     /tikzfeynman/arrow size=1.2pt,
     /tikzfeynman/insertion/size=2.5pt,
   },
-  medium/.style={
+  small/.style={/tikzfeynman/every small@@},
+  every medium/.style={/tikzfeynman/medium@@/.append style={#1}},
+  every medium@@/.style={
     /tikz/node distance=1.5cm,
     /graph drawing/node distance=1.9cm,
     /graph drawing/level distance=1.5cm,
     /graph drawing/sibling distance=2.25cm,
   },
-  large/.style={
+  medium/.style={/tikzfeynman/every medium@@},
+  every large/.style={/tikzfeynman/large@@/.append style={#1}},
+  every large@@/.style={
     /tikz/node distance=2cm,
     /graph drawing/node distance=2.5cm,
     /graph drawing/level distance=2cm,
@@ -194,16 +201,16 @@
     /tikzfeynman/arrow size=1.6pt,
     /tikzfeynman/insertion/size=4pt,
   },
+  large/.style={/tikzfeynman/every large@@},
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %% Vertices
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   every vertex@@/.style={
     /tikz/shape=coordinate,
   },
-  every vertex/.style={},
+  every vertex/.style={/tikzfeynman/every vertex@@/.append style={#1}},
   vertex/.style={
     /tikzfeynman/every vertex@@,
-    /tikzfeynman/every vertex,
   },
   every dot@@/.style={
     /tikz/shape=circle,
@@ -214,42 +221,35 @@
     /tikz/outer sep=0pt,
     /tikz/minimum size=1.5mm,
   },
-  every dot/.style={},
+  every dot/.style={/tikzfeynman/every dot@@/.append style={#1}},
   dot/.style={
     /tikzfeynman/every dot@@,
-    /tikzfeynman/every dot,
   },
   every square dot@@/.style={
     /tikz/shape=rectangle,
   },
-  every square dot/.style={},
+  every square dot/.style={/tikzfeynman/every square dot@@/.append style={#1}},
   square dot/.style={
     /tikzfeynman/every dot@@,
-    /tikzfeynman/every dot,
     /tikzfeynman/every square dot@@,
-    /tikzfeynman/every square dot,
   },
   every empty dot@@/.style={
     /tikz/fill=none,
   },
-  every empty dot/.style={},
+  every empty dot/.style={/tikzfeynman/every empty dot@@/.append style={#1}},
   empty dot/.style={
     /tikzfeynman/every dot@@,
-    /tikzfeynman/every dot,
     /tikzfeynman/every empty dot@@,
-    /tikzfeynman/every empty dot,
   },
   every crossed dot@@/.style={
     /tikz/fill=none,
     /tikz/shape=crossed circle,
     /tikz/minimum size=3mm,
   },
-  every crossed dot/.style={},
+  every crossed dot/.style={/tikzfeynman/every crossed dot@@/.append style={#1}},
   crossed dot/.style={
     /tikzfeynman/every dot@@,
-    /tikzfeynman/every dot,
     /tikzfeynman/every crossed dot@@,
-    /tikzfeynman/every crossed dot,
   },
   every blob@@/.style={
     /tikz/shape=circle,
@@ -261,10 +261,9 @@
     /tikz/minimum size=0.75cm,
     /tikz/pattern=north west lines,
   },
-  every blob/.style={},
+  every blob/.style={/tikzfeynman/every blob@@/.append style={#1}},
   blob/.style={
     /tikzfeynman/every blob@@,
-    /tikzfeynman/every blob,
   },
   every particle@@/.style={
     /tikz/shape=rectangle,
@@ -273,10 +272,9 @@
     /tikz/inner sep=0.3333em,
     /tikz/outer sep=0.5\pgflinewidth,
   },
-  every particle/.style={},
+  every particle/.style={/tikzfeynman/every particle@@/.append style={#1}},
   particle/.style args={#1}{
     /tikzfeynman/every particle@@,
-    /tikzfeynman/every particle,
     /tikz/graphs/as={#1},
   },
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -326,7 +324,7 @@
   %% Base Edge Styles
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   every edge@@/.style={},
-  every edge/.style={},
+  every edge/.style={/tikzfeynman/every edge@@/.append style={#1}},
   %% Specific Styles
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   every plain@@/.style={
@@ -336,6 +334,7 @@
       /tikz/draw
     },
   },
+  every plain/.style={/tikzfeynman/every plain@@/.append style={#1}},
   plain/.style={
     /tikzfeynman/every plain@@,
   },
@@ -352,28 +351,25 @@
       /tikz/decorate=true,
     },
   },
-  every boson/.style={},
+  every boson/.style={/tikzfeynman/every boson@@/.append style={#1}},
   boson/.style={
     /tikzfeynman/every boson@@,
-    /tikzfeynman/every boson,
   },
   every charged boson@@/.style={
     /tikzfeynman/with arrow=0.5,
   },
-  every charged boson/.style={},
+  every charged boson/.style={/tikzfeynman/every charged boson@@/.append style={#1}},
   charged boson/.style={
     /tikzfeynman/boson,
     /tikzfeynman/every charged boson@@,
-    /tikzfeynman/every charged boson,
   },
   every anti charged boson@@/.style={
     /tikzfeynman/with reversed arrow=0.5,
   },
-  every anti charged boson/.style={},
+  every anti charged boson/.style={/tikzfeynman/every anti charged boson@@/.append style={#1}},
   anti charged boson/.style={
     /tikzfeynman/boson,
     /tikzfeynman/every anti charged boson@@,
-    /tikzfeynman/every anti charged boson,
   },
   every photon@@/.style={
     /tikz/draw=none,
@@ -388,10 +384,9 @@
       /tikz/decorate=true,
     },
   },
-  every photon/.style={},
+  every photon/.style={/tikzfeynman/every photon@@/.append style={#1}},
   photon/.style={
     /tikzfeynman/every photon@@,
-    /tikzfeynman/every photon,
   },
   every scalar@@/.style={
     /tikz/draw=none,
@@ -401,10 +396,9 @@
       /tikz/dashed,
     },
   },
-  every scalar/.style={},
+  every scalar/.style={/tikzfeynman/every scalar@@/.append style={#1}},
   scalar/.style={
     /tikzfeynman/every scalar@@,
-    /tikzfeynman/every scalar,
   },
   every charged scalar@@/.style={
     /tikz/draw=none,
@@ -413,11 +407,10 @@
       /tikzfeynman/with arrow=0.5,
     },
   },
-  every charged scalar/.style={},
+  every charged scalar/.style={/tikzfeynman/every charged scalar@@/.append style={#1}},
   charged scalar/.style={
     /tikzfeynman/scalar,
     /tikzfeynman/every charged scalar@@,
-    /tikzfeynman/every charged scalar,
   },
   every anti charged scalar@@/.style={
     /tikz/draw=none,
@@ -426,12 +419,10 @@
       /tikzfeynman/with reversed arrow=0.5,
     },
   },
-  every anti charged scalar/.style={},
+  every anti charged scalar/.style={/tikzfeynman/every anti charged scalar@@/.append style={#1}},
   anti charged scalar/.style={
     /tikzfeynman/scalar,
-    /tikzfeynman/every charged scalar,
     /tikzfeynman/every anti charged scalar@@,
-    /tikzfeynman/every anti charged scalar,
   },
   every ghost@@/.style={
     /tikz/draw=none,
@@ -442,10 +433,9 @@
       /tikz/thick,
     },
   },
-  every ghost/.style={},
+  every ghost/.style={/tikzfeynman/every ghost@@/.append style={#1}},
   ghost/.style={
     /tikzfeynman/every ghost@@,
-    /tikzfeynman/every ghost,
   },
   every fermion@@/.style={
     /tikz/draw=none,
@@ -455,10 +445,9 @@
       /tikzfeynman/with arrow=0.5,
     },
   },
-  every fermion/.style={},
+  every fermion/.style={/tikzfeynman/every fermion@@/.append style={#1}},
   fermion/.style={
     /tikzfeynman/every fermion@@,
-    /tikzfeynman/every fermion,
   },
   every anti fermion@@/.style={
     /tikz/draw=none,
@@ -468,11 +457,9 @@
       /tikzfeynman/with reversed arrow=0.5,
     },
   },
-  every anti fermion/.style={},
+  every anti fermion/.style={/tikzfeynman/every anti fermion@@/.append style={#1}},
   anti fermion/.style={
-    /tikzfeynman/every fermion,
     /tikzfeynman/every anti fermion@@,
-    /tikzfeynman/every anti fermion,
   },
   every majorana@@/.style={
     /tikz/draw=none,
@@ -483,10 +470,9 @@
       /tikzfeynman/with reversed arrow=0.73,
     },
   },
-  every majorana/.style={},
+  every majorana/.style={/tikzfeynman/every majorana@@/.append style={#1}},
   majorana/.style={
     /tikzfeynman/every majorana@@,
-    /tikzfeynman/every majorana,
   },
   every anti majorana@@/.style={
     /tikz/draw=none,
@@ -497,10 +483,9 @@
       /tikzfeynman/with arrow=0.73,
     },
   },
-  every anti majorana/.style={},
+  every anti majorana/.style={/tikzfeynman/every anti majorana@@/.append style={#1}},
   anti majorana/.style={
     /tikzfeynman/every anti majorana@@,
-    /tikzfeynman/every anti majorana,
   },
   every gluon@@/.style={
     /tikz/draw=none,
@@ -516,10 +501,9 @@
       /tikz/decorate=true,
     },
   },
-  every gluon/.style={},
+  every gluon/.style={/tikzfeynman/every gluon@@/.append style={#1}},
   gluon/.style={
     /tikzfeynman/every gluon@@,
-    /tikzfeynman/every gluon,
   },
   %% Insertions
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -543,6 +527,7 @@
       /tikz/decorate=true,
     },
   },
+  insertion@@/.default={[]0.5},
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   %% Momentum arrows
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
