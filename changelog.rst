@@ -37,7 +37,7 @@ that users know immediately how big this change is.  In the case of
   major change in the package and code written for ``1.0.0`` is not guaranteed
   to work on 2.0.0.
 
-__ http:://semver.org
+__ http://semver.org
 
 The changes for each version are listed below, along with explanation as the
 possible repercussions.
