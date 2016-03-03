@@ -385,7 +385,7 @@ currently, two leading methods of drawing Feynman diagrams in \LaTeX{} are
 latter also featuring a \textsc{gui} front-end called
 \href{http://jaxodraw.sourceforge.net}{|JaxoDraw|} \cite{jaxodrawV1,jaxodrawV2}.
 
-Both |feynMF|/|feynMP| and |AxoDraw| have quite complicated syntax.  As an
+Both |feynMF|/|feynMP| and |AxoDraw| have quite complicated syntaxes.  As an
 example, the code to generate an \(\ell\ell \to \ell\ell\) scattering Feynman
 diagram in each package is:
 \begin{center}
@@ -454,13 +454,13 @@ and feature requests is done at
 third number (|1.0.0| to |1.0.1|) will consist of bug fixes and very minor
 changes but they should not change the output otherwise\footnote{That is, with
   the exception of the bug that they are fixing.}.  Changes in the second number
-(|1.0.0| to |1.1.0|) will consist of new features but everything should be
+(|1.0.0| to |1.1.0|) will consist of new features and everything should be
 backwards compatible.  Finally, changes in the first number (|1.0.0| to |2.0.0|)
 indicates a major change in the package and code written for |1.0.0| is not
 guaranteed to work on |2.0.0|.  The intended version of this package to use
 should be indicated when the package is loaded with
 |\usepackage[compat=x.y.z]{tikz-feynman}| so the user may be informed of any
-discrepancyx.  If needed, earlier versions may be downloaded from the
+discrepancy.  If needed, earlier versions may be downloaded from the
 \href{http://www.jpellis.me/projects/tikz-feynman}{project
   page}\footnote{\url{http://www.jpellis.me/projects/tikz-feynman}}.
 
@@ -497,11 +497,11 @@ This package is distributed in the hope that it will be useful, but
 \label{sibsec:loading_the_package}
 
 After installing the package, the \tikzfeynmanname{} package can be loaded with
-|\usepackage{tikz-feynman}| in the preamble.  It is recommend that you also
-specify the version of \tikzfeynmanname{} to use with the optional package
-argument |compat|: |\usepackage[compat=1.1.0]{tikz-feynman}|.  This ensures that
-any new versions of \tikzfeynmanname{} do not produce any undesirable changes
-without warning.
+|\usepackage{tikz-feynman}| in the preamble of the \TeX{} document.  It is
+recommend that you also specify the version of \tikzfeynmanname{} to use with
+the optional package argument |compat|:
+|\usepackage[compat=1.1.0]{tikz-feynman}|.  This ensures that any new versions
+of \tikzfeynmanname{} do not produce any undesirable changes without warning.
 
 \subsection{A First Diagram}
 \label{subsec:a_first_diagram}
@@ -518,8 +518,6 @@ is:
   f1 -- [fermion] b -- [fermion] f2,
 };
 \end{codeexample}
-
-Let's go through this example line by line:
 \begin{description}
 \item[Line 1] |\feynmandiagram| introduces the Feynman diagram and allows for
   optional arguments to be given in the brackets \texttt{[\meta{options}]}.  In
@@ -528,12 +526,11 @@ Let's go through this example line by line:
 \item[Line 2] The left fermion line is drawn by declaring three vertices (|i1|,
   |a| and |i2|) and connecting them with edges |--|.  Just like the
   |\feynmandiagram| command above, each edge also take optional arguments
-  specified in brackets \texttt{[\meta{options}]}.  In this instance, we want
-  these edges to have arrows to indicate that they are fermion lines, so we add
-  the |fermion| style to them.
+  specified in brackets \texttt{[\meta{options}]}.  In this instance, these
+  edges need arrows in order indicate that they are fermion lines, so the
+  |fermion| style is added to them.
 
-  As you will see later on, optional arguments can also be given to the vertices
-  in exactly the same way.
+  Optional arguments can also be given to the vertices in exactly the same way.
 \item[Line 3] This edge connects vertices |a| and |b| with an edge styled as a
   photon.  Since there is already a vertex labelled |a|, the algorithm will
   connect it to a new vertex labeled |b|.
@@ -545,18 +542,19 @@ Let's go through this example line by line:
 
 The name given to each vertex in the graph does not matter.  So in this example,
 |i1|, |i2| denote the initial particles; |f1|, |f2| denotes the final particles;
-and |a|, |b| are the end points of the propagator.  The only important aspect is
-that what we called |a| in line 2 is also |a| in line 3 so that the underlying
-algorithm treats them as the same vertex.
+and |a|, |b| are the end points of the propagator; however, any other labels
+could have been given.  The only important aspect is that what was called |a| in
+line 2 is also |a| in line 3 so that the underlying algorithm treats them as the
+same vertex.
 
 The order in which vertices are declared does not matter as the default
 algorithm re-arranges everything\footnote{It is possible for the algorithm to
-  get a litte confused in some circumstances, but these cases should be rather
+  get a little confused in some circumstances, but these cases should be rather
   rare.  For some algorithms (such as the |layered~layout|), the order in which
   vertices are introduces \emph{does} matter.  This is documented in
   \cref{subsubsec:diagram_keys}.}.  For example, one might prefer to draw the
 fermion lines all at once, as with the following example (note also that the way
-we named vertices is completely different):
+vertices are named is completely different):
 
 \begin{codeexample}[]
 \feynmandiagram [horizontal=f2 to f3] {
@@ -577,12 +575,12 @@ the user instead.
 
 So far, the examples have only used the |photon| and |fermion| styles.  The
 \tikzfeynmanname{} package comes with quite a few extra styles for edges and
-vertices which are all documented over in \cref{sec:documentation}.  As an
+vertices which are all documented over in \cref{sec:documentation}.  For
 example, it is possible to add momentum arrows with |momentum=|\meta{text}, and
 in the case of end vertices, the particle can be labelled with
-|particle=|\meta{text}.  As an example, we take the generic \(s\)-channel
-diagram from \cref{subsec:a_first_diagram} and make it a \(e^{+}e^{-} \to
-\mu^{+}\mu^{-}\) diagram:
+|particle=|\meta{text}.  This is illustrated in the following example where the
+generic \(s\)-channel diagram from \cref{subsec:a_first_diagram} is annotated
+into a \(e^{+}e^{-} \to \mu^{+}\mu^{-}\) diagram:
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {
   i1 [particle=\(e^{-}\)] -- [fermion] a -- [fermion] i2 [particle=\(e^{+}\)],
@@ -603,7 +601,7 @@ For a list of all the various styles that \tikzname{} provides, have a look at
 the \pgfmanual; it is extremely thorough and provides many usage examples.
 
 \tikzfeynmanname{} also supports combining styles together which can be useful
-in certain new models such as supersymmetry:
+in certain models such as supersymmetry:
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {
   i1 [particle=\(\tilde W\)] -- [plain, boson] a -- [anti fermion] i2 [particle=\(q\)],
@@ -635,7 +633,8 @@ three main alternatives:
   their parameters is given in the \pgfmanual;
 
 \item[Manual placement] As a last resort, very complicated or unusual diagrams
-  will require each vertex to be manually placed.
+  will require each vertex to be manually placed.  \tikzfeynmanname{} offers a
+  simplified syntax for manual placement so that it is not too difficult.
 \end{description}
 
 \subsubsection{Invisible Edges}
@@ -728,9 +727,9 @@ is specified, the vertex automatically is given the |particle| style, and
 otherwise it is a usual (zero-sized) vertex.
 
 To specify where the vertices go, it is possible to give explicit coordinates
-though it is probably easiest to use the |positioning| library from \tikzname{}
-which allows vertices to be placed relative to existing vertices\footnote{The
-  \pgfmanual{} has some extensive documentation explaining how to use the
+though it is easier to use the |positioning| library from \tikzname{} which
+allows vertices to be placed relative to existing vertices\footnote{The
+  \pgfmanual{} has extensive documentation explaining how to use the
   |positioning| library.}.  By using relative placements, it is possible to
 easily tweak one part of the graph and everything will adjust accordingly---the
 alternative being to manually adjust the coordinates of every affected vertex.
@@ -788,12 +787,12 @@ them is shown below for the muon decay:
   Please refer to the documentation for |\diagram| for the \meta{diagram
     instruction} syntax.
 
-  The optional arguments specified in \meta{tikz options} are passed on to the
+  The optional arguments specified in \meta{TikZ options} are passed on to the
   |{tikzpicture}|, and the \meta{diagram options} are passed on to |\diagram|.
   If only one optional argument is given, then the optional arguments are given
   to both.  A single optional argument will usually suffice as most keys are
-  recognized by both commands; however, in the event that a key is not
-  recognized, both options are provided.
+  recognized by both commands and appropriately selected; however, in the event
+  that a key is not recognized, both options are provided.
 \end{command}
 
 \begin{environment}{{feynman}\opt{\oarg{options}}}
@@ -858,7 +857,7 @@ them is shown below for the muon decay:
       of a sequence of edges and vertices and allows for another sequence to be
       started.  So \verb|a -- b, c -- d| will create two disconnected edges.
 
-    \item Subgroups (aking to scopes in \tikzname) are specified with braces:
+    \item Subgroups (akin to scopes in \tikzname) are specified with braces:
       |{|\oarg{options}\meta{diagram instructions}|}|.  This can be quite
       useful when a lot of edges or nodes share a common style.  For example,
       one could use |{[edges={fermion}]|\verb| a -- b -- c, x -- y -- z}| and
@@ -881,9 +880,9 @@ them is shown below for the muon decay:
     Same as |\diagram|, but instead of using the |spring layout| algorithm to
     place the vertices, this uses the most basic algorithm.  This basic
     algorithm in most cases will not produce a satisfactory diagram, but is
-    intended to be used with vertices are declared and positioned outside of the
-    |\diagram*| command.  Essentially, |\diagram*| should be used only to
-    connect existing vertices.
+    intended to be used with vertices which have been declared and positioned
+    outside of the |\diagram*| command.  Essentially, |\diagram*| should be used
+    only to connect existing vertices.
   \end{command}
 \end{environment}
 
@@ -966,22 +965,22 @@ full path with the leading |/tikzfeynman|.
   in an equation more nicely; if you do not wish to have these additional
   styles, use the |baseline| key.
 
-  \begin{equation}
+  \begin{equation*}
     \feynmandiagram [inline=(d.base), horizontal=d to b] {
       a -- [fermion] b -- [fermion] c,
       b -- [boson] d [particle=\(\gamma\)],
     };
     = i g_{e} \gamma^{\mu}
-  \end{equation}
+  \end{equation*}
 
 \begin{codeexample}[execute code=false]
-\begin{equation}
+\begin{equation*}
   \feynmandiagram [inline=(d.base), horizontal=d to b] {
     a -- [fermion] b -- [fermion] c,
     b -- [boson] d [particle=\(\gamma\)],
   };
   = i g_{e} \gamma^{\mu}
-\end{equation}
+\end{equation*}
 \end{codeexample}
 \end{stylekey}
 
@@ -990,22 +989,22 @@ full path with the leading |/tikzfeynman|.
   baseline is at the node specified.  This works in the same was as
   |inline=|\meta{node}, but it does not apply any additional styles (notice how
   the following example is larger than the one above).
-  \begin{equation}
+  \begin{equation*}
     \feynmandiagram [baseline=(d.base), horizontal=d to b] {
       a -- [fermion] b -- [fermion] c,
       b -- [boson] d [particle=\(\gamma\)],
     };
     = i g_{e} \gamma^{\mu}
-  \end{equation}
+  \end{equation*}
 
 \begin{codeexample}[execute code=false]
-\begin{equation}
+\begin{equation*}
   \feynmandiagram [baseline=(d.base), horizontal=d to b] {
     a -- [fermion] b -- [fermion] c,
     b -- [boson] d [particle=\(\gamma\)],
   };
   = i g_{e} \gamma^{\mu}
-\end{equation}
+\end{equation*}
 \end{codeexample}
 \end{key}
 
@@ -1150,7 +1149,7 @@ will warn the user instead.
 \end{key}
 
 \begin{key}{/graph drawing/tree layout=\opt{\meta{string}}}
-  Uses the Reingold--Tilform algorithm in order to place the node.  This works
+  Uses the Reingold--Tilford algorithm in order to place the node.  This works
   in a similar way to the layered layout, but has quite a lot of additional
   options to handle missing children in the tree.  Please refer to the
   \pgfmanual{} for a thorough description of these additional features.
@@ -1186,7 +1185,7 @@ will warn the user instead.
 \begin{key}{/tikzfeynman/vertex}
   The default, base style applied to every vertex initially.  Other styles
   are subsequently added.  This sets the vertex |shape| to be a |coordinate|,
-  that is, a null shape with no size or width.
+  that is, a null shape with no size nor width.
 \end{key}
 
 \begin{key}{/tikzfeynman/every \meta{vertex shape}=\meta{styles}}
@@ -1262,8 +1261,8 @@ will warn the user instead.
 \begin{key}{/tikzfeynman/particle=\meta{name}}
   Modifies the vertex so that it shows \meta{name}.  This is intended to label
   initial and final particles, but it should not be used on internal vertices as
-  it will result in the lines at the vertex having a gap.  For propagators (the
-  |edge label| key is much more appropriate).
+  it will result in the lines at the vertex having a gap.  For propagators the
+  |edge label| key is much more appropriate.
 
   Note that if \meta{name} contains characters such as brackets (|[]|) or
   commas (|,|), the whole \meta{name} has to be enclosed in braces (|{}|);
@@ -1290,7 +1289,7 @@ will apply to |charged scalar| and |anti charged scalar|.
 
 The edge styles do not override each other and instead stack.  This means that
 an edge styled with both |boson| and |fermion| will consist of a straight line
-with a wavy line on top and an error.  If not styles are provided, then a simple
+with a wavy line on top and an error.  If no styles are provided, then a simple
 solid line is drawn.
 
 \begin{key}{/tikzfeynman/every edge=\meta{styles}}
