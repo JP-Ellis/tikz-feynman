@@ -98,13 +98,17 @@ Feynman Diagrams with Ti*k*Z
 Copyright (C) 2016  Joshua Ellis
 
 
-This *documentation* may be redistributed and/or modified under the terms of the
+The *documentation* may be redistributed and/or modified under the terms of the
 GNU General Public License as published by the Free Software Foundation, either
 version 3 of the License, or (at your option) any later version.
 
-The *code of this package* may be distributed and/or modified under the
-conditions of the LaTeX Project Public License, either version 1.3 of this
-license or (at your option) any later version.
+The *code of this package* may be distributed and/or modified under either:
+
+- the conditions of the LaTeX Project Public License, either version 1.3 of this
+  license or (at your option) any later version; or
+- the terms of the GNU General Public License as published by the Free Software
+  Foundation, either version 3 of the License, or (at your option) any later
+  version.
 
 This work has the LPPL maintenance status `maintained'.
 
