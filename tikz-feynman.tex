@@ -970,22 +970,22 @@ full path with the leading |/tikzfeynman|.
   in an equation more nicely; if you do not wish to have these additional
   styles, use the |baseline| key.
 
-  \begin{equation*}
+  \begin{equation}
     \feynmandiagram [inline=(d.base), horizontal=d to b] {
       a -- [fermion] b -- [fermion] c,
       b -- [boson] d [particle=\(\gamma\)],
     };
     = i g_{e} \gamma^{\mu}
-  \end{equation*}
+  \end{equation}
 
 \begin{codeexample}[execute code=false]
-\begin{equation*}
+\begin{equation}
   \feynmandiagram [inline=(d.base), horizontal=d to b] {
     a -- [fermion] b -- [fermion] c,
     b -- [boson] d [particle=\(\gamma\)],
   };
   = i g_{e} \gamma^{\mu}
-\end{equation*}
+\end{equation}
 \end{codeexample}
 \end{stylekey}
 
@@ -994,22 +994,22 @@ full path with the leading |/tikzfeynman|.
   baseline is at the node specified.  This works in the same was as
   |inline=|\meta{node}, but it does not apply any additional styles (notice how
   the following example is larger than the one above).
-  \begin{equation*}
+  \begin{equation}
     \feynmandiagram [baseline=(d.base), horizontal=d to b] {
       a -- [fermion] b -- [fermion] c,
       b -- [boson] d [particle=\(\gamma\)],
     };
     = i g_{e} \gamma^{\mu}
-  \end{equation*}
+  \end{equation}
 
 \begin{codeexample}[execute code=false]
-\begin{equation*}
+\begin{equation}
   \feynmandiagram [baseline=(d.base), horizontal=d to b] {
     a -- [fermion] b -- [fermion] c,
     b -- [boson] d [particle=\(\gamma\)],
   };
   = i g_{e} \gamma^{\mu}
-\end{equation*}
+\end{equation}
 \end{codeexample}
 \end{key}
 
