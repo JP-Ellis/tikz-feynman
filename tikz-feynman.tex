@@ -367,13 +367,14 @@ appear in his paper \citetitle{PhysRev.76.769} \cite{PhysRev.76.769}.  Since
 then, \LaTeX{} has become widely used to type-set scientific papers and
 currently, two leading methods of drawing Feynman diagrams in \LaTeX{} are
 \href{https://www.ctan.org/pkg/feynmf}{|feynMF|/|feynMP|} \cite{feynmf} and
-\href{https://www.ctan.org/pkg/axodraw}{|AxoDraw|} \cite{axodraw}, with the
-latter also featuring a \textsc{gui} front-end called
+\href{https://www.ctan.org/pkg/axodraw}{|AxoDraw|} \cite{axodrawV1,axodrawV2},
+with the latter also featuring a \textsc{gui} front-end called
 \href{http://jaxodraw.sourceforge.net}{|JaxoDraw|} \cite{jaxodrawV1,jaxodrawV2}.
 
-Both |feynMF|/|feynMP| and |AxoDraw| have quite complicated syntaxes.  As an
-example, the code to generate an \(\ell\ell \to \ell\ell\) scattering Feynman
-diagram in each package is:
+In |feynMF|/|feynMP|, the position of vertices follows an algorithm whilst
+|AxoDraw| requires their position to be specified on a grid.  As an example, the
+code to generate an \(\ell\ell \to \ell\ell\) scattering Feynman diagram in each
+package is:
 \begin{center}
   \begin{tabular}{p{0.3\linewidth} p{0.27\linewidth} p{0.34\linewidth}}
     |AxoDraw| & |feynMF|/|feynMP| & \tikzfeynmanname{} \\[-2em]
@@ -410,13 +411,14 @@ diagram in each package is:
 \end{codeexample} \\[-2em]
   \end{tabular}
 \end{center}
-The learning curves for both |AxoDraw| and |feynMF|/|feynMP| are quite steep,
-and although this is partly resolved by using |JaxoDraw|, this requires an
-external program.  In addition, the creation of Feynman diagrams in
-|feynMF|/|feynMP| requires further processing outside of \LaTeX{}.
+The inconvenience of specifying absolute coordinates in |AxoDraw| is alleviated
+by |JaxoDraw|, though this requires an external program.  In addition, the
+creation of Feynman diagrams in |feynMF|/|feynMP| and |AxoDraw| requires further
+processing outside of \LaTeX{}.\footnote{With the exception of |AxoDraw| when
+  compiled with |latex|.}
 
-\tikzfeynmanname{} on the other hand uses a clear syntax and delegates the
-positioning of vertices to algorithms originally developed by
+\tikzfeynmanname{} on the other hand requires no external program and delegates
+the positioning of vertices to algorithms originally developed by
 \citeauthor{hu2005} \cite{hu2005}, and \citeauthor{eades1991} \cite{eades1991},
 both of which were implemented into \tikzname{} by \citeauthor{pohlmann2011}
 \cite{pohlmann2011}.  Since \tikzfeynmanname{} is built on \tikzname{}, users
@@ -741,6 +743,38 @@ them is shown below for the muon decay:
       (b) -- [boson, edge label'=\(W^{-}\)] (c),
       (c) -- [anti fermion] (f2),
       (c) -- [fermion] (f3),
+    };
+  \end{feynman}
+\end{tikzpicture}
+\end{codeexample}
+
+One important note is that it is not possible to arbitrarily use automatic and
+manual placement of vertices; automatic placement should be used first (if at
+all) and manually placed vertices should be specified subsequently.  This is due
+to most algorithms not being able to handles nodes with fixed placement.  The
+following example illustrates how an initial automatically generated layout can
+be built upon by placing new nodes relative to the automatically placed ones:
+
+\begin{codeexample}[]
+\begin{tikzpicture}
+  \begin{feynman}
+    % The first decay layout is done automatically
+    \diagram [horizontal'=i to a] {
+      i -- [scalar] a,
+      b1 -- [fermion] a -- [fermion] b2,
+      b1 -- [draw=none] b2,
+    };
+    % New vertices are added relative to automatically placed ones
+    \vertex [above right=of b1] (c1);
+    \vertex [right=of b1] (c2);
+    \vertex [right=of b2] (c3);
+    \vertex [below right=of b2] (c4);
+    % and they are linked together here
+    \diagram* {
+      (b1) -- [gluon] (c1),
+      (b1) -- [anti fermion] (c2),
+      (b2) -- [fermion] (c3),
+      (b2) -- [gluon] (c4),
     };
   \end{feynman}
 \end{tikzpicture}
