@@ -2,7 +2,7 @@
 %
 % TikZ-Feynman
 % Feynman Diagrams with TikZ
-% Copyright (C) 2015  Joshua Ellis
+% Copyright (C) 2016  Joshua Ellis
 %
 %
 % This LaTeX file is free: you can redistribute it and/or modify it under the
@@ -69,8 +69,6 @@
 
 \usepackage[UKenglish]{babel} % Set up the language
 \usepackage{csquotes}
-\usepackage{siunitx}          % Provides \SI{1}{\metre}, also \ang{90}.
-\usepackage{textcomp}
 
 %% Graphics & Figure
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -113,7 +111,6 @@
 \usepackage{mathtools} % Various extra maths functions
 % \usepackage{cancel}    % Show cancellations with \cancel{}
 % \usepackage{autonum}   % Only number referenced equations (must be loaded after cleverref)
-\usepackage{dsfont}
 
 \usepackage[cmintegrals,varg]{newtxmath} % Nice math with Garamond
 
@@ -126,27 +123,11 @@
 
 \DeclarePairedDelimiter{\angles}{\langle}{\rangle}
 
-%% Tables
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage{array}     % New column types, including >{}x<{}
-\usepackage{booktabs}  % Provides nicer horizontal lines
-\usepackage{multirow}  % Allows cells to span multiple rows
-%\usepackage{longtable} % Allows for tables to span multiple pages
-
-%% Define the maths version of clr columns.
-\newcolumntype{C}{>{\(}c<{\)}}
-\newcolumntype{L}{>{\(}l<{\)}}
-\newcolumntype{R}{>{\(}r<{\)}}
-
 %% Other Packages
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{listings}    % Code listings
-\usepackage{minted}      % Use Pygments
-\usepackage{fp}          % Floating point arithmetics
 \usepackage{makeidx}     % Index creation
-\usepackage{xr}          % Cross-referencing
 \usepackage[orig,UKenglish]{isodate}     % Handle dates
 
 \usepackage{hyperref}    % Automatically inserts hyperlinks.
