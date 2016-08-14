@@ -26,6 +26,7 @@ graphics
 hyperref
 ifplatform
 isodate
+kastrup
 latex-bin
 latexmk
 lineno
@@ -41,7 +42,6 @@ ms
 multirow
 newtx
 oberdiek
-pdftex-def
 pgf
 pgfopts
 siunitx
