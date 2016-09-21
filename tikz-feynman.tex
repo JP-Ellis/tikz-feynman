@@ -511,9 +511,9 @@ is:
   line through vertices |a| and |b| is horizontal.
 \item[Line 2] The left fermion line is drawn by declaring three vertices (|i1|,
   |a| and |i2|) and connecting them with edges |--|.  Just like the
-  |\feynmandiagram| command above, each edge also take optional arguments
+  |\feynmandiagram| command above, each edge also takes optional arguments
   specified in brackets \texttt{[\meta{options}]}.  In this instance, these
-  edges need arrows in order indicate that they are fermion lines, so the
+  edges need arrows in order to indicate that they are fermion lines, so the
   |fermion| style is added to them.
 
   Optional arguments can also be given to the vertices in exactly the same way.
@@ -537,7 +537,7 @@ The order in which vertices are declared does not matter as the default
 algorithm re-arranges everything\footnote{It is possible for the algorithm to
   get a little confused in some circumstances, but these cases should be rather
   rare.  For some algorithms (such as the |layered~layout|), the order in which
-  vertices are introduces \emph{does} matter.  This is documented in
+  vertices are introduced \emph{does} matter.  This is documented in
   \cref{subsubsec:diagram_keys}.}.  For example, one might prefer to draw the
 fermion lines all at once, as with the following example (note also that the way
 vertices are named is completely different):
@@ -664,7 +664,7 @@ position the vertices\footnote{See \cref{subsubsec:diagram_keys} for some
 |spring layout| algorithm to place the vertices.  The |spring layout| attempts
 to spread everything out as much as possible which, in most cases, gives a nice
 diagram; however, there are certain cases where this does not work.  A good
-example where the |spring layout| doesn't work are decays where we have the
+example where the |spring layout| does not work are decays where we have the
 decaying particle on the left and all the daughter particles on the right.
 \begin{codeexample}[]
 % Using the default spring layout
@@ -752,7 +752,7 @@ them is shown below for the muon decay:
 One important note is that it is not possible to arbitrarily use automatic and
 manual placement of vertices; automatic placement should be used first (if at
 all) and manually placed vertices should be specified subsequently.  This is due
-to most algorithms not being able to handles nodes with fixed placement.  The
+to most algorithms not being able to handle nodes with fixed placement.  The
 following example illustrates how an initial automatically generated layout can
 be built upon by placing new nodes relative to the automatically placed ones:
 
@@ -800,7 +800,7 @@ be built upon by placing new nodes relative to the automatically placed ones:
 \end{command}
 
 \begin{command}{\feynmandiagram\opt{\oarg{TikZ options}\oarg{diagram options}}\marg{diagram instructions}}
-  This commands creates a |{tikzpicture}| and |{feynman}| environment, and
+  This command creates a |{tikzpicture}| and |{feynman}| environment, and
   places a |\diagram| inside with the provided \meta{diagram instruction}.
   Please refer to the documentation for |\diagram| for the \meta{diagram
     instruction} syntax.
@@ -928,8 +928,7 @@ small diagrams which should be blue, then one would add to the preamble:
 }
 \end{codeexample}
 If you are completely unhappy with a particular inbuilt style, you can define
-your own style with with \meta{key}|/.style={...}| as shown in the
-following example:
+your own style with \meta{key}|/.style={...}| as shown in the following example:
 \begin{codeexample}[execute code=false]
 \tikzfeynmanset{
   myblob/.style={
@@ -975,8 +974,8 @@ full path with the leading |/tikzfeynman|.
 \begin{stylekey}{/tikzfeynman/inline=\meta{node}}
   A style used to display a Feynman diagram inline (typically in an equation),
   and aligning such that its vertical placement is at the node specified.  The
-  node specification must enclosed in parentheses.  For nodes which contain text
-  (such as when the |particle| style is applied), it is possible to use the
+  node specification must be enclosed in parentheses.  For nodes which contain
+  text (such as when the |particle| style is applied), it is possible to use the
   baseline of the text inside the node to line up with the baseline of the
   equation by using |(|\meta{node}|.base)| as demonstrated in the following
   example.  Note that this key applies additional styles to make the diagram fit
@@ -1004,7 +1003,7 @@ full path with the leading |/tikzfeynman|.
 
 \begin{key}{/tikz/baseline=\meta{node}}
   Changes the vertical alignment of the Feynman diagram such that it diagram's
-  baseline is at the node specified.  This works in the same was as
+  baseline is at the node specified.  This works in the same way as
   |inline=|\meta{node}, but it does not apply any additional styles (notice how
   the following example is larger than the one above).
   \begin{equation}
@@ -1083,7 +1082,7 @@ full path with the leading |/tikzfeynman|.
     /tikzfeynman/large}
   Changes the default separation between the vertices and changes the size of
   arrows, blobs, and other shapes to fit different context.  The |small| size is
-  best used with when the diagram is quite simple and doesn't have too many
+  best used with when the diagram is quite simple and does not have too many
   annotations (such as momentum arrows and particle labels).  The |medium| size
   is the default and is usually large enough that even diagrams with many labels
   and momentum arrows do not become too cluttered.  Finally the |large| key is
@@ -1108,7 +1107,7 @@ full path with the leading |/tikzfeynman|.
 There are several algorithms which are available to place the vertices which are
 all provided within the |graph drawing| library from \tikzname.  Below are
 listed a few of these layouts which are more relevant for drawing Feynman
-diagrams.  For a more complete description of how these algorithm work, please
+diagrams.  For a more complete description of how these algorithms work, please
 refer to the \pgfmanual{}.  Please note that most graph drawing algorithms are
 implemented in Lua and thus require \LuaTeX{} in order to work.  If \LuaTeX{} is
 not used, \tikzfeynmanname{} will default to a more rudimentary algorithm and
@@ -1360,7 +1359,7 @@ solid line is drawn.
 \end{key}
 
 \begin{key}{/tikzfeynman/anti charged boson}
-  Draws a sinusoidal line with an arrow pointing the other way to to denote a
+  Draws a sinusoidal line with an arrow pointing the other way to denote a
   anti charged boson.
 
 \begin{codeexample}[]
@@ -1427,8 +1426,8 @@ solid line is drawn.
 \end{key}
 
 \begin{key}{/tikzfeynman/majorana}
-  Draws a solid line with two arrows pointing to the center to denote an
-  Majorana particle.
+  Draws a solid line with two arrows pointing to the center to denote a Majorana
+  particle.
 
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {a -- [majorana] b};
@@ -1503,14 +1502,14 @@ solid line is drawn.
     /tikzfeynman/rmomentum=\opt{\oarg{options}}\meta{text},
     /tikzfeynman/rmomentum'=\opt{\oarg{options}}\meta{text}}
   Places a momentum arrow on the specified edge with label given by \meta{text}.
-  The primed (|'|) version place the momentum arrow on the other side of the
+  The primed (|'|) version places the momentum arrow on the other side of the
   edge; that is, if the momentum arrow was on the right, it will be placed on
   the left of the edge.  The |reversed momentum| and |reversed momentum'| keys
   are analogous to |momentum| and |momentum'| except that the momentum arrow
   points in the opposite direction.  Finally, the |rmomentum| and |rmomentum'|
   are aliases of |reversed momentum| and |reversed momentum'|.
 
-  Note that due to the way the arrow is drawn, it doesn't inherit styles of the
+  Note that due to the way the arrow is drawn, it does not inherit styles of the
   edge.  As a result, they have to be re-specified through \meta{options}.
 
 \begin{codeexample}[]
