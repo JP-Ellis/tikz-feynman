@@ -110,7 +110,6 @@
 \usepackage{amssymb}   % Defines additional math fonts
 \usepackage{mathtools} % Various extra maths functions
 % \usepackage{cancel}    % Show cancellations with \cancel{}
-% \usepackage{autonum}   % Only number referenced equations (must be loaded after cleverref)
 
 \usepackage[cmintegrals,varg]{newtxmath} % Nice math with Garamond
 
@@ -120,6 +119,12 @@
 %% Allows page breaks in math (1 = avoid if possible, 4 = whenever)
 %% Page breaks can be avoided at particular places by using \\*
 \allowdisplaybreaks[2]
+
+\mathtoolsset{
+  %% Number only referenced equations
+  showonlyrefs,
+}
+
 
 \DeclarePairedDelimiter{\angles}{\langle}{\rangle}
 
@@ -132,8 +137,6 @@
 
 \usepackage{hyperref}    % Automatically inserts hyperlinks.
 \usepackage{cleveref}    % Use `\cref{}` to reference anything
-
-\usepackage{autonum}
 
 %% Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
