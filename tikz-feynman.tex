@@ -247,6 +247,16 @@ directory}{}}
   Physics.
 }
 
+%% LaTeX Documentation
+\usepackage{doc}
+\providecommand\marg[1]{%
+  {\ttfamily\char`\{}\meta{#1}{\ttfamily\char`\}}}
+\providecommand\oarg[1]{%
+  {\ttfamily[}\meta{#1}{\ttfamily]}}
+\providecommand\parg[1]{%
+  {\ttfamily(}\meta{#1}{\ttfamily)}}
+
+
 %% Center codeexample
 \makeatletter
 \let\codeexample@orig=\codeexample
