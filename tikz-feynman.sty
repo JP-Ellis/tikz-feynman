@@ -26,9 +26,24 @@
 
 \RequirePackage{tikz}[2013/12/13] % v3.0.0
 \RequirePackage{ifluatex}
+\RequirePackage{ifpdf}
 \RequirePackage{pgfopts}
 
 \usetikzlibrary{feynman}
+
+\ifpdf
+  \ifcsname pdfinfo\endcsname%
+    \pdfinfo{
+      /FeynmanDiagrams (TikZ-Feynman \tikzfeynman@version)
+    }
+  \else
+    \ifcsname pdfextension\endcsname%
+      \pdfextension info{
+        /FeynmanDiagrams (TikZ-Feynman \tikzfeynman@version)
+      }
+    \fi
+  \fi
+\fi
 
 \endinput
 
