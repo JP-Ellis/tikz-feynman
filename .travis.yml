@@ -1,4 +1,5 @@
 langage: generic
+python: "3.6"
 
 cache:
   directories:
@@ -6,26 +7,8 @@ cache:
     - $HOME/.cache/pip
 
 before_install:
-  # Font dependencies
-  - wget https://bitbucket.org/georgd/eb-garamond/downloads/EBGaramond-0.016.zip
-  - unzip -q EBGaramond-0.016.zip -d $HOME/.fonts
-  - wget http://www.fantascienza.net/leonardo/ar/inconsolatag/inconsolata-g_font.zip
-  - unzip -q inconsolata-g_font.zip -d $HOME/.fonts
-  - fc-cache
-  # LaTeX package
-  - |
-    if [[ ! -e ./texlive/bin/x86_64-linux/tlmgr ]]; then
-      wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz -O - | tar -x --gzip
-      mv $(ls | grep install) install-tl
-      ./install-tl/install-tl -profile texlive.profile
-    fi
   - export PATH=$(pwd)/texlive/bin/x86_64-linux:$PATH
-  - tlmgr install $(cat .tlmgr-dep)
-  - tlmgr update --self
-  - tlmgr update --all
-  # Pygmentize
-  - pip install -U --user pygments
+  - bash ci/before_install.sh
 
 script:
-  - latexmk --halt-on-error tikz-feynman.tex
-  - latexmk --halt-on-error tests.tex
+  - bash ci/script.sh
