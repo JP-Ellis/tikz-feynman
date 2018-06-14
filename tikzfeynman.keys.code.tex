@@ -783,29 +783,28 @@
 %% Graceful Failure of LuaTeX keys
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \def\tikzfeynman@luatex@required@path{
-  \PackageWarning{tikz-feynman}{The key you tried to use '\pgfkeyscurrentpath/\pgfkeyscurrentname' requires LuaTeX.  It will be ignored.}
+  \iftikzfeynman@warn@luatex
+    \PackageWarning{tikz-feynman}{The key you tried to use '\pgfkeyscurrentpath/\pgfkeyscurrentname' requires LuaTeX.  It will be ignored.}
+  \fi
 }
 \def\tikzfeynman@luatex@required@key{
-  \PackageWarning{tikz-feynman}{The key you tried to use '\pgfkeyscurrentpath' requires LuaTeX.  It will be ignored.}
+  \iftikzfeynman@warn@luatex
+    \PackageWarning{tikz-feynman}{The key you tried to use '\pgfkeyscurrentpath' requires LuaTeX.  It will be ignored.}
+  \fi
 }
 
-\ifluatex\else
-  \pgfkeys{
-    /graph drawing/.unknown/.code=\tikzfeynman@luatex@required@path,
-    /tikz/graphs/.unknown/.code=\tikzfeynman@luatex@required@path,
-    /tikz/horizontal/.code=\tikzfeynman@luatex@required@key,
-    /tikz/horizontal'/.code=\tikzfeynman@luatex@required@key,
-    /tikz/vertical/.code=\tikzfeynman@luatex@required@key,
-    /tikz/vertical'/.code=\tikzfeynman@luatex@required@key,
-    /tikz/tree layout/.code=\tikzfeynman@luatex@required@key,
-    /tikz/spring layout/.code=\tikzfeynman@luatex@required@key,
-    /tikz/layered layout/.code=\tikzfeynman@luatex@required@key,
-    /tikz/spring electrical layout/.code=\tikzfeynman@luatex@required@key,
-    /tikz/electric charge/.code=\tikzfeynman@luatex@required@key,
-  }
-  % \tikzfeynmanset{
-  %   horizontal/.code={The key 'horizontal' requires LuaTeX.  It will be ignored.},
-  % }
-\fi
+\pgfkeys{
+  /graph drawing/.unknown/.code=\tikzfeynman@luatex@required@path,
+  /tikz/graphs/.unknown/.code=\tikzfeynman@luatex@required@path,
+  /tikz/horizontal/.code=\tikzfeynman@luatex@required@key,
+  /tikz/horizontal'/.code=\tikzfeynman@luatex@required@key,
+  /tikz/vertical/.code=\tikzfeynman@luatex@required@key,
+  /tikz/vertical'/.code=\tikzfeynman@luatex@required@key,
+  /tikz/tree layout/.code=\tikzfeynman@luatex@required@key,
+  /tikz/spring layout/.code=\tikzfeynman@luatex@required@key,
+  /tikz/layered layout/.code=\tikzfeynman@luatex@required@key,
+  /tikz/spring electrical layout/.code=\tikzfeynman@luatex@required@key,
+  /tikz/electric charge/.code=\tikzfeynman@luatex@required@key,
+}
 
 \endinput

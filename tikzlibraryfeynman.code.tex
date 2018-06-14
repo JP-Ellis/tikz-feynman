@@ -31,7 +31,7 @@
   positioning,
   shapes.geometric,
 }
-\ifluatex
+\ifLuaTeX
   \usetikzlibrary{
     graphdrawing
   }
@@ -68,15 +68,22 @@
 \newif\iftikzfeynman@warn@luatex%
 \tikzfeynmanset{
   warn luatex/.is if=tikzfeynman@warn@luatex,
-  warn luatex=true,
 }
 
+\ifLuaTeX
+  \tikzfeynmanset{warn luatex=false}
+\else
+  \tikzfeynmanset{warn luatex=true}
+\fi
+
 \AtBeginDocument{
-  \ifluatex\else
-    \iftikzfeynman@warn@luatex
-      \PackageWarning{tikz-feynman}{LuaTeX is required if you wish to have vertices automatically placed.  You can disable this warning by setting /tikzfeynman/warn luatex=false}
-    \fi
-  \fi
+  \ifLuaTeX\else%
+    \iftikzfeynman@warn@luatex%
+      \PackageWarning{tikz-feynman}{%
+        LuaTeX is required if you wish to have vertices automatically placed. You can silence warnings by setting /tikzfeynman/warn luatex=false%
+      }
+    \fi%
+  \fi%
 }
 
 %% Version check
