@@ -21,7 +21,10 @@ Below are a few example to demonstrate how easy diagram can be, and how
 extensible it can be.  Many more are given in the
 [documentation][documentation]:
 
-<p align="center"><img src="./images/qed.png" alt="QED Example" width=300px /></p>
+<p align="center">
+<img src="./images/qed.png" alt="QED Example" width=300px />
+</p>
+
 ```latex
 \feynmandiagram [horizontal=a to b] {
   i1 -- [fermion] a -- [fermion] i2,
@@ -30,7 +33,10 @@ extensible it can be.  Many more are given in the
 };
 ```
 
-<p align="center"><img src="./images/penguin.png" alt="Penguin Example" width=300px /></p>
+<p align="center">
+<img src="./images/penguin.png" alt="Penguin Example" width=300px />
+</p>
+
 ```latex
 \feynmandiagram [large, vertical=e to f] {
   a -- [fermion] b -- [photon, momentum=\(k\)] c -- [fermion] d,
@@ -40,7 +46,10 @@ extensible it can be.  Many more are given in the
 };
 ```
 
-<p align="center"><img src="./images/mixing.png" alt="Mixing Example" width=490px /></p>
+<p align="center">
+<img src="./images/mixing.png" alt="Mixing Example" width=490px />
+</p>
+
 ```latex
 \begin{tikzpicture}
   \begin{feynman}
@@ -83,9 +92,6 @@ extensible it can be.  Many more are given in the
 \end{tikzpicture}
 ```
 
-  [ctan]: https://ctan.org/pkg/tikz-feynman
-  [documentation]: http://www.jpellis.me/projects/tikz-feynman/tikz-feynman/tikz-feynman.pdf
-  [projectpage]: http://www.jpellis.me/projects/tikz-feynman
 
 
 Licence
@@ -109,3 +115,8 @@ either version 3 of the License, or (at your option) any later version.
 This package is distributed in the hope that it will be useful, but WITHOUT ANY
 WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
 PARTICULAR PURPOSE.
+
+
+  [ctan]: https://ctan.org/pkg/tikz-feynman
+  [documentation]: http://www.jpellis.me/projects/tikz-feynman/tikz-feynman/tikz-feynman.pdf
+  [projectpage]: http://www.jpellis.me/projects/tikz-feynman
