@@ -1,0 +1,60 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - "*"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest-full
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Compile pdfLaTeX
+        run: |
+          pdflatex --halt-on-error tests/test-all.tex
+
+      - name: Compile LuaLaTeX
+        run: |
+          lualatex --halt-on-error tests/test-all.tex
+
+  docs:
+    runs-on: ubuntu-latest
+    container: texlive/texlive:latest-full
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Cache fonts
+        id: font-cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.local/share/fonts
+          key: fonts
+
+      - name: Download Fira Code
+        if: steps.font-cache.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/.local/share/fonts
+          curl -LO https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip
+          unzip -j Fira_Code_v6.2.zip ttf/* -d ~/.local/share/fonts
+
+      - name: Download EB Garamond
+        if: steps.font-cache.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/.local/share/fonts
+          curl -LO https://github.com/georgd/EB-Garamond/releases/download/nightly/EBGaramond.zip
+          unzip -j EBGaramond.zip -d ~/.local/share/fonts
+
+      - name: Update Lua font cache
+        run: |
+          luaotfload-tool --update -vv
+
+      - name: Build documentation
+        run: |
+          lualatex --halt-on-error tikz-feynman.tex
