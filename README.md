@@ -1,27 +1,31 @@
-[Ti*k*Z-Feynman](http://www.jpellis.me/projects/tikz-feynman) [![ctan.org](https://img.shields.io/ctan/v/tikz-feynman.svg)](https://ctan.org/pkg/tikz-feynman) [![Travis](https://img.shields.io/travis/JP-Ellis/tikz-feynman/master.svg)](https://travis-ci.org/JP-Ellis/tikz-feynman)
-=============================================================
+# [Ti*k*Z-Feynman](http://www.jpellis.me/projects/tikz-feynman)
+
+[![ctan.org](https://img.shields.io/ctan/v/tikz-feynman.svg)](https://ctan.org/pkg/tikz-feynman)
 
 Ti*k*Z-Feynman is a LaTeX package allowing Feynman diagrams to be easily
 generated within LaTeX with minimal user instructions and without the need of
-external programs.  It builds upon the Ti*k*Z package and leverages the graph
+external programs. It builds upon the Ti*k*Z package and leverages the graph
 placement algorithms from Ti*k*Z in order to automate the placement of many
-vertices.  Ti*k*Z-Feynman still allows fine-tuned placement of vertices so that
+vertices. Ti*k*Z-Feynman still allows fine-tuned placement of vertices so that
 even complex diagrams can still be generated with ease.
 
-Ti*k*Z-Feynman is made available through the
-[Comprehensive TeX Archive Network (CTAN)][ctan] and comes with some thorough
-[documentation][documentation] containing a tutorial and many examples.  Please
-refer to the [project page][projectpage] for additional information.
+Ti*k*Z-Feynman is made available through the [Comprehensive TeX Archive Network
+(CTAN)][ctan] and comes with some thorough [documentation][documentation]
+containing a tutorial and many examples. If you use Ti*k*Z-Feynman, please cite:
 
-Ti*k*Z-Feynman is open source and contribution are welcome.  If you have any
-suggestions, feature requests, or have found any bugs, feel free to create a new
-issue or pull request on Github.
+> Ellis, Joshua P. "Ti*k*Z-Feynman: Feynman diagrams with Ti*k*Z."
+> Computer Physics Communications 210 (2017): 103-123.
+> [doi:10.1016/j.cpc.2016.08.019](https://doi.org/10.1016/j.cpc.2016.08.019)
+> [arXiV:1601.05437](https://arxiv.org/abs/1601.05437)
 
-Below are a few example to demonstrate how easy diagram can be, and how
-extensible it can be.  Many more are given in the
-[documentation][documentation]:
+</div>
 
-<p align="center"><img src="./images/qed.png" alt="QED Example" width=300px /></p>
+## Examples
+
+<p align="center">
+<img src="./images/qed.png" alt="Feynman diagram of two electrons scattering through the exchange of a photon." width=300px />
+</p>
+
 ```latex
 \feynmandiagram [horizontal=a to b] {
   i1 -- [fermion] a -- [fermion] i2,
@@ -30,7 +34,10 @@ extensible it can be.  Many more are given in the
 };
 ```
 
-<p align="center"><img src="./images/penguin.png" alt="Penguin Example" width=300px /></p>
+<p align="center">
+<img src="./images/penguin.png" alt="'Penguin' feynman diagram showcasing the use of momentum arrows." width=300px />
+</p>
+
 ```latex
 \feynmandiagram [large, vertical=e to f] {
   a -- [fermion] b -- [photon, momentum=\(k\)] c -- [fermion] d,
@@ -40,7 +47,10 @@ extensible it can be.  Many more are given in the
 };
 ```
 
-<p align="center"><img src="./images/mixing.png" alt="Mixing Example" width=490px /></p>
+<p align="center">
+<img src="./images/mixing.png" alt="Feynman diagram of a B meson decaying to π⁺π⁻" width=490px />
+</p>
+
 ```latex
 \begin{tikzpicture}
   \begin{feynman}
@@ -79,33 +89,12 @@ extensible it can be.  Many more are given in the
           node [pos=0.5, right] {\(\pi^{-}\)};
     \draw [decoration={brace}, decorate] (a6.north east) -- (b5.south east)
           node [pos=0.5, right] {\(\pi^{+}\)};
+
   \end{feynman}
 \end{tikzpicture}
 ```
 
-  [ctan]: https://ctan.org/pkg/tikz-feynman
-  [documentation]: http://www.jpellis.me/projects/tikz-feynman/tikz-feynman/tikz-feynman.pdf
-  [projectpage]: http://www.jpellis.me/projects/tikz-feynman
-
-
-Licence
--------
-
-Ti*k*Z-Feynman
-
-Feynman Diagrams with Ti*k*Z
-
-Copyright (C) 2016  Joshua Ellis
-
-
-The *documentation* may be redistributed and/or modified under the terms of the
-GNU General Public License as published by the Free Software Foundation, either
-version 3 of the License, or (at your option) any later version.
-
-The *code of this package* may be distributed and/or modified under the terms of
-the GNU General Public License as published by the Free Software Foundation,
-either version 3 of the License, or (at your option) any later version.
-
-This package is distributed in the hope that it will be useful, but WITHOUT ANY
-WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
-PARTICULAR PURPOSE.
+[ctan]: https://ctan.org/pkg/tikz-feynman
+[documentation]:
+  https://www.jpellis.me/projects/tikz-feynman/tikz-feynman/tikz-feynman.pdf
+[projectpage]: https://www.jpellis.me/projects/tikz-feynman
