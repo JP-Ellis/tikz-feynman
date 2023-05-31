@@ -168,10 +168,9 @@
   \let\attribute\relax
   \input{pgfmanual-en-macros}
 }{
-  \PackageError{tikz-feynman-manual}{
-This document requires the file pgfmanual-en-macros.tex (distributed
-with pgf) to compile.  Please place a copy of that file in the current
-directory}{}}
+  \PackageError{tikz-feynman-manual}{%
+    This document requires the file pgfmanual-en-macros.tex (distributed with pgf) to compile.  Please place a copy of that file in the current directory%
+  }{}}
 
 \makeindex
 
@@ -233,17 +232,11 @@ directory}{}}
   \subsection*{Acknowledgements}
   \label{subsec:acknowledgements}
 
-  The original proof-of-concept for using \tikzname{} to draw Feynman diagrams
-  was done by the user `\href{http://tex.stackexchange.com/users/2552}{Jake}' on
-  the \TeX{} StackExchange.  His original answer can be viewed at:
-  \url{http://tex.stackexchange.com/a/87395/26980}.
+  The original proof-of-concept for using \tikzname{} to draw Feynman diagrams was done by the user `\href{http://tex.stackexchange.com/users/2552}{Jake}' on the \TeX{} StackExchange.  His original answer can be viewed at: \url{http://tex.stackexchange.com/a/87395/26980}.
 
-  I must also thank all the people who have used the development versions of
-  \tikzfeynmanname{} and offered suggestions to improve it and found bugs for me
-  to fix.
+  I must also thank all the people who have used the development versions of \tikzfeynmanname{} and offered suggestions to improve it and found bugs for me to fix.
 
-  This work was partially supported by the N.~D.~Goldsworthy Scholarship for
-  Physics.
+  This work was partially supported by the N.~D.~Goldsworthy Scholarship for Physics.
 }
 
 %% LaTeX Documentation
@@ -347,21 +340,14 @@ directory}{}}
 
 \ifarxiv
 \begin{abstract}
-  \tikzfeynmanname{} is a \LaTeX{} package allowing Feynman diagrams to be
-  easily generated within \LaTeX{} with minimal user instructions and without
-  the need of external programs.  It builds upon the \tikzname{} package and
-  leverages the graph placement algorithms from \tikzname{} in order to automate
-  the placement of many vertices.  \tikzfeynmanname{} still allows fine-tuned
-  placement of vertices so that even complex diagrams can be generated with
-  ease.
+  \tikzfeynmanname{} is a \LaTeX{} package allowing Feynman diagrams to be easily generated within \LaTeX{} with minimal user instructions and without the need of external programs.  It builds upon the \tikzname{} package and leverages the graph placement algorithms from \tikzname{} in order to automate the placement of many vertices.  \tikzfeynmanname{} still allows fine-tuned placement of vertices so that even complex diagrams can be generated with ease.
 \end{abstract}
 \fi
 
 \section{Introduction}
 \label{sec:introduction}
 
-\tikzfeynmanname{} provides a new way to draw Feynman diagrams in \LaTeX{} that
-does not rely on external programs and uses a clear extensible syntax.
+\tikzfeynmanname{} provides a new way to draw Feynman diagrams in \LaTeX{} that does not rely on external programs and uses a clear extensible syntax.
 
 %% Trust people on arXiv to cite TikZ-Feynman, but otherwise put a notice to
 %% remind people
@@ -372,21 +358,9 @@ If you use \tikzfeynmanname{} in an academic setting, please cite:
 \end{quote}
 \fi
 
-Feynman diagrams provide a description of interactions of subatomic particles in
-a form that is clearer and more succinct than the corresponding mathematical
-description.  They were introduced by \citeauthor{PhysRev.76.769} and first
-appear in his paper \citetitle{PhysRev.76.769} \cite{PhysRev.76.769}.  Since
-then, \LaTeX{} has become widely used to type-set scientific papers and
-currently, two leading methods of drawing Feynman diagrams in \LaTeX{} are
-\href{https://www.ctan.org/pkg/feynmf}{|feynMF|/|feynMP|} \cite{feynmf} and
-\href{https://www.ctan.org/pkg/axodraw}{|AxoDraw|} \cite{axodrawV1,axodrawV2},
-with the latter also featuring a \textsc{gui} front-end called
-\href{http://jaxodraw.sourceforge.net}{|JaxoDraw|} \cite{jaxodrawV1,jaxodrawV2}.
+Feynman diagrams provide a description of interactions of subatomic particles in a form that is clearer and more succinct than the corresponding mathematical description.  They were introduced by \citeauthor{PhysRev.76.769} and first appear in his paper \citetitle{PhysRev.76.769} \cite{PhysRev.76.769}.  Since then, \LaTeX{} has become widely used to type-set scientific papers and currently, two leading methods of drawing Feynman diagrams in \LaTeX{} are \href{https://www.ctan.org/pkg/feynmf}{|feynMF|/|feynMP|} \cite{feynmf} and \href{https://www.ctan.org/pkg/axodraw}{|AxoDraw|} \cite{axodrawV1,axodrawV2}, with the latter also featuring a \textsc{gui} front-end called \href{http://jaxodraw.sourceforge.net}{|JaxoDraw|} \cite{jaxodrawV1,jaxodrawV2}.
 
-In |feynMF|/|feynMP|, the position of vertices follows an algorithm whilst
-|AxoDraw| requires their position to be specified on a grid.  As an example, the
-code to generate an \(\ell\ell \to \ell\ell\) scattering Feynman diagram in each
-package is:
+In |feynMF|/|feynMP|, the position of vertices follows an algorithm whilst |AxoDraw| requires their position to be specified on a grid.  As an example, the code to generate an \(\ell\ell \to \ell\ell\) scattering Feynman diagram in each package is:
 \begin{center}
   \begin{tabular}{p{0.3\linewidth} p{0.27\linewidth} p{0.34\linewidth}}
     |AxoDraw| & |feynMF|/|feynMP| & \tikzfeynmanname{} \\[-2em]
@@ -424,63 +398,23 @@ package is:
   \end{tabular}
 \end{center}
 
-The inconvenience of specifying absolute coordinates in |AxoDraw| is alleviated
-by |JaxoDraw|, though this requires an external program.  In addition, the
-creation of Feynman diagrams in |feynMF|/|feynMP| and |AxoDraw| requires further
-processing outside of \LaTeX{}.\footnote{With the exception of |AxoDraw| when
-  compiled with |latex|.}
+The inconvenience of specifying absolute coordinates in |AxoDraw| is alleviated by |JaxoDraw|, though this requires an external program.  In addition, the creation of Feynman diagrams in |feynMF|/|feynMP| and |AxoDraw| requires further processing outside of \LaTeX{}.\footnote{With the exception of |AxoDraw| when compiled with |latex|.}
 
-\tikzfeynmanname{} on the other hand requires no external program and delegates
-the positioning of vertices to algorithms originally developed by
-\citeauthor{hu2005} \cite{hu2005}, and \citeauthor{eades1991} \cite{eades1991},
-both of which were implemented into \tikzname{} by \citeauthor{pohlmann2011}
-\cite{pohlmann2011}.  Since \tikzfeynmanname{} is built on \tikzname{}, users
-can harness the power and extensibilty of \tikzname{} \cite{tikz} making it easy
-to extend to accommodate individual needs.  In order to produce more complicated
-diagrams, relative or absolute positioning of vertices can also be used in
-\tikzfeynmanname{} so that any diagram can be generated with relative ease.
+\tikzfeynmanname{} on the other hand requires no external program and delegates the positioning of vertices to algorithms originally developed by \citeauthor{hu2005} \cite{hu2005}, and \citeauthor{eades1991} \cite{eades1991}, both of which were implemented into \tikzname{} by \citeauthor{pohlmann2011} \cite{pohlmann2011}.  Since \tikzfeynmanname{} is built on \tikzname{}, users can harness the power and extensibilty of \tikzname{} \cite{tikz} making it easy to extend to accommodate individual needs.  In order to produce more complicated diagrams, relative or absolute positioning of vertices can also be used in \tikzfeynmanname{} so that any diagram can be generated with relative ease.
 
 \tikzfeynmanname{} is made available through the
-\href{https://ctan.org/pkg/tikz-feynman}{Comprehensive \TeX{} Archive Network
-  (\textsc{ctan})}\footnote{\url{https://ctan.org/pkg/tikz-feynman}} and can
-also be downloaded from the
-\href{http://www.jpellis.me/projects/tikz-feynman}{project
-  page}\footnote{\url{http://www.jpellis.me/projects/tikz-feynman}}.  The
-project is open source and contributions are welcome.  The management of bugs
-and feature requests is done at
-\href{https://github.com/JP-Ellis/tikz-feynman}{Github}\footnote{\url{https://github.com/JP-Ellis/tikz-feynman}}.
+\href{https://ctan.org/pkg/tikz-feynman}{Comprehensive \TeX{} Archive Network (\textsc{ctan})}\footnote{\url{https://ctan.org/pkg/tikz-feynman}} and can also be downloaded from the \href{http://www.jpellis.me/projects/tikz-feynman}{project page}\footnote{\url{http://www.jpellis.me/projects/tikz-feynman}}.  The project is open source and contributions are welcome.  The management of bugs and feature requests is done at \href{https://github.com/JP-Ellis/tikz-feynman}{Github}\footnote{\url{https://github.com/JP-Ellis/tikz-feynman}}.
 
-\tikzfeynmanname{}'s versioning will approximately follow
-\href{http://semver.org}{semantic versioning}.  This means that changes in the
-third number (|1.0.0| to |1.0.1|) will consist of bug fixes and very minor
-changes but they should not change the output otherwise\footnote{That is, with
-  the exception of the bug that they are fixing.}.  Changes in the second number
-(|1.0.0| to |1.1.0|) will consist of new features and everything should be
-backwards compatible.  Finally, changes in the first number (|1.0.0| to |2.0.0|)
-indicates a major change in the package and code written for |1.0.0| is not
-guaranteed to work on |2.0.0|.  The intended version of this package to use
-should be indicated when the package is loaded with
-|\usepackage[compat=x.y.z]{tikz-feynman}| so the user may be informed of any
-discrepancy.  If needed, earlier versions may be downloaded from the
-\href{http://www.jpellis.me/projects/tikz-feynman}{project
-  page}\footnote{\url{http://www.jpellis.me/projects/tikz-feynman}}.
+\tikzfeynmanname{}'s versioning will approximately follow \href{http://semver.org}{semantic versioning}.  This means that changes in the third number (|1.0.0| to |1.0.1|) will consist of bug fixes and very minor changes but they should not change the output otherwise\footnote{That is, with the exception of the bug that they are fixing.}.  Changes in the second number (|1.0.0| to |1.1.0|) will consist of new features and everything should be backwards compatible.  Finally, changes in the first number (|1.0.0| to |2.0.0|) indicates a major change in the package and code written for |1.0.0| is not guaranteed to work on |2.0.0|.  The intended version of this package to use should be indicated when the package is loaded with |\usepackage[compat=x.y.z]{tikz-feynman}| so the user may be informed of any discrepancy.  If needed, earlier versions may be downloaded from the \href{http://www.jpellis.me/projects/tikz-feynman}{project page}\footnote{\url{http://www.jpellis.me/projects/tikz-feynman}}.
 
 \subsection*{Licence}
 \label{subsec:licence}
 
-The \emph{documentation} may be redistributed and/or modified under the terms of
-the \textsc{Gnu} General Public License as published by the Free Software
-Foundation, either version 3 of the License, or (at your option) any later
-version.
+The \emph{documentation} may be redistributed and/or modified under the terms of the \textsc{Gnu} General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-The \emph{code of this package} may be distributed and/or modified under the
-terms of the \textsc{Gnu} General Public License as published by the Free
-Software Foundation, either version 3 of the License, or (at your option) any
-later version.
+The \emph{code of this package} may be distributed and/or modified under the terms of the \textsc{Gnu} General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
-This package is distributed in the hope that it will be useful, but without any
-warranty; without even the implied warranty of merchantability or fitness for a
-particular purpose.
+This package is distributed in the hope that it will be useful, but without any warranty; without even the implied warranty of merchantability or fitness for a particular purpose.
 
 \ifarxiv\else
 \acknowledgements
@@ -494,20 +428,12 @@ particular purpose.
 \subsection{Loading the Package}
 \label{sibsec:loading_the_package}
 
-After installing the package, the \tikzfeynmanname{} package can be loaded with
-|\usepackage{tikz-feynman}| in the preamble of the \TeX{} document.  It is
-recommend that you also specify the version of \tikzfeynmanname{} to use with
-the optional package argument |compat|:
-|\usepackage[compat=1.1.0]{tikz-feynman}|.  This ensures that any new versions
-of \tikzfeynmanname{} do not produce any undesirable changes without warning.
+After installing the package, the \tikzfeynmanname{} package can be loaded with |\usepackage{tikz-feynman}| in the preamble of the \TeX{} document.  It is recommend that you also specify the version of \tikzfeynmanname{} to use with the optional package argument |compat|: |\usepackage[compat=1.1.0]{tikz-feynman}|.  This ensures that any new versions of \tikzfeynmanname{} do not produce any undesirable changes without warning.
 
 \subsection{A First Diagram}
 \label{subsec:a_first_diagram}
 
-Feynman diagrams can be declared with the |\feynmandiagram| command.  It is
-analogous to the |\tikz| command from \tikzname~and requires a final semi-colon
-(|;|) to finish the environment.  For example, a simple \(s\)-channel diagram
-is:
+Feynman diagrams can be declared with the |\feynmandiagram| command.  It is analogous to the |\tikz| command from \tikzname~and requires a final semi-colon (|;|) to finish the environment.  For example, a simple \(s\)-channel diagram is:
 
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {
@@ -517,42 +443,18 @@ is:
 };
 \end{codeexample}
 \begin{description}
-\item[Line 1] |\feynmandiagram| introduces the Feynman diagram and allows for
-  optional arguments to be given in the brackets \texttt{[\meta{options}]}.  In
-  this instance, |horizontal=a to b| orients the algorithm outputs such that the
-  line through vertices |a| and |b| is horizontal.
-\item[Line 2] The left fermion line is drawn by declaring three vertices (|i1|,
-  |a| and |i2|) and connecting them with edges |--|.  Just like the
-  |\feynmandiagram| command above, each edge also takes optional arguments
-  specified in brackets \texttt{[\meta{options}]}.  In this instance, these
-  edges need arrows in order to indicate that they are fermion lines, so the
-  |fermion| style is added to them.
+\item[Line 1] |\feynmandiagram| introduces the Feynman diagram and allows for optional arguments to be given in the brackets \texttt{[\meta{options}]}.  In this instance, |horizontal=a to b| orients the algorithm outputs such that the line through vertices |a| and |b| is horizontal.
+\item[Line 2] The left fermion line is drawn by declaring three vertices (|i1|, |a| and |i2|) and connecting them with edges |--|.  Just like the |\feynmandiagram| command above, each edge also takes optional arguments specified in brackets \texttt{[\meta{options}]}.  In this instance, these edges need arrows in order to indicate that they are fermion lines, so the |fermion| style is added to them.
 
   Optional arguments can also be given to the vertices in exactly the same way.
-\item[Line 3] This edge connects vertices |a| and |b| with an edge styled as a
-  photon.  Since there is already a vertex labelled |a|, the algorithm will
-  connect it to a new vertex labeled |b|.
-\item[Line 4] This line is analogous to line 2 and introduces two new vertices,
-  |f1| and |f2|.  It re-uses the previously labelled |b| vertex.
-\item[Line 5] Finish the declaration of the Feynman diagram.  The final
-  semi-colon (|;|) is important.
+\item[Line 3] This edge connects vertices |a| and |b| with an edge styled as a photon.  Since there is already a vertex labelled |a|, the algorithm will connect it to a new vertex labeled |b|.
+\item[Line 4] This line is analogous to line 2 and introduces two new vertices, |f1| and |f2|.  It re-uses the previously labelled |b| vertex.
+\item[Line 5] Finish the declaration of the Feynman diagram.  The final semi-colon (|;|) is important.
 \end{description}
 
-The name given to each vertex in the graph does not matter.  So in this example,
-|i1|, |i2| denote the initial particles; |f1|, |f2| denotes the final particles;
-and |a|, |b| are the end points of the propagator; however, any other labels
-could have been given.  The only important aspect is that what was called |a| in
-line 2 is also |a| in line 3 so that the underlying algorithm treats them as the
-same vertex.
+The name given to each vertex in the graph does not matter.  So in this example, |i1|, |i2| denote the initial particles; |f1|, |f2| denotes the final particles; and |a|, |b| are the end points of the propagator; however, any other labels could have been given.  The only important aspect is that what was called |a| in line 2 is also |a| in line 3 so that the underlying algorithm treats them as the same vertex.
 
-The order in which vertices are declared does not matter as the default
-algorithm re-arranges everything\footnote{It is possible for the algorithm to
-  get a little confused in some circumstances, but these cases should be rather
-  rare.  For some algorithms (such as the |layered~layout|), the order in which
-  vertices are introduced \emph{does} matter.  This is documented in
-  \cref{subsubsec:diagram_keys}.}.  For example, one might prefer to draw the
-fermion lines all at once, as with the following example (note also that the way
-vertices are named is completely different):
+The order in which vertices are declared does not matter as the default algorithm re-arranges everything\footnote{It is possible for the algorithm to get a little confused in some circumstances, but these cases should be rather rare.  For some algorithms (such as the |layered~layout|), the order in which vertices are introduced \emph{does} matter.  This is documented in \cref{subsubsec:diagram_keys}.}.  For example, one might prefer to draw the fermion lines all at once, as with the following example (note also that the way vertices are named is completely different):
 
 \begin{codeexample}[]
 \feynmandiagram [horizontal=f2 to f3] {
@@ -562,23 +464,12 @@ vertices are named is completely different):
 };
 \end{codeexample}
 
-As a final remark, the calculation of where vertices should be placed is usually
-done through an algorithm written in Lua.  As a result, \LuaTeX{} is required in
-order to make use of these algorithms.  If \LuaTeX{} is not used,
-\tikzfeynmanname{} will default to a more rudimentary algorithm and will warn
-the user instead.
+As a final remark, the calculation of where vertices should be placed is usually done through an algorithm written in Lua.  As a result, \LuaTeX{} is required in order to make use of these algorithms.  If \LuaTeX{} is not used, \tikzfeynmanname{} will default to a more rudimentary algorithm and will warn the user instead.
 
 \subsection{Adding Styles}
 \label{subsec:adding_styles}
 
-So far, the examples have only used the |photon| and |fermion| styles.  The
-\tikzfeynmanname{} package comes with quite a few extra styles for edges and
-vertices which are all documented over in \cref{sec:documentation}.  For
-example, it is possible to add momentum arrows with |momentum=|\meta{text}, and
-in the case of end vertices, the particle can be labelled with
-|particle=|\meta{text}.  This is illustrated in the following example where the
-generic \(s\)-channel diagram from \cref{subsec:a_first_diagram} is annotated
-into a \(e^{+}e^{-} \to \mu^{+}\mu^{-}\) diagram:
+So far, the examples have only used the |photon| and |fermion| styles.  The \tikzfeynmanname{} package comes with quite a few extra styles for edges and vertices which are all documented over in \cref{sec:documentation}.  For example, it is possible to add momentum arrows with |momentum=|\meta{text}, and in the case of end vertices, the particle can be labelled with |particle=|\meta{text}.  This is illustrated in the following example where the generic \(s\)-channel diagram from \cref{subsec:a_first_diagram} is annotated into a \(e^{+}e^{-} \to \mu^{+}\mu^{-}\) diagram:
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {
   i1 [particle=\(e^{-}\)] -- [fermion] a -- [fermion] i2 [particle=\(e^{+}\)],
@@ -586,8 +477,7 @@ into a \(e^{+}e^{-} \to \mu^{+}\mu^{-}\) diagram:
   f1 [particle=\(\mu^{+}\)] -- [fermion] b -- [fermion] f2 [particle=\(\mu^{-}\)],
 };
 \end{codeexample}
-In addition to the style keys documented below, style keys from \tikzname{} can
-be used as well:
+In addition to the style keys documented below, style keys from \tikzname{} can be used as well:
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {
   i1 [particle=\(e^{-}\)] -- [fermion, very thick] a -- [fermion, opacity=0.2] i2 [particle=\(e^{+}\)],
@@ -595,11 +485,9 @@ be used as well:
   f1 [particle=\(\mu^{+}\)] -- [fermion, opacity=0.2] b -- [fermion, very thick] f2 [particle=\(\mu^{-}\)],
 };
 \end{codeexample}
-For a list of all the various styles that \tikzname{} provides, have a look at
-the \pgfmanual; it is extremely thorough and provides many usage examples.
+For a list of all the various styles that \tikzname{} provides, have a look at the \pgfmanual; it is extremely thorough and provides many usage examples.
 
-\tikzfeynmanname{} also supports combining styles together which can be useful
-in certain models such as supersymmetry:
+\tikzfeynmanname{} also supports combining styles together which can be useful in certain models such as supersymmetry:
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {
   i1 [particle=\(\tilde W\)] -- [plain, boson] a -- [anti fermion] i2 [particle=\(q\)],
@@ -611,43 +499,21 @@ in certain models such as supersymmetry:
 \subsection{When the Algorithm Isn't Enough}
 \label{subsec:when_the_algorithm_isnt_enough}
 
-By default, the |\feynmandiagram| and |\diagram| commands use the
-|spring layout| algorithm to place all the edges\footnote{For more details on
-  this layout and any other graph layouts available, see
-  \cref{subsubsec:diagram_keys}}. The |spring layout| algorithm attempts to
-`spread out' the diagram as much as possible which---for most simpler
-diagrams---gives a satisfactory result; however in some cases, this does not
-produce the best diagram and this section will look at alternatives.  There are
-three main alternatives:
+By default, the |\feynmandiagram| and |\diagram| commands use the |spring layout| algorithm to place all the edges\footnote{For more details on this layout and any other graph layouts available, see \cref{subsubsec:diagram_keys}}. The |spring layout| algorithm attempts to `spread out' the diagram as much as possible which---for most simpler diagrams---gives a satisfactory result; however in some cases, this does not produce the best diagram and this section will look at alternatives.  There are three main alternatives:
 \begin{description}
-\item[Add invisible edges] While still using the default algorithm, it is
-  possible to force certain vertices to be closer together by adding extra edges
-  and making them invisible through |draw=none|.  The algorithm will treat these
-  extra edges in the same way, but they are simply not drawn at the end;
+\item[Add invisible edges] While still using the default algorithm, it is possible to force certain vertices to be closer together by adding extra edges and making them invisible through |draw=none|.  The algorithm will treat these extra edges in the same way, but they are simply not drawn at the end;
 
-\item[Use a different algorithm] In some circumstances, other algorithms may be
-  better suited.  Some of the other graph layout algorithms are listed in
-  \cref{subsubsec:diagram_keys}, and an exhaustive list of all algorithms and
-  their parameters is given in the \pgfmanual;
+\item[Use a different algorithm] In some circumstances, other algorithms may be better suited.  Some of the other graph layout algorithms are listed in \cref{subsubsec:diagram_keys}, and an exhaustive list of all algorithms and their parameters is given in the \pgfmanual;
 
-\item[Manual placement] As a last resort, very complicated or unusual diagrams
-  will require each vertex to be manually placed.  \tikzfeynmanname{} offers a
-  simplified syntax for manual placement so that it is not too difficult.
+\item[Manual placement] As a last resort, very complicated or unusual diagrams will require each vertex to be manually placed.  \tikzfeynmanname{} offers a simplified syntax for manual placement so that it is not too difficult.
 \end{description}
 
 \subsubsection{Invisible Edges}
 \label{subsubsec:invisible_edges}
 
-The underlying algorithm treats all edges in exactly the same way when
-calculating where to place all the vertices, and the actual drawing of the
-diagram (after the placements have been calculated) is done separately.
-Consequently, it is possible to add edges to the algorithm, but prevent them
-from being drawn by adding |draw=none| to the edge style.
+The underlying algorithm treats all edges in exactly the same way when calculating where to place all the vertices, and the actual drawing of the diagram (after the placements have been calculated) is done separately. Consequently, it is possible to add edges to the algorithm, but prevent them from being drawn by adding |draw=none| to the edge style.
 
-This is particularly useful if you want to ensure that the initial or final
-states remain closer together than they would have otherwise as illustrated in
-the following example (note that |opacity=0.2| is used instead of |draw=none| to
-illustrate where exactly the edge is located).
+This is particularly useful if you want to ensure that the initial or final states remain closer together than they would have otherwise as illustrated in the following example (note that |opacity=0.2| is used instead of |draw=none| to illustrate where exactly the edge is located).
 
 \begin{codeexample}[]
 % No invisible to keep the two photons together
@@ -670,14 +536,7 @@ illustrate where exactly the edge is located).
 \subsubsection{Alternative Algorithms}
 \label{subsubsec:alternative_algorithms}
 
-The graph drawing library from \tikzname{} has several different algorithms to
-position the vertices\footnote{See \cref{subsubsec:diagram_keys} for some
-  alternative algorithms.}  By default, |\diagram| and |\feynmandiagram| use the
-|spring layout| algorithm to place the vertices.  The |spring layout| attempts
-to spread everything out as much as possible which, in most cases, gives a nice
-diagram; however, there are certain cases where this does not work.  A good
-example where the |spring layout| does not work are decays where we have the
-decaying particle on the left and all the daughter particles on the right.
+The graph drawing library from \tikzname{} has several different algorithms to position the vertices\footnote{See \cref{subsubsec:diagram_keys} for some alternative algorithms.}  By default, |\diagram| and |\feynmandiagram| use the |spring layout| algorithm to place the vertices.  The |spring layout| attempts to spread everything out as much as possible which, in most cases, gives a nice diagram; however, there are certain cases where this does not work.  A good example where the |spring layout| does not work are decays where we have the decaying particle on the left and all the daughter particles on the right.
 \begin{codeexample}[]
 % Using the default spring layout
 \feynmandiagram [horizontal=a to b] {
@@ -695,51 +554,22 @@ decaying particle on the left and all the daughter particles on the right.
   c -- [fermion] f3 [particle=\(e^{-}\)],
 };
 \end{codeexample}
-You may notice that in addition to adding the |layered layout| style to
-|\feynmandiagram|, we also changed the order in which we specify the vertices.
-This is because the |layered layout| algorithm does pay attention to the order
-in which vertices are declared (unlike the default |spring layout|); as a
-result, |c--f2, c--f3| has a different meaning to |f2--c--f3|.  In the former
-case, |f2| and |f3| are both on the layer below |c| as desired; whilst the
-latter case places |f2| on the layer above |c| (that, the same layer as where
-the \(W^{-}\) originates).
+You may notice that in addition to adding the |layered layout| style to |\feynmandiagram|, we also changed the order in which we specify the vertices. This is because the |layered layout| algorithm does pay attention to the order in which vertices are declared (unlike the default |spring layout|); as a result, |c--f2, c--f3| has a different meaning to |f2--c--f3|.  In the former case, |f2| and |f3| are both on the layer below |c| as desired; whilst the latter case places |f2| on the layer above |c| (that, the same layer as where the \(W^{-}\) originates).
 
 \subsubsection{Manual Placement}
 \label{subsubsec:manual_placement}
 
-In more complicated diagrams, it is quite likely that none of the algorithms
-work, no matter how many invisible edges are added.  In such cases, the vertices
-have to be placed manually.  \tikzfeynmanname{} allows for vertices to be
-manually placed by using the |\vertex| command.
+In more complicated diagrams, it is quite likely that none of the algorithms work, no matter how many invisible edges are added.  In such cases, the vertices have to be placed manually.  \tikzfeynmanname{} allows for vertices to be manually placed by using the |\vertex| command.
 
-The |\vertex| command is available only within the |feynman| environment (which
-itself is only available inside a |tikzpicture|).  The |feynman| environment
-loads all the relevant styles from \tikzfeynmanname{} and declares additional
-\tikzfeynmanname-specific commands such as |\vertex| and |\diagram|.  This is
-inspired from PGFPlots and its use of the |axis| environment.
+The |\vertex| command is available only within the |feynman| environment (which itself is only available inside a |tikzpicture|).  The |feynman| environment loads all the relevant styles from \tikzfeynmanname{} and declares additional \tikzfeynmanname-specific commands such as |\vertex| and |\diagram|.  This is inspired from PGFPlots and its use of the |axis| environment.
 
-The |\vertex| command is very much analogous to the |\node| command from
-\tikzname{}, with the notable exception that the vertex contents are optional;
-that is, you need not have |{|\meta{text}|}| at the end.  In the case where |{}|
-is specified, the vertex automatically is given the |particle| style, and
-otherwise it is a usual (zero-sized) vertex.
+The |\vertex| command is very much analogous to the |\node| command from \tikzname{}, with the notable exception that the vertex contents are optional; that is, you need not have |{|\meta{text}|}| at the end.  In the case where |{}| is specified, the vertex automatically is given the |particle| style, and otherwise it is a usual (zero-sized) vertex.
 
-To specify where the vertices go, it is possible to give explicit coordinates
-though it is easier to use the |positioning| library from \tikzname{} which
-allows vertices to be placed relative to existing vertices\footnote{The
-  \pgfmanual{} has extensive documentation explaining how to use the
-  |positioning| library.}.  By using relative placements, it is possible to
-easily tweak one part of the graph and everything will adjust accordingly---the
-alternative being to manually adjust the coordinates of every affected vertex.
+To specify where the vertices go, it is possible to give explicit coordinates though it is easier to use the |positioning| library from \tikzname{} which allows vertices to be placed relative to existing vertices\footnote{The \pgfmanual{} has extensive documentation explaining how to use the |positioning| library.}.  By using relative placements, it is possible to easily tweak one part of the graph and everything will adjust accordingly---the alternative being to manually adjust the coordinates of every affected vertex.
 
-Finally, once all the vertices have been specified, the |\diagram*| command is
-used to specify all the edges.  This works in much the same way as |\diagram|
-(and also |\feynmandiagram|), except that it uses an \emph{very basic} algorithm
-to place new nodes and allows existing (named) nodes to be included.  In order
-to refer to an existing node, the node must be given in parentheses.
+Finally, once all the vertices have been specified, the |\diagram*| command is used to specify all the edges.  This works in much the same way as |\diagram| (and also |\feynmandiagram|), except that it uses an \emph{very basic} algorithm to place new nodes and allows existing (named) nodes to be included.  In order to refer to an existing node, the node must be given in parentheses.
 
-This whole process of specifying the nodes and then drawing the edges between
-them is shown below for the muon decay:
+This whole process of specifying the nodes and then drawing the edges between them is shown below for the muon decay:
 
 \begin{codeexample}[]
 \begin{tikzpicture}
@@ -761,12 +591,7 @@ them is shown below for the muon decay:
 \end{tikzpicture}
 \end{codeexample}
 
-One important note is that it is not possible to arbitrarily use automatic and
-manual placement of vertices; automatic placement should be used first (if at
-all) and manually placed vertices should be specified subsequently.  This is due
-to most algorithms not being able to handle nodes with fixed placement.  The
-following example illustrates how an initial automatically generated layout can
-be built upon by placing new nodes relative to the automatically placed ones:
+One important note is that it is not possible to arbitrarily use automatic and manual placement of vertices; automatic placement should be used first (if at all) and manually placed vertices should be specified subsequently.  This is due to most algorithms not being able to handle nodes with fixed placement.  The following example illustrates how an initial automatically generated layout can be built upon by placing new nodes relative to the automatically placed ones:
 
 \begin{codeexample}[]
 \begin{tikzpicture}
@@ -801,102 +626,48 @@ be built upon by placing new nodes relative to the automatically placed ones:
 \label{subsec:commands}
 
 \begin{command}{\tikzfeynmanset\marg{options}}
-  This command will process \meta{options} using |\pgfkeys| with the default
-  path set to |/tikzfeynman|.  Typically, \meta{options} will be a
-  comma-separated list of the form \meta{key}|=|\meta{value}, though the full
-  power of the mechanism behind |\pgfkeys| can be used (see the \pgfmanual{} for
-  a complete description).
+  This command will process \meta{options} using |\pgfkeys| with the default path set to |/tikzfeynman|.  Typically, \meta{options} will be a comma-separated list of the form \meta{key}|=|\meta{value}, though the full power of the mechanism behind |\pgfkeys| can be used (see the \pgfmanual{} for a complete description).
 
-  Typically, this is used in the preamble of the document to add or change
-  certain keys for the whole document.
+  Typically, this is used in the preamble of the document to add or change certain keys for the whole document.
 \end{command}
 
 \begin{command}{\feynmandiagram\opt{\oarg{TikZ options}\oarg{diagram options}}\marg{diagram instructions}}
-  This command creates a |{tikzpicture}| and |{feynman}| environment, and
-  places a |\diagram| inside with the provided \meta{diagram instruction}.
-  Please refer to the documentation for |\diagram| for the \meta{diagram
-    instruction} syntax.
+  This command creates a |{tikzpicture}| and |{feynman}| environment, and places a |\diagram| inside with the provided \meta{diagram instruction}. Please refer to the documentation for |\diagram| for the \meta{diagram instruction} syntax.
 
-  The optional arguments specified in \meta{TikZ options} are passed on to the
-  |{tikzpicture}|, and the \meta{diagram options} are passed on to |\diagram|.
-  If only one optional argument is given, then the optional arguments are given
-  to both.  A single optional argument will usually suffice as most keys are
-  recognized by both commands and appropriately selected; however, in the event
-  that a key is not recognized, both options are provided.
+  The optional arguments specified in \meta{TikZ options} are passed on to the |{tikzpicture}|, and the \meta{diagram options} are passed on to |\diagram|. If only one optional argument is given, then the optional arguments are given to both.  A single optional argument will usually suffice as most keys are recognized by both commands and appropriately selected; however, in the event that a key is not recognized, both options are provided.
 \end{command}
 
 \begin{environment}{{feynman}\opt{\oarg{options}}}
-  The |{feynman}| environment is where all the drawing of Feynman diagrams takes
-  place.  It makes all the \tikzfeynmanname{} styles available and defines
-  commands such as |\vertex| and |\diagram| which are otherwise unavailable
-  outside of this environment.  The |{feynman}| environment is only accessible
-  within the |{tikzpicture}| environment.
+  The |{feynman}| environment is where all the drawing of Feynman diagrams takes place.  It makes all the \tikzfeynmanname{} styles available and defines commands such as |\vertex| and |\diagram| which are otherwise unavailable outside of this environment.  The |{feynman}| environment is only accessible within the |{tikzpicture}| environment.
 
-  Options which are passed in \meta{options} apply for the whole environment in
-  the same way that the |{scope}| environment work in \tikzname.
+  Options which are passed in \meta{options} apply for the whole environment in the same way that the |{scope}| environment work in \tikzname.
 
   \begin{command}{\vertex\opt{\oarg{options}} (\meta{name}) \opt{at (\meta{coordinate})} \opt{\marg{contents}};}
-    Defines a new vertex with the provided \meta{name}.  If \meta{contents} is
-    not provided, the resulting vertex will have zero size.  On the other hand,
-    if \meta{contents} is provided, the |particle=|\meta{contents} style is
-    applied.  Additional styles can be applied to the vertex through
-    \meta{options}.
+    Defines a new vertex with the provided \meta{name}.  If \meta{contents} is not provided, the resulting vertex will have zero size.  On the other hand, if \meta{contents} is provided, the |particle=|\meta{contents} style is applied.  Additional styles can be applied to the vertex through \meta{options}.
 
-    The final semicolon (|;|) is vital for this command since without it, the
-    \LaTeX{} engine will not know when the |\vertex| command ends.
-    Additionally, this command \emph{cannot} be chained like one can do with the
-    inbuilt \tikzname{} commands.
+    The final semicolon (|;|) is vital for this command since without it, the \LaTeX{} engine will not know when the |\vertex| command ends. Additionally, this command \emph{cannot} be chained like one can do with the inbuilt \tikzname{} commands.
 
     This command is only available with the |{feynman}| environment.
   \end{command}
 
   \begin{command}{\diagram\opt{\oarg{options}}\marg{diagram instructions}}
-    Begins a new diagram using the |spring layout|.  Keys passed through
-    \meta{options} can include general \tikzname{} keys, graph-specific keys and
-    any applicable \tikzfeynmanname{} keys too.  Other algorithms (such as |tree
-    layout|) can be passed through \meta{options} and that will override the
-    |spring layout|.
+    Begins a new diagram using the |spring layout|. Keys passed through \meta{options} can include general \tikzname{} keys, graph-specific keys and any applicable \tikzfeynmanname{} keys too. Other algorithms (such as |tree layout|) can be passed through \meta{options} and that will override the |spring layout|.
 
-    The syntax for the \meta{diagram instructions} is thoroughly described in
-    the \pgfmanual, but in the context of this package, it will usually suffice
-    to know the following:
+    The syntax for the \meta{diagram instructions} is thoroughly described in the \pgfmanual, but in the context of this package, it will usually suffice to know the following:
     \begin{itemize}
-    \item Vertices within the graph are specified with no delimiters (i.e.~no
-      parenthesis, no brackets) and only require spaces around either side.  In
-      order to refer to a vertex defined outside of the |\diagram| command, its
-      name must be given in parenthesis: |(|\meta{name}|)|.  Note that in order
-      to refer to external vertices, one must use |\diagram*| as most algorithms
-      (including the default |spring layout|) are incompatible with vertices
-      defined outside of the algorithm.
+    \item Vertices within the graph are specified with no delimiters (i.e.~no parenthesis, no brackets) and only require spaces around either side.  In order to refer to a vertex defined outside of the |\diagram| command, its name must be given in parenthesis: |(|\meta{name}|)|.  Note that in order to refer to external vertices, one must use |\diagram*| as most algorithms (including the default |spring layout|) are incompatible with vertices defined outside of the algorithm.
 
-      When a vertex name is used multiple times, the underlying algorithm will
-      consider them to be the same vertex and introduces additional edges.
+          When a vertex name is used multiple times, the underlying algorithm will consider them to be the same vertex and introduces additional edges.
 
-      Options can be given to the vertex in brackets after the name: \meta{name}
-      |[|\meta{options}|]|.  For vertices defined outside of the |\diagram|
-      command, these options should be specified when the vertex is first
-      declared.
+          Options can be given to the vertex in brackets after the name: \meta{name} |[|\meta{options}|]|.  For vertices defined outside of the |\diagram| command, these options should be specified when the vertex is first declared.
 
-    \item The edges between each pair of vertices is specified with |--|, and
-      these can be chained together: \verb|a -- b -- c|.  In order to pass a
-      style to the edge, it is specified in brackets after the dashed:
-      |-- | \oarg{options}.  For example, to make on edge red, one would use
-      |-- [red]|.
+    \item The edges between each pair of vertices is specified with |--|, and these can be chained together: \verb|a -- b -- c|.  In order to pass a style to the edge, it is specified in brackets after the dashed: |-- | \oarg{options}.  For example, to make on edge red, one would use |-- [red]|.
 
-    \item A comma (|,|)---or equivalently a semicolon (|;|)---specifies the end
-      of a sequence of edges and vertices and allows for another sequence to be
-      started.  So \verb|a -- b, c -- d| will create two disconnected edges.
+    \item A comma (|,|)---or equivalently a semicolon (|;|)---specifies the end of a sequence of edges and vertices and allows for another sequence to be started.  So \verb|a -- b, c -- d| will create two disconnected edges.
 
-    \item Subgroups (akin to scopes in \tikzname) are specified with braces:
-      |{|\oarg{options}\meta{diagram instructions}|}|.  This can be quite
-      useful when a lot of edges or nodes share a common style.  For example,
-      one could use |{[edges={fermion}]|\verb| a -- b -- c, x -- y -- z}| and
-      every edge will have the |fermion| style applied automatically.
+    \item Subgroups (akin to scopes in \tikzname) are specified with braces: |{|\oarg{options}\meta{diagram instructions}|}|.  This can be quite useful when a lot of edges or nodes share a common style.  For example, one could use |{[edges={fermion}]|\verb| a -- b -- c, x -- y -- z}| and every edge will have the |fermion| style applied automatically.
 
-      Another useful feature of subgroups is that an edge to a group will create
-      an edge to each vertex in that subgroup as shown below.  The example also
-      shows how they can be nested which in some cases (such as with a
-      |layered layout|) can be extremely useful.
+      Another useful feature of subgroups is that an edge to a group will create an edge to each vertex in that subgroup as shown below.  The example also shows how they can be nested which in some cases (such as with a |layered layout|) can be extremely useful.
 
 \begin{codeexample}[]
 \feynmandiagram [nodes=circle, horizontal=a1 to b3] {
@@ -907,12 +678,7 @@ be built upon by placing new nodes relative to the automatically placed ones:
   \end{command}
 
   \begin{command}{\diagram*\opt{\oarg{options}}\marg{diagram instructions}}
-    Same as |\diagram|, but instead of using the |spring layout| algorithm to
-    place the vertices, this uses the most basic algorithm.  This basic
-    algorithm in most cases will not produce a satisfactory diagram, but is
-    intended to be used with vertices which have been declared and positioned
-    outside of the |\diagram*| command.  Essentially, |\diagram*| should be used
-    only to connect existing vertices.
+    Same as |\diagram|, but instead of using the |spring layout| algorithm to place the vertices, this uses the most basic algorithm.  This basic algorithm in most cases will not produce a satisfactory diagram, but is intended to be used with vertices which have been declared and positioned outside of the |\diagram*| command.  Essentially, |\diagram*| should be used only to connect existing vertices.
   \end{command}
 \end{environment}
 
@@ -921,26 +687,16 @@ be built upon by placing new nodes relative to the automatically placed ones:
 \subsection{Keys \emph{\&} Styles}
 \label{subsec:Keys}
 
-The various styles and options that allow the Feynman diagrams to be customized
-are defined in what \tikzname{} calls \emph{keys}.  The documentation includes
-all keys which are defined within \tikzfeynmanname{} which all begin with the
-prefix |/tikzfeynman|.  In addition, a few of the keys from \tikzname{} itself
-which are particularly useful to \tikzfeynmanname{} are documented and these are
-prefixed with |/tikz| or |/graph drawing|.  Please refer to the \pgfmanual{} for
-a more in thorough documentation of the \tikzname{} keys.
+The various styles and options that allow the Feynman diagrams to be customized are defined in what \tikzname{} calls \emph{keys}.  The documentation includes all keys which are defined within \tikzfeynmanname{} which all begin with the prefix |/tikzfeynman|.  In addition, a few of the keys from \tikzname{} itself which are particularly useful to \tikzfeynmanname{} are documented and these are prefixed with |/tikz| or |/graph drawing|.  Please refer to the \pgfmanual{} for a more in thorough documentation of the \tikzname{} keys.
 
-
-\tikzfeynmanname{} provides many |every |\meta{key} which allow every instance
-of \meta{key} to be modified.  For example, to make every diagram red except for
-small diagrams which should be blue, then one would add to the preamble:
+\tikzfeynmanname{} provides many |every |\meta{key} which allow every instance of \meta{key} to be modified.  For example, to make every diagram red except for small diagrams which should be blue, then one would add to the preamble:
 \begin{codeexample}[execute code=false]
 \tikzfeynmanset{
   every diagram={red},
   every small={blue},
 }
 \end{codeexample}
-If you are completely unhappy with a particular inbuilt style, you can define
-your own style with \meta{key}|/.style={...}| as shown in the following example:
+If you are completely unhappy with a particular inbuilt style, you can define your own style with \meta{key}|/.style={...}| as shown in the following example:
 \begin{codeexample}[execute code=false]
 \tikzfeynmanset{
   myblob/.style={
@@ -951,10 +707,7 @@ your own style with \meta{key}|/.style={...}| as shown in the following example:
 }
 \end{codeexample}
 
-All the keys defined here are made available inside the |{feynman}| environment
-and inside |\feynmandiagram|; but if you wish to access them outside of this
-(say, in a regular |{tikzpicture}| environment), you will need to specify the
-full path with the leading |/tikzfeynman|.
+All the keys defined here are made available inside the |{feynman}| environment and inside |\feynmandiagram|; but if you wish to access them outside of this (say, in a regular |{tikzpicture}| environment), you will need to specify the full path with the leading |/tikzfeynman|.
 
 \subsubsection{Feynman Keys}
 \label{subsubsec:feynman_keys}
@@ -962,15 +715,11 @@ full path with the leading |/tikzfeynman|.
 \begin{keylist}{%
     /tikzfeynman/execute at begin feynman=\marg{\TeX{} code},
     /tikzfeynman/execute at end feynman=\marg{\TeX{} code}}
-  Allows for custom code to be executed at the start or end of each |{feynman}|
-  environment.
+  Allows for custom code to be executed at the start or end of each |{feynman}| environment.
 \end{keylist}
 
 \begin{key}{/tikzfeynman/every feynman=\meta{styles}}
-  Set of styles which are applied to every |{feynman}| environments (and
-  consequently, every apply inside all |\feynmandiagram| too).  The style also
-  applies to regular \tikzname{} commands used inside the |{feynman}|
-  environment.
+  Set of styles which are applied to every |{feynman}| environments (and consequently, every apply inside all |\feynmandiagram| too).  The style also applies to regular \tikzname{} commands used inside the |{feynman}| environment.
 
 \begin{codeexample}[]
 \tikzfeynmanset{every feynman={red}}
@@ -984,15 +733,7 @@ full path with the leading |/tikzfeynman|.
 \end{key}
 
 \begin{stylekey}{/tikzfeynman/inline=\meta{node}}
-  A style used to display a Feynman diagram inline (typically in an equation),
-  and aligning such that its vertical placement is at the node specified.  The
-  node specification must be enclosed in parentheses.  For nodes which contain
-  text (such as when the |particle| style is applied), it is possible to use the
-  baseline of the text inside the node to line up with the baseline of the
-  equation by using |(|\meta{node}|.base)| as demonstrated in the following
-  example.  Note that this key applies additional styles to make the diagram fit
-  in an equation more nicely; if you do not wish to have these additional
-  styles, use the |baseline| key.
+  A style used to display a Feynman diagram inline (typically in an equation), and aligning such that its vertical placement is at the node specified.  The node specification must be enclosed in parentheses.  For nodes which contain text (such as when the |particle| style is applied), it is possible to use the baseline of the text inside the node to line up with the baseline of the equation by using |(|\meta{node}|.base)| as demonstrated in the following example.  Note that this key applies additional styles to make the diagram fit in an equation more nicely; if you do not wish to have these additional styles, use the |baseline| key.
 
   \begin{equation}
     \feynmandiagram [inline=(d.base), horizontal=d to b] {
@@ -1014,10 +755,7 @@ full path with the leading |/tikzfeynman|.
 \end{stylekey}
 
 \begin{key}{/tikz/baseline=\meta{node}}
-  Changes the vertical alignment of the Feynman diagram such that it diagram's
-  baseline is at the node specified.  This works in the same way as
-  |inline=|\meta{node}, but it does not apply any additional styles (notice how
-  the following example is larger than the one above).
+  Changes the vertical alignment of the Feynman diagram such that it diagram's baseline is at the node specified.  This works in the same way as |inline=|\meta{node}, but it does not apply any additional styles (notice how the following example is larger than the one above).
   \begin{equation}
     \feynmandiagram [baseline=(d.base), horizontal=d to b] {
       a -- [fermion] b -- [fermion] c,
@@ -1042,18 +780,11 @@ full path with the leading |/tikzfeynman|.
     /graph drawing/horizontal'=\meta{node} to \meta{node},
     /graph drawing/vertical=\meta{node} to \meta{node},
     /graph drawing/vertical'=\meta{node} to \meta{node}}
-  The underlying algorithm will arrange all the nodes relative to each other,
-  but beyond that it has no idea how the overall graph should be oriented.
-  By using one of the above keys, the final output of the algorithm is oriented
-  and/or mirrored such that the two nodes specified are on the same horizontal
-  (or vertical) line.  The two nodes need not actually be connected by an edge
-  for this to work.
+  The underlying algorithm will arrange all the nodes relative to each other, but beyond that it has no idea how the overall graph should be oriented. By using one of the above keys, the final output of the algorithm is oriented and/or mirrored such that the two nodes specified are on the same horizontal (or vertical) line.  The two nodes need not actually be connected by an edge for this to work.
 
-  The two \meta{node} specifications should \emph{not} be enclosed in
-  parentheses, unlike the |inline| and |baseline| keys.
+  The two \meta{node} specifications should \emph{not} be enclosed in parentheses, unlike the |inline| and |baseline| keys.
 
-  The |horizontal'| and |vertical'| keys work in the same was as |horizontal|
-  and |vertical|, but with a flip.
+  The |horizontal'| and |vertical'| keys work in the same was as |horizontal| and |vertical|, but with a flip.
 
 \begin{codeexample}[]
 \feynmandiagram [inline=(b), horizontal=a to b, red] {
@@ -1075,9 +806,7 @@ full path with the leading |/tikzfeynman|.
 \label{subsubsec:diagram_keys}
 
 \begin{key}{/tikzfeynman/every diagram=\meta{styles}}
-  Set of styles which are applied to every diagram; that is, to everything
-  inside the |\feynmandiagram|, |\diagram| and |\diagram*| commands but not the
-  general |{feynman}| environment (see \cref{subsubsec:feynman_keys} for that).
+  Set of styles which are applied to every diagram; that is, to everything inside the |\feynmandiagram|, |\diagram| and |\diagram*| commands but not the general |{feynman}| environment (see \cref{subsubsec:feynman_keys} for that).
 
 \begin{codeexample}[]
 \tikzfeynmanset{every diagram={red}}
@@ -1092,13 +821,7 @@ full path with the leading |/tikzfeynman|.
     /tikzfeynman/small,
     /tikzfeynman/medium,
     /tikzfeynman/large}
-  Changes the default separation between the vertices and changes the size of
-  arrows, blobs, and other shapes to fit different context.  The |small| size is
-  best used with when the diagram is quite simple and does not have too many
-  annotations (such as momentum arrows and particle labels).  The |medium| size
-  is the default and is usually large enough that even diagrams with many labels
-  and momentum arrows do not become too cluttered.  Finally the |large| key is
-  best for large illustrations as used on the title page of this document.
+  Changes the default separation between the vertices and changes the size of arrows, blobs, and other shapes to fit different context.  The |small| size is best used with when the diagram is quite simple and does not have too many annotations (such as momentum arrows and particle labels).  The |medium| size is the default and is usually large enough that even diagrams with many labels and momentum arrows do not become too cluttered.  Finally the |large| key is best for large illustrations as used on the title page of this document.
 
 \begin{codeexample}[]
 \feynmandiagram [baseline=(b), small, horizontal=d to b, red] {
@@ -1116,19 +839,10 @@ full path with the leading |/tikzfeynman|.
 \end{codeexample}
 \end{keylist}
 
-There are several algorithms which are available to place the vertices which are
-all provided within the |graph drawing| library from \tikzname.  Below are
-listed a few of these layouts which are more relevant for drawing Feynman
-diagrams.  For a more complete description of how these algorithms work, please
-refer to the \pgfmanual{}.  Please note that most graph drawing algorithms are
-implemented in Lua and thus require \LuaTeX{} in order to work.  If \LuaTeX{} is
-not used, \tikzfeynmanname{} will default to a more rudimentary algorithm and
-will warn the user instead.
+There are several algorithms which are available to place the vertices which are all provided within the |graph drawing| library from \tikzname.  Below are listed a few of these layouts which are more relevant for drawing Feynman diagrams.  For a more complete description of how these algorithms work, please refer to the \pgfmanual{}.  Please note that most graph drawing algorithms are implemented in Lua and thus require \LuaTeX{} in order to work.  If \LuaTeX{} is not used, \tikzfeynmanname{} will default to a more rudimentary algorithm and will warn the user instead.
 
 \begin{key}{/graph drawing/spring layout=\opt{\meta{string}}}
-  Uses Hu's spring layout \cite{hu2005} as implemented by Pohlmann
-  \cite{pohlmann2011}.  This models each edge as springs and attempts to spread
-  everything out as much as possible.  This is the default layout.
+  Uses Hu's spring layout \cite{hu2005} as implemented by Pohlmann \cite{pohlmann2011}.  This models each edge as springs and attempts to spread everything out as much as possible.  This is the default layout.
 
 \begin{codeexample}[]
 \feynmandiagram [nodes=circle, small, horizontal=c to d] {
@@ -1138,10 +852,7 @@ will warn the user instead.
 \end{key}
 
 \begin{key}{/graph drawing/spring electrical layout=\opt{\meta{string}}}
-  Uses Hu's spring electrical layout \cite{hu2005} as implemented by Pohlmann
-  \cite{pohlmann2011}.  This models each edge as springs and gives each vertex a
-  charge.  This algorithm allows for the charge of a particular vertex to be
-  adjusted using the |electric charge| key (the default is |1|).
+  Uses Hu's spring electrical layout \cite{hu2005} as implemented by Pohlmann \cite{pohlmann2011}.  This models each edge as springs and gives each vertex a charge.  This algorithm allows for the charge of a particular vertex to be adjusted using the |electric charge| key (the default is |1|).
 
 \begin{codeexample}[]
 \feynmandiagram [nodes=circle,
@@ -1154,15 +865,11 @@ will warn the user instead.
 \end{key}
 
 \begin{key}{/graph drawing/layered layout=\opt{\meta{string}}}
-  Uses the Sugiyama layout algorithm \cite{eades1991} as implemented by Pohlmann
-  \cite{pohlmann2011} in order to place the node.
+  Uses the Sugiyama layout algorithm \cite{eades1991} as implemented by Pohlmann \cite{pohlmann2011} in order to place the node.
 
-  When an edge is specified, the first vertex is always located on the layer
-  above the second vertex.  This creates a hierarchy of vertices which is
-  particularly useful for decays.
+  When an edge is specified, the first vertex is always located on the layer above the second vertex.  This creates a hierarchy of vertices which is particularly useful for decays.
 
-  Two vertices can be forced to be on the same layer with the
-  |/graph drawing/same layer| key.
+  Two vertices can be forced to be on the same layer with the |/graph drawing/same layer| key.
 
 \begin{codeexample}[]
 \feynmandiagram [nodes=circle, small, horizontal=a to b, layered layout] {
@@ -1178,14 +885,9 @@ will warn the user instead.
 \end{key}
 
 \begin{key}{/graph drawing/tree layout=\opt{\meta{string}}}
-  Uses the Reingold--Tilford algorithm in order to place the node.  This works
-  in a similar way to the layered layout, but has quite a lot of additional
-  options to handle missing children in the tree.  Please refer to the
-  \pgfmanual{} for a thorough description of these additional features.
+  Uses the Reingold--Tilford algorithm in order to place the node.  This works in a similar way to the layered layout, but has quite a lot of additional options to handle missing children in the tree.  Please refer to the \pgfmanual{} for a thorough description of these additional features.
 
-  When an edge is specified, the first vertex is always located on the layer
-  above the second vertex.  This creates a hierarchy of vertices which is
-  particularly useful for decays.
+  When an edge is specified, the first vertex is always located on the layer above the second vertex.  This creates a hierarchy of vertices which is particularly useful for decays.
 
 \begin{codeexample}[]
 \feynmandiagram [nodes=circle, small, horizontal=a to b, tree layout] {
@@ -1202,26 +904,18 @@ will warn the user instead.
 \begin{keylist}{%
   /tikz/graphs/edges=\meta{options},
   /tikz/graphs/nodes=\meta{options}}
-  Just like it is possible to change the shape of every vertex or edge in the
-  whole document, it is also possible to change the shape of every vertex or
-  edge in a single diagram by modifying these keys and adding the desired
-  styles.
+  Just like it is possible to change the shape of every vertex or edge in the whole document, it is also possible to change the shape of every vertex or edge in a single diagram by modifying these keys and adding the desired styles.
 \end{keylist}
 
 \subsubsection{Vertex Keys}
 \label{subsubsec:vertex_keys}
 
 \begin{key}{/tikzfeynman/vertex}
-  The default, base style applied to every vertex initially.  Other styles
-  are subsequently added.  This sets the vertex |shape| to be a |coordinate|,
-  that is, a null shape with no size nor width.
+  The default, base style applied to every vertex initially.  Other styles are subsequently added.  This sets the vertex |shape| to be a |coordinate|, that is, a null shape with no size nor width.
 \end{key}
 
 \begin{key}{/tikzfeynman/every \meta{vertex shape}=\meta{styles}}
-  The style of specific vertices can be modified by changing the appropriate
-  |every |\meta{vertex shape} key.  For example, in order to change the style of
-  every |dot|-styled vertex, you can modify the |every dot| key, or to modify
-  every vertex globally, the |every vertex| key can be modified.
+  The style of specific vertices can be modified by changing the appropriate |every |\meta{vertex shape} key.  For example, in order to change the style of every |dot|-styled vertex, you can modify the |every dot| key, or to modify every vertex globally, the |every vertex| key can be modified.
 
 \begin{codeexample}[]
 \tikzfeynmanset{
@@ -1277,8 +971,7 @@ will warn the user instead.
 \end{key}
 
 \begin{key}{/tikzfeynman/blob}
-  Modifies the vertex so that it is a large blob, usually used to denote an
-  effective operator.
+  Modifies the vertex so that it is a large blob, usually used to denote an effective operator.
 
 \begin{codeexample}[]
 \feynmandiagram [small] {
@@ -1288,16 +981,9 @@ will warn the user instead.
 \end{key}
 
 \begin{key}{/tikzfeynman/particle=\meta{name}}
-  Modifies the vertex so that it shows \meta{name}.  This is intended to label
-  initial and final particles, but it should not be used on internal vertices as
-  it will result in the lines at the vertex having a gap.  For propagators the
-  |edge label| key is much more appropriate.
+  Modifies the vertex so that it shows \meta{name}.  This is intended to label initial and final particles, but it should not be used on internal vertices as it will result in the lines at the vertex having a gap.  For propagators the |edge label| key is much more appropriate.
 
-  Note that if \meta{name} contains characters such as brackets (|[]|) or
-  commas (|,|), the whole \meta{name} has to be enclosed in braces (|{}|);
-  otherwise, the parser will interpret the comma as the end of the \meta{name}
-  and the start of the next key, or the closing bracket as the end of all
-  optional arguments.
+  Note that if \meta{name} contains characters such as brackets (|[]|) or commas (|,|), the whole \meta{name} has to be enclosed in braces (|{}|); otherwise, the parser will interpret the comma as the end of the \meta{name} and the start of the next key, or the closing bracket as the end of all optional arguments.
 
 \begin{codeexample}[]
 \feynmandiagram [small, horizontal=a to b] {
@@ -1310,25 +996,16 @@ will warn the user instead.
 \subsubsection{Edge Keys}
 \label{subsubsec:edge_keys}
 
-Just like with the various vertex keys, each edge type has a corresponding
-|every |\meta{edge type}; however, due to the existence of very similar keys
-such as |scalar|, |charged scalar| and |anti charged scalar|, more specific keys
-inherit styles from less specific ones.  For example, styles in |every scalar|
-will apply to |charged scalar| and |anti charged scalar|.
+Just like with the various vertex keys, each edge type has a corresponding |every |\meta{edge type}; however, due to the existence of very similar keys such as |scalar|, |charged scalar| and |anti charged scalar|, more specific keys inherit styles from less specific ones.  For example, styles in |every scalar| will apply to |charged scalar| and |anti charged scalar|.
 
-The edge styles do not override each other and instead stack.  This means that
-an edge styled with both |boson| and |fermion| will consist of a straight line
-with a wavy line on top and an error.  If no styles are provided, then a simple
-solid line is drawn.
+The edge styles do not override each other and instead stack.  This means that an edge styled with both |boson| and |fermion| will consist of a straight line with a wavy line on top and an error.  If no styles are provided, then a simple solid line is drawn.
 
 \begin{key}{/tikzfeynman/every edge=\meta{styles}}
   A style to apply to every edge initially.
 \end{key}
 
 \begin{stylekey}{/tikzfeynman/every \meta{edge style}=\meta{styles}}
-  The style of specific edges can be modified by changing the appropriate
-  |every |\meta{edge style} key.  For example, in order to make a global change
-  to every |boson|, you can modify the |every boson| key.
+  The style of specific edges can be modified by changing the appropriate |every |\meta{edge style} key.  For example, in order to make a global change to every |boson|, you can modify the |every boson| key.
 
 \begin{codeexample}[]
 \tikzfeynmanset{
@@ -1344,9 +1021,7 @@ solid line is drawn.
 \end{stylekey}
 
 \begin{key}{/tikzfeynman/plain}
-  Draws a simple solid line.  This style is identical to the default style
-  applied if no other style is used, but is provided so that it can be combined
-  with other styles.
+  Draws a simple solid line.  This style is identical to the default style applied if no other style is used, but is provided so that it can be combined with other styles.
 
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {a -- [plain] b};
@@ -1371,8 +1046,7 @@ solid line is drawn.
 \end{key}
 
 \begin{key}{/tikzfeynman/anti charged boson}
-  Draws a sinusoidal line with an arrow pointing the other way to denote a
-  anti charged boson.
+  Draws a sinusoidal line with an arrow pointing the other way to denote a anti charged boson.
 
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {a -- [anti charged boson] b};
@@ -1404,8 +1078,7 @@ solid line is drawn.
 \end{key}
 
 \begin{key}{/tikzfeynman/anti charged scalar}
-  Draws a dashed line with an arrow pointing the other way to denote a charged
-  scalar antiparticle.
+  Draws a dashed line with an arrow pointing the other way to denote a charged scalar antiparticle.
 
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {a -- [anti charged scalar] b};
@@ -1438,8 +1111,7 @@ solid line is drawn.
 \end{key}
 
 \begin{key}{/tikzfeynman/majorana}
-  Draws a solid line with two arrows pointing to the center to denote a Majorana
-  particle.
+  Draws a solid line with two arrows pointing to the center to denote a Majorana particle.
 
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {a -- [majorana] b};
@@ -1447,8 +1119,7 @@ solid line is drawn.
 \end{key}
 
 \begin{key}{/tikzfeynman/anti majorana}
-  Draws a solid line with two arrows pointing to the ends to denote a Majorana
-  particle.
+  Draws a solid line with two arrows pointing to the ends to denote a Majorana particle.
 
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {a -- [anti majorana] b};
@@ -1466,28 +1137,22 @@ solid line is drawn.
 \begin{keylist}{%
   /tikz/edge label=\meta{text},
   /tikz/edge label'=\meta{text}}
-  Places a label halfway along the edge with the given text.  The primed key
-  switches which side of the edge the label is placed.
+  Places a label halfway along the edge with the given text.  The primed key switches which side of the edge the label is placed.
 \end{keylist}
 
 \begin{key}{/tikzfeynman/insertion=\opt{\oarg{options}}\meta{distance}}
-  Places an insertion (for mass or momentum insertion) along an edge.  The
-  distance specifies how far along the edge the insertion should be placed such
-  that |0| and |1| respectively correspond to the start and the end of the edge.
+  Places an insertion (for mass or momentum insertion) along an edge.  The distance specifies how far along the edge the insertion should be placed such that |0| and |1| respectively correspond to the start and the end of the edge.
 
-  Multiple insertions can be placed along a single edge by repeating the style
-  key.
+  Multiple insertions can be placed along a single edge by repeating the style key.
 
-  Through the \meta{options} argument, the insertion size and style can be
-  changed.
+  Through the \meta{options} argument, the insertion size and style can be changed.
 
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {a -- [insertion=0.33, insertion=0.67] b};
 \end{codeexample}
 
   \begin{key}{/tikzfeynman/insertion/size=\meta{distance} (initially 3pt)}
-    Specifies how big the insertion should be.  The length of each edge starting
-    from the center will be \(\sqrt{2} \times \meta{distance}\).
+    Specifies how big the insertion should be.  The length of each edge starting from the center will be \(\sqrt{2} \times \meta{distance}\).
 
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {a -- [insertion={[size=10pt]0.4}] b};
@@ -1513,16 +1178,9 @@ solid line is drawn.
     /tikzfeynman/reversed momentum'=\opt{\oarg{options}}\meta{text},
     /tikzfeynman/rmomentum=\opt{\oarg{options}}\meta{text},
     /tikzfeynman/rmomentum'=\opt{\oarg{options}}\meta{text}}
-  Places a momentum arrow on the specified edge with label given by \meta{text}.
-  The primed (|'|) version places the momentum arrow on the other side of the
-  edge; that is, if the momentum arrow was on the right, it will be placed on
-  the left of the edge.  The |reversed momentum| and |reversed momentum'| keys
-  are analogous to |momentum| and |momentum'| except that the momentum arrow
-  points in the opposite direction.  Finally, the |rmomentum| and |rmomentum'|
-  are aliases of |reversed momentum| and |reversed momentum'|.
+  Places a momentum arrow on the specified edge with label given by \meta{text}. The primed (|'|) version places the momentum arrow on the other side of the edge; that is, if the momentum arrow was on the right, it will be placed on the left of the edge.  The |reversed momentum| and |reversed momentum'| keys are analogous to |momentum| and |momentum'| except that the momentum arrow points in the opposite direction.  Finally, the |rmomentum| and |rmomentum'| are aliases of |reversed momentum| and |reversed momentum'|.
 
-  Note that due to the way the arrow is drawn, it does not inherit styles of the
-  edge.  As a result, they have to be re-specified through \meta{options}.
+  Note that due to the way the arrow is drawn, it does not inherit styles of the edge.  As a result, they have to be re-specified through \meta{options}.
 
 \begin{codeexample}[]
 \feynmandiagram [layered layout, horizontal=a to b] {
@@ -1541,16 +1199,10 @@ solid line is drawn.
 };
 \end{codeexample}
 
-The \meta{options} allows for the following options to customize the appearance
-of the momentum arrows.  These can be either set globally with the usual
-|\tikzfeynmanset|, or can be set on a individual basis through the
-\meta{options} argument of the |momentum| key.  In the latter case, only the
-\meta{key} in |/tikzfeynman/momentum/|\meta{key} is required.
+The \meta{options} allows for the following options to customize the appearance of the momentum arrows.  These can be either set globally with the usual |\tikzfeynmanset|, or can be set on a individual basis through the \meta{options} argument of the |momentum| key.  In the latter case, only the \meta{key} in |/tikzfeynman/momentum/|\meta{key} is required.
 
 \begin{key}{/tikzfeynman/momentum/label distance=\meta{distance} (initially 0pt)}
-  Set the separation between the text and the arrow.  Note that the text is
-  still surrounded by an |inner sep=0.3333em| by default so the default
-  distance of |0pt| will not result in the momentum label touching the arrow.
+  Set the separation between the text and the arrow.  Note that the text is still surrounded by an |inner sep=0.3333em| by default so the default distance of |0pt| will not result in the momentum label touching the arrow.
 \end{key}
 
 \begin{key}{/tikzfeynman/momentum/arrow distance=\meta{distance} (initially 3mm)}
@@ -1558,8 +1210,7 @@ of the momentum arrows.  These can be either set globally with the usual
 \end{key}
 
 \begin{key}{/tikzfeynman/momentum/arrow shorten=\meta{distance} (initially 0.15)}
-  Specify the fraction of the total edge length by which the momentum arrow is
-  shortened at each end.
+  Specify the fraction of the total edge length by which the momentum arrow is shortened at each end.
 \end{key}
 
 \begin{key}{/tikzfeynman/momentum/label style=\meta{style} (initially \normalfont empty)}
@@ -1581,8 +1232,7 @@ Modifier keys serve only to slightly modify a small feature of the edge.
     /tikzfeynman/half right,
     /tikzfeynman/quarter left,
     /tikzfeynman/quarter right}
-  Modifies the edge so that it bends left or right in such a way that it
-  completes half a circle, or a quarter of a circle.
+  Modifies the edge so that it bends left or right in such a way that it completes half a circle, or a quarter of a circle.
 
 \begin{codeexample}[]
 \feynmandiagram [horizontal=a to b] {
@@ -1603,27 +1253,22 @@ Modifier keys serve only to slightly modify a small feature of the edge.
 \begin{keylist}{%
   /tikz/out=\meta{angle},
   /tikz/in=\meta{angle}}
-  Specifies the angle at which the edge leaves the first vertex in an edge and
-  the angle at which it enters the second vertex in an edge.
+  Specifies the angle at which the edge leaves the first vertex in an edge and the angle at which it enters the second vertex in an edge.
 \end{keylist}
 
 \begin{key}{/tikz/relative=\opt{\meta{true or false}} (default true)}
-  If |relative| is set to |false|, the angle is relative to the paper whilst when
-  |relative| is set to |true|, the angle is relative to the straight line
-  joining the two vertices.
+  If |relative| is set to |false|, the angle is relative to the paper whilst when |relative| is set to |true|, the angle is relative to the straight line joining the two vertices.
 \end{key}
 
 \begin{key}{/tikz/looseness=\meta{number} (initially 1)}
-  As the name suggests, this specifies how `loose' or `tight' a curve is
-  connecting two vertices.
+  As the name suggests, this specifies how `loose' or `tight' a curve is connecting two vertices.
 \end{key}
 
 \clearpage
 \section{Examples}
 \label{sec:examples}
 
-Below are a few diagrams which demonstrate how the package can be used in some
-more practical examples..
+Below are a few diagrams which demonstrate how the package can be used in some more practical examples..
 
 \begin{description}
 \item[Vertex Rule] \hspace*{0pt} \newline
