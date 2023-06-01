@@ -16,13 +16,11 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\def\tikzfeynman@date{2016/02/05}
-\def\tikzfeynman@version@major{1}
-\def\tikzfeynman@version@minor{1}
-\def\tikzfeynman@version@patch{0}
+% Import tikzfeynman.revision.tex if it exists
+\IfFileExists{tikzfeynman.revision.tex}{\input{tikzfeynman.revision.tex}}{}
 \edef\tikzfeynman@version{\tikzfeynman@version@major.\tikzfeynman@version@minor.\tikzfeynman@version@patch}
 
-\ProvidesPackage{tikz-feynman}[\tikzfeynman@date v\tikzfeynman@version Feynman diagrams with TikZ]
+\ProvidesPackage{tikz-feynman}[\tikzfeynman@date{} v\tikzfeynman@version{} Feynman diagrams with TikZ]
 
 \RequirePackage{tikz}[2013/12/13] % v3.0.0
 \RequirePackage{iftex}

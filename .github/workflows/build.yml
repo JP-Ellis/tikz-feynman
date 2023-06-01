@@ -5,28 +5,86 @@ on:
     branches:
       - "*"
 
+env:
+  TEXMFHOME: ${{ github.workspace }}
+
 jobs:
   test:
-    runs-on: ubuntu-latest
-    container: texlive/texlive:latest-full
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        compiler: [pdflatex, lualatex]
+
+    runs-on: ${{ matrix.os }}
 
     steps:
+      - name: Setup TeX Live
+        uses: teatimeguest/setup-texlive-action@v2
+        with:
+          packages: |
+            scheme-basic
+            pgf
+            pgfopts
+            l3build
+            hologo
+
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Compile pdfLaTeX
+      - name: Run l3build tests
+        shell: bash
         run: |
-          pdflatex --halt-on-error tests/test-all.tex
+          l3build check
 
-      - name: Compile LuaLaTeX
+      - name: Compile Tests
+        shell: bash
         run: |
-          lualatex --halt-on-error tests/test-all.tex
+          cd tests
+          for test in *.tex ; do
+            ${{ matrix.compiler }} -halt-on-error $test
+          done
+
+      - name: Upload PDF outputs
+        uses: actions/upload-artifact@v3
+        with:
+          name: tests-${{ matrix.os }}-${{ matrix.compiler }}
+          path: |
+            tests/*.pdf
 
   docs:
     runs-on: ubuntu-latest
-    container: texlive/texlive:latest-full
 
     steps:
+      - name: Setup TeX Live
+        uses: teatimeguest/setup-texlive-action@v2
+        with:
+          packages: |
+            scheme-basic
+            pgf
+            pgfopts
+            l3build
+            fontspec
+            microtype
+            etoolbox
+            titlesec
+            footmisc
+            bigfoot
+            enumitem
+            tocloft
+            csquotes
+            mathtools
+            newtx
+            xkeyval
+            listings
+            isodate
+            substr
+            cleveref
+            biblatex
+            biblatex-phys
+            hypdoc
+            txfonts
+            biber
+
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -53,8 +111,15 @@ jobs:
 
       - name: Update Lua font cache
         run: |
+          fc-cache --force --verbose
           luaotfload-tool --update -vv
 
       - name: Build documentation
         run: |
-          lualatex --halt-on-error tikz-feynman.tex
+          l3build doc
+
+      - name: Upload PDF outputs
+        uses: actions/upload-artifact@v3
+        with:
+          name: docs
+          path: docs/tikz-feynman.pdf

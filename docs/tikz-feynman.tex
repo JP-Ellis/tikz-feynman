@@ -46,7 +46,8 @@
   Scale=MatchLowercase,
 ]
 
-\usepackage{microtype}   % Fine small typographical details
+%% TODO: Remove verbose=silent once https://tex.stackexchange.com/q/630979 is resolved
+\usepackage[verbose=silent]{microtype}   % Fine small typographical details
 \usepackage{titlesec}    % Change section heading font
 \titleformat*{\section}{\huge\scshape}
 \titleformat*{\subsection}{\Large\scshape}
@@ -170,7 +171,8 @@
 }{
   \PackageError{tikz-feynman-manual}{%
     This document requires the file pgfmanual-en-macros.tex (distributed with pgf) to compile.  Please place a copy of that file in the current directory%
-  }{}}
+  }{}%
+}
 
 \makeindex
 
@@ -306,7 +308,7 @@
     {\huge Feynman diagrams with \tikzname}
 
     \vspace{0.7em}
-    {Version \texttt{\tikzfeynman@version} \qquad \origdate\printdateTeX{\tikzfeynman@date}}
+    {Version \texttt{\tikzfeynman@version}}
 
     \vspace{1.3em}
     {by \@author} \\[1em]
