@@ -1,5 +1,5 @@
 \documentclass[twocolumn]{article}
-\usepackage{support}
+\IfFileExists{regression.sty}{\usepackage{regression}}{\usepackage{support/regression}}
 
 \def\sizes{%
   small,%
@@ -15,11 +15,14 @@
 \clearpage
 
 \foreach \size in \sizes {
-  \section{Insertions (\size)}
+  \edef\name{Insertions (\size)}
+  \section\name
 
+  \expandafter\BEGINTEST\expandafter{\name}
   \feynmandiagram [\size, horizontal=a to b] {
     a -- [insertion=0.5] b,
   };
+  \ENDTEST
 }
 
 \end{document}

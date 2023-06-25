@@ -1,5 +1,5 @@
 \documentclass[twocolumn]{article}
-\usepackage{support}
+\IfFileExists{regression.sty}{\usepackage{regression}}{\usepackage{support/regression}}
 
 \def\vertices{%
   dot,%
@@ -26,10 +26,14 @@
   \section{\vertex\ (center)}
 
   \foreach \size in \sizes {
-    \subsection{\vertex\ (\size)}
+    \edef\name{\vertex\ (\size)}
+    \subsection\name
+
+    \expandafter\BEGINTEST\expandafter{\name}
     \feynmandiagram[\size, horizontal=a to b] {
       a -- b [\vertex]  -- {c, d},
     };
+    \ENDTEST
   }
   \clearpage
 }
@@ -37,10 +41,14 @@
 \section{Particle (center)}
 
 \foreach \size in \sizes {
-  \subsection{Particle (\size)}
+  \edef\name{Particle (\size)}
+  \subsection\name
+
+  \expandafter\BEGINTEST\expandafter{\name}
   \feynmandiagram[\size, horizontal=a to b] {
     a -- b [particle=\(\mu\)]  -- {c, d},
   };
+  \ENDTEST
 }
 \clearpage
 
@@ -48,10 +56,14 @@
   \section{\vertex\ (edge)}
 
   \foreach \size in \sizes {
-    \subsection{\vertex\ (\size)}
+    \edef\name{\vertex\ (\size)}
+    \subsection\name
+
+    \expandafter\BEGINTEST\expandafter{\name}
     \feynmandiagram[\size, horizontal=a to b] {
       a [\vertex] -- b -- {c [\vertex], d [\vertex]},
     };
+    \ENDTEST
   }
   \clearpage
 }
@@ -59,10 +71,14 @@
 \section{Particle (edge)}
 
 \foreach \size in \sizes {
-  \subsection{Particle (\size)}
+  \edef\name{Particle (\size)}
+  \subsection\name
+
+  \expandafter\BEGINTEST\expandafter{\name}
   \feynmandiagram[\size, horizontal=a to b] {
     a [particle=\(\mu\)] -- b -- {c [particle=\(\mu\)], d [particle=\(\mu\)]},
   };
+  \ENDTEST
 }
 
 \end{document}

@@ -1,0 +1,3630 @@
+This is a generated file for the l3build validation system.
+Don't change this file in any respect.
+============================================================
+TEST 1: plain--small
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 2: plain--medium
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 3: plain--large
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[2
+]
+============================================================
+TEST 4: boson--small
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 5: boson--medium
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 6: boson--large
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[3
+]
+============================================================
+TEST 7: charged boson--small
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 8: charged boson--medium
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 9: charged boson--large
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[4
+]
+============================================================
+TEST 10: anti charged boson--small
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 11: anti charged boson--medium
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 12: anti charged boson--large
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[5
+]
+============================================================
+TEST 13: photon--small
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 14: photon--medium
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 15: photon--large
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[6
+]
+============================================================
+TEST 16: scalar--small
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 17: scalar--medium
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 18: scalar--large
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[7
+]
+============================================================
+TEST 19: charged scalar--small
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 20: charged scalar--medium
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 21: charged scalar--large
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[8
+]
+============================================================
+TEST 22: anti charged scalar--small
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 23: anti charged scalar--medium
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 24: anti charged scalar--large
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[9
+]
+============================================================
+TEST 25: ghost--small
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 26: ghost--medium
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 27: ghost--large
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[10
+]
+============================================================
+TEST 28: fermion--small
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 29: fermion--medium
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 30: fermion--large
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[11
+]
+============================================================
+TEST 31: anti fermion--small
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 32: anti fermion--medium
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 33: anti fermion--large
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[12
+]
+============================================================
+TEST 34: majorana--small
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 35: majorana--medium
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 36: majorana--large
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[13
+]
+============================================================
+TEST 37: anti majorana--small
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 38: anti majorana--medium
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 39: anti majorana--large
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[14
+]
+============================================================
+TEST 40: gluon--small
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 41: gluon--medium
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 42: gluon--large
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[15
+]
+============================================================
+TEST 43: plain--plain
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 44: plain--boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 45: plain--charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 46: plain--anti charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 47: plain--photon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 48: plain--scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 49: plain--charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 50: plain--anti charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 51: plain--ghost
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 52: plain--fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 53: plain--anti fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 54: plain--majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 55: plain--anti majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 56: plain--gluon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[16
+]
+============================================================
+TEST 57: boson--plain
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 58: boson--boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 59: boson--charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 60: boson--anti charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 61: boson--photon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 62: boson--scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 63: boson--charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 64: boson--anti charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 65: boson--ghost
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 66: boson--fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 67: boson--anti fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 68: boson--majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 69: boson--anti majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 70: boson--gluon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[17
+]
+============================================================
+TEST 71: charged boson--plain
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 72: charged boson--boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 73: charged boson--charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 74: charged boson--anti charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 75: charged boson--photon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 76: charged boson--scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 77: charged boson--charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]\TU/lmr/bx/n/12 charged boson--anti charged
+\hbox(8.328+2.412)x229.5, glue set 6.56801, direction TLT
+.\localpar
+..\localinterlinepenalty=0
+..\localbrokenpenalty=0
+..\localleftbox=null
+..\localrightbox=null
+.\hbox(7.872+0.144)x36.02399, direction TLT
+..\glue 0.0
+..\TU/lmr/bx/n/12 1
+..\TU/lmr/bx/n/12 8
+..\TU/lmr/bx/n/12 .
+..\TU/lmr/bx/n/12 8
+..\glue 12.0
+.\TU/lmr/bx/n/12 c
+.\kern-0.372 (font)
+.\TU/lmr/bx/n/12 h
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 r
+.\TU/lmr/bx/n/12 g
+.\TU/lmr/bx/n/12 e
+.\TU/lmr/bx/n/12 d
+.\glue(\spaceskip) 4.5 plus 2.25 minus 1.5
+.\TU/lmr/bx/n/12 b
+.\kern0.372 (font)
+.\TU/lmr/bx/n/12 o
+.\TU/lmr/bx/n/12 s
+.\TU/lmr/bx/n/12 o
+.\TU/lmr/bx/n/12 n
+.\discretionary (penalty 50)
+..< \TU/lmr/bx/n/12 – (ligature --)
+..= \TU/lmr/bx/n/12 – (ligature --)
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 n
+.\kern-0.372 (font)
+.\TU/lmr/bx/n/12 t
+.\TU/lmr/bx/n/12 i
+.\glue(\spaceskip) 4.5 plus 2.25 minus 1.5
+.\TU/lmr/bx/n/12 c
+.\kern-0.372 (font)
+.\TU/lmr/bx/n/12 h
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 r
+.\TU/lmr/bx/n/12 g
+.\TU/lmr/bx/n/12 e
+.\TU/lmr/bx/n/12 d
+.\glue(\rightskip) 0.0
+============================================================
+TEST 78: charged boson--anti charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 79: charged boson--ghost
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 80: charged boson--fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 81: charged boson--anti fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 82: charged boson--majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 83: charged boson--anti majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 84: charged boson--gluon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[18
+]
+============================================================
+TEST 85: anti charged boson--plain
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 86: anti charged boson--boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 87: anti charged boson--charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 88: anti charged boson--anti charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 89: anti charged boson--photon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 90: anti charged boson--scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]\TU/lmr/bx/n/12 anti charged boson--charged
+\hbox(8.328+2.412)x229.5, glue set 6.56801, direction TLT
+.\localpar
+..\localinterlinepenalty=0
+..\localbrokenpenalty=0
+..\localleftbox=null
+..\localrightbox=null
+.\hbox(8.112+0.144)x36.02399, direction TLT
+..\glue 0.0
+..\TU/lmr/bx/n/12 1
+..\TU/lmr/bx/n/12 9
+..\TU/lmr/bx/n/12 .
+..\TU/lmr/bx/n/12 7
+..\glue 12.0
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 n
+.\kern-0.372 (font)
+.\TU/lmr/bx/n/12 t
+.\TU/lmr/bx/n/12 i
+.\glue(\spaceskip) 4.5 plus 2.25 minus 1.5
+.\TU/lmr/bx/n/12 c
+.\kern-0.372 (font)
+.\TU/lmr/bx/n/12 h
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 r
+.\TU/lmr/bx/n/12 g
+.\TU/lmr/bx/n/12 e
+.\TU/lmr/bx/n/12 d
+.\glue(\spaceskip) 4.5 plus 2.25 minus 1.5
+.\TU/lmr/bx/n/12 b
+.\kern0.372 (font)
+.\TU/lmr/bx/n/12 o
+.\TU/lmr/bx/n/12 s
+.\TU/lmr/bx/n/12 o
+.\TU/lmr/bx/n/12 n
+.\discretionary (penalty 50)
+..< \TU/lmr/bx/n/12 – (ligature --)
+..= \TU/lmr/bx/n/12 – (ligature --)
+.\TU/lmr/bx/n/12 c
+.\kern-0.372 (font)
+.\TU/lmr/bx/n/12 h
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 r
+.\TU/lmr/bx/n/12 g
+.\TU/lmr/bx/n/12 e
+.\TU/lmr/bx/n/12 d
+.\glue(\rightskip) 0.0
+============================================================
+TEST 91: anti charged boson--charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 92: anti charged boson--anti charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 93: anti charged boson--ghost
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 94: anti charged boson--fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 95: anti charged boson--anti fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 96: anti charged boson--majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 97: anti charged boson--anti majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 98: anti charged boson--gluon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[19
+]
+============================================================
+TEST 99: photon--plain
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 100: photon--boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 101: photon--charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 102: photon--anti charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 103: photon--photon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 104: photon--scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 105: photon--charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 106: photon--anti charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 107: photon--ghost
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 108: photon--fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 109: photon--anti fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 110: photon--majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 111: photon--anti majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 112: photon--gluon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[20
+]
+============================================================
+TEST 113: scalar--plain
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 114: scalar--boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 115: scalar--charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 116: scalar--anti charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 117: scalar--photon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 118: scalar--scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 119: scalar--charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 120: scalar--anti charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 121: scalar--ghost
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 122: scalar--fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 123: scalar--anti fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 124: scalar--majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 125: scalar--anti majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 126: scalar--gluon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[21
+]
+============================================================
+TEST 127: charged scalar--plain
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 128: charged scalar--boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 129: charged scalar--charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 130: charged scalar--anti charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 131: charged scalar--photon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 132: charged scalar--scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 133: charged scalar--charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]\TU/lmr/bx/n/12 charged scalar--anti charged
+\hbox(8.328+2.412)x229.5, glue set 6.67467, direction TLT
+.\localpar
+..\localinterlinepenalty=0
+..\localbrokenpenalty=0
+..\localleftbox=null
+..\localrightbox=null
+.\hbox(7.872+0.144)x36.02399, direction TLT
+..\glue 0.0
+..\TU/lmr/bx/n/12 2
+..\TU/lmr/bx/n/12 2
+..\TU/lmr/bx/n/12 .
+..\TU/lmr/bx/n/12 8
+..\glue 12.0
+.\TU/lmr/bx/n/12 c
+.\kern-0.372 (font)
+.\TU/lmr/bx/n/12 h
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 r
+.\TU/lmr/bx/n/12 g
+.\TU/lmr/bx/n/12 e
+.\TU/lmr/bx/n/12 d
+.\glue(\spaceskip) 4.5 plus 2.25 minus 1.5
+.\TU/lmr/bx/n/12 s
+.\TU/lmr/bx/n/12 c
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 l
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 r
+.\discretionary (penalty 50)
+..< \TU/lmr/bx/n/12 – (ligature --)
+..= \TU/lmr/bx/n/12 – (ligature --)
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 n
+.\kern-0.372 (font)
+.\TU/lmr/bx/n/12 t
+.\TU/lmr/bx/n/12 i
+.\glue(\spaceskip) 4.5 plus 2.25 minus 1.5
+.\TU/lmr/bx/n/12 c
+.\kern-0.372 (font)
+.\TU/lmr/bx/n/12 h
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 r
+.\TU/lmr/bx/n/12 g
+.\TU/lmr/bx/n/12 e
+.\TU/lmr/bx/n/12 d
+.\glue(\rightskip) 0.0
+============================================================
+TEST 134: charged scalar--anti charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 135: charged scalar--ghost
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 136: charged scalar--fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 137: charged scalar--anti fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 138: charged scalar--majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 139: charged scalar--anti majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 140: charged scalar--gluon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[22
+]
+============================================================
+TEST 141: anti charged scalar--plain
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 142: anti charged scalar--boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 143: anti charged scalar--charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 144: anti charged scalar--anti charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 145: anti charged scalar--photon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 146: anti charged scalar--scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]\TU/lmr/bx/n/12 anti charged scalar--charged
+\hbox(8.328+2.412)x229.5, glue set 6.67467, direction TLT
+.\localpar
+..\localinterlinepenalty=0
+..\localbrokenpenalty=0
+..\localleftbox=null
+..\localrightbox=null
+.\hbox(8.112+0.144)x36.02399, direction TLT
+..\glue 0.0
+..\TU/lmr/bx/n/12 2
+..\TU/lmr/bx/n/12 3
+..\TU/lmr/bx/n/12 .
+..\TU/lmr/bx/n/12 7
+..\glue 12.0
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 n
+.\kern-0.372 (font)
+.\TU/lmr/bx/n/12 t
+.\TU/lmr/bx/n/12 i
+.\glue(\spaceskip) 4.5 plus 2.25 minus 1.5
+.\TU/lmr/bx/n/12 c
+.\kern-0.372 (font)
+.\TU/lmr/bx/n/12 h
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 r
+.\TU/lmr/bx/n/12 g
+.\TU/lmr/bx/n/12 e
+.\TU/lmr/bx/n/12 d
+.\glue(\spaceskip) 4.5 plus 2.25 minus 1.5
+.\TU/lmr/bx/n/12 s
+.\TU/lmr/bx/n/12 c
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 l
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 r
+.\discretionary (penalty 50)
+..< \TU/lmr/bx/n/12 – (ligature --)
+..= \TU/lmr/bx/n/12 – (ligature --)
+.\TU/lmr/bx/n/12 c
+.\kern-0.372 (font)
+.\TU/lmr/bx/n/12 h
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 r
+.\TU/lmr/bx/n/12 g
+.\TU/lmr/bx/n/12 e
+.\TU/lmr/bx/n/12 d
+.\glue(\rightskip) 0.0
+============================================================
+TEST 147: anti charged scalar--charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 148: anti charged scalar--anti charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 149: anti charged scalar--ghost
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 150: anti charged scalar--fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 151: anti charged scalar--anti fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 152: anti charged scalar--majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 153: anti charged scalar--anti majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 154: anti charged scalar--gluon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[23
+]
+============================================================
+TEST 155: ghost--plain
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 156: ghost--boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 157: ghost--charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 158: ghost--anti charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 159: ghost--photon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 160: ghost--scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 161: ghost--charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 162: ghost--anti charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 163: ghost--ghost
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 164: ghost--fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 165: ghost--anti fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 166: ghost--majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 167: ghost--anti majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 168: ghost--gluon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[24
+]
+============================================================
+TEST 169: fermion--plain
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 170: fermion--boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 171: fermion--charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 172: fermion--anti charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 173: fermion--photon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 174: fermion--scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 175: fermion--charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 176: fermion--anti charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 177: fermion--ghost
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 178: fermion--fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 179: fermion--anti fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 180: fermion--majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 181: fermion--anti majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 182: fermion--gluon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[25
+]
+============================================================
+TEST 183: anti fermion--plain
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 184: anti fermion--boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 185: anti fermion--charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 186: anti fermion--anti charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 187: anti fermion--photon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 188: anti fermion--scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 189: anti fermion--charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 190: anti fermion--anti charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 191: anti fermion--ghost
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 192: anti fermion--fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 193: anti fermion--anti fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 194: anti fermion--majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 195: anti fermion--anti majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 196: anti fermion--gluon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[26
+]
+============================================================
+TEST 197: majorana--plain
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 198: majorana--boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 199: majorana--charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 200: majorana--anti charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 201: majorana--photon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 202: majorana--scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 203: majorana--charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 204: majorana--anti charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 205: majorana--ghost
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 206: majorana--fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 207: majorana--anti fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 208: majorana--majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 209: majorana--anti majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 210: majorana--gluon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[27
+]
+============================================================
+TEST 211: anti majorana--plain
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 212: anti majorana--boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 213: anti majorana--charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 214: anti majorana--anti charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 215: anti majorana--photon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 216: anti majorana--scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 217: anti majorana--charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+Underfull \hbox (badness 10000) in paragraph at lines 67--67
+[]\TU/lmr/bx/n/12 anti majorana--anti charged
+\hbox(8.328+2.412)x229.5, glue set 6.992, direction TLT
+.\localpar
+..\localinterlinepenalty=0
+..\localbrokenpenalty=0
+..\localleftbox=null
+..\localrightbox=null
+.\hbox(7.872+0.144)x36.02399, direction TLT
+..\glue 0.0
+..\TU/lmr/bx/n/12 2
+..\TU/lmr/bx/n/12 8
+..\TU/lmr/bx/n/12 .
+..\TU/lmr/bx/n/12 8
+..\glue 12.0
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 n
+.\kern-0.372 (font)
+.\TU/lmr/bx/n/12 t
+.\TU/lmr/bx/n/12 i
+.\glue(\spaceskip) 4.5 plus 2.25 minus 1.5
+.\TU/lmr/bx/n/12 m
+.\TU/lmr/bx/n/12 a
+.\kern0.372 (font)
+.\TU/lmr/bx/n/12 j
+.\TU/lmr/bx/n/12 o
+.\TU/lmr/bx/n/12 r
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 n
+.\TU/lmr/bx/n/12 a
+.\discretionary (penalty 50)
+..< \TU/lmr/bx/n/12 – (ligature --)
+..= \TU/lmr/bx/n/12 – (ligature --)
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 n
+.\kern-0.372 (font)
+.\TU/lmr/bx/n/12 t
+.\TU/lmr/bx/n/12 i
+.\glue(\spaceskip) 4.5 plus 2.25 minus 1.5
+.\TU/lmr/bx/n/12 c
+.\kern-0.372 (font)
+.\TU/lmr/bx/n/12 h
+.\TU/lmr/bx/n/12 a
+.\TU/lmr/bx/n/12 r
+.\TU/lmr/bx/n/12 g
+.\TU/lmr/bx/n/12 e
+.\TU/lmr/bx/n/12 d
+.\glue(\rightskip) 0.0
+============================================================
+TEST 218: anti majorana--anti charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 219: anti majorana--ghost
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 220: anti majorana--fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 221: anti majorana--anti fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 222: anti majorana--majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 223: anti majorana--anti majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 224: anti majorana--gluon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[28
+]
+============================================================
+TEST 225: gluon--plain
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 226: gluon--boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 227: gluon--charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 228: gluon--anti charged boson
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 229: gluon--photon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 230: gluon--scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 231: gluon--charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 232: gluon--anti charged scalar
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 233: gluon--ghost
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 234: gluon--fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 235: gluon--anti fermion
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 236: gluon--majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 237: gluon--anti majorana
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+============================================================
+TEST 238: gluon--gluon
+============================================================
+Gd Lua layer Info: Create event 'collection'
+Gd Lua layer Info: Create vertex 'a'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create event 'begin'
+Gd Lua layer Info: Create vertex 'b'
+Gd Lua layer Info: Create event 'node'
+Gd Lua layer Info: Create edge '--' from 'a' to 'b'
+Gd Lua layer Info: Create event 'edge'
+Gd Lua layer Info: Create event 'end'
+Gd Lua layer Info: Create event 'node'
+============================================================
+[29
+] (edges.aux)

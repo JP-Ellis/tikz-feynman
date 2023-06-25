@@ -21,3 +21,15 @@
     & \ifluahbtex Yes \else No \fi
 \end{tabular}
 }
+
+%% Regression Testing
+\input regression-test.tex
+
+\ifdefined\directlua
+  \IfFileExists{pgfgd-debug.lua}{
+    \AtBeginDocument{\directlua{dofile('pgfgd-debug.lua')}}
+  }{
+    \AtBeginDocument{\directlua{dofile('support/pgfgd-debug.lua')}}
+  }
+\fi
+\def\pgfutil@packageerror#1#2#3{\immediate\write17{Package #1 Error: #2.}}

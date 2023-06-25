@@ -42,7 +42,7 @@ jobs:
         shell: bash
         run: |
           cd tests
-          for test in *.tex ; do
+          for test in *.lvt ; do
             ${{ matrix.compiler }} -halt-on-error $test
           done
 

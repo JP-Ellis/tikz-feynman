@@ -1,5 +1,5 @@
 \documentclass[twocolumn]{article}
-\usepackage{support}
+\IfFileExists{regression.sty}{\usepackage{regression}}{\usepackage{support/regression}}
 
 \def\modifiers{%
   half left,%
@@ -38,10 +38,14 @@
   \section{\momentum}
 
   \foreach \size in \sizes {
-    \subsection{\momentum\ (\size)}
+    \edef\name{\momentum\ (\size)}
+    \subsection\name
+
+    \expandafter\BEGINTEST\expandafter{\name}
     \feynmandiagram[\size, horizontal=a to b] {
       a -- [\momentum=\(p\)] b,
     };
+    \ENDTEST
   }
 }
 \clearpage
@@ -50,10 +54,14 @@
   \section{\modifier}
 
   \foreach \size in \sizes {
-    \subsection{\modifier\ (\size)}
+    \edef\name{\modifier\ (\size)}
+    \subsection\name
+
+    \expandafter\BEGINTEST\expandafter{\name}
     \feynmandiagram[\size, horizontal=a to b] {
       a -- [\modifier] b,
     };
+    \ENDTEST
   }
 }
 \clearpage
@@ -62,10 +70,14 @@
   \section{\momentum}
 
   \foreach \modifier in \modifiers {
-    \subsection{\momentum\ (\modifier)}
+    \edef\name{\momentum\ (\modifier)}
+    \subsection\name
+
+    \expandafter\BEGINTEST\expandafter{\name}
     \feynmandiagram[horizontal=a to b] {
       a -- [\momentum=\(p\), \modifier] b,
     };
+    \ENDTEST
   }
 }
 

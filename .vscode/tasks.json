@@ -10,13 +10,13 @@
         "cwd": "${workspaceFolder}/tests"
       },
       "linux": {
-        "command": "for test in *.tex ; do lualatex -interaction=nonstopmode -halt-on-error $test ; done"
+        "command": "for test in *.lvt ; do lualatex -interaction=nonstopmode -halt-on-error $test ; done"
       },
       "osx": {
-        "command": "for test in *.tex ; do lualatex -interaction=nonstopmode -halt-on-error $test ; done"
+        "command": "for test in *.lvt ; do lualatex -interaction=nonstopmode -halt-on-error $test ; done"
       },
       "windows": {
-        "command": "for %f in (*.tex) do lualatex -interaction=nonstopmode -halt-on-error %f"
+        "command": "for %f in (*.lvt) do lualatex -interaction=nonstopmode -halt-on-error %f"
       }
     },
     {

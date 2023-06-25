@@ -1,5 +1,5 @@
 \documentclass[twocolumn]{article}
-\usepackage{support}
+\IfFileExists{regression.sty}{\usepackage{regression}}{\usepackage{support/regression}}
 
 \def\edges{%
   plain,%
@@ -31,15 +31,22 @@
 \TeXTable
 \clearpage
 
+\START
+
 \foreach \edge in \edges {
   \section{\edge}
 
   \foreach \size in \sizes {
-    \subsection{\edge\ (\size)}
+    \edef\name{\edge--\size}
+    \subsection\name
+
+    \expandafter\BEGINTEST\expandafter{\name}
     \feynmandiagram[\size, horizontal=a to b] {
       a -- [\edge] b,
     };
+    \ENDTEST
   }
+
   \clearpage
 }
 
@@ -47,10 +54,14 @@
   \section{\edgea}
 
   \foreach \edgeb [count=\j] in \edges {
-    \subsection{\edgea--\edgeb}
+    \edef\name{\edgea--\edgeb}
+    \subsection\name
+
+    \expandafter\BEGINTEST\expandafter{\name}
     \feynmandiagram[horizontal=a to b] {
       a -- [\edgea, \edgeb] b,
     };
+    \ENDTEST
   }
   \clearpage
 }
