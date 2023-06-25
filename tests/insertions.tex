@@ -1,0 +1,25 @@
+\documentclass[twocolumn]{article}
+\usepackage{support}
+
+\def\sizes{%
+  small,%
+  medium,%
+  large%
+}
+
+\begin{document}
+
+\section{Information}
+
+\TeXTable
+\clearpage
+
+\foreach \size in \sizes {
+  \section{Insertions (\size)}
+
+  \feynmandiagram [\size, horizontal=a to b] {
+    a -- [insertion=0.5] b,
+  };
+}
+
+\end{document}

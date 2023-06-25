@@ -1,0 +1,68 @@
+\documentclass[twocolumn]{article}
+\usepackage{support}
+
+\def\vertices{%
+  dot,%
+  square dot,%
+  empty dot,%
+  crossed dot,%
+  blob%
+}
+
+\def\sizes{%
+  small,%
+  medium,%
+  large%
+}
+
+\begin{document}
+
+\section{Information}
+
+\TeXTable
+\clearpage
+
+\foreach \vertex in \vertices {
+  \section{\vertex\ (center)}
+
+  \foreach \size in \sizes {
+    \subsection{\vertex\ (\size)}
+    \feynmandiagram[\size, horizontal=a to b] {
+      a -- b [\vertex]  -- {c, d},
+    };
+  }
+  \clearpage
+}
+
+\section{Particle (center)}
+
+\foreach \size in \sizes {
+  \subsection{Particle (\size)}
+  \feynmandiagram[\size, horizontal=a to b] {
+    a -- b [particle=\(\mu\)]  -- {c, d},
+  };
+}
+\clearpage
+
+\foreach \vertex in \vertices {
+  \section{\vertex\ (edge)}
+
+  \foreach \size in \sizes {
+    \subsection{\vertex\ (\size)}
+    \feynmandiagram[\size, horizontal=a to b] {
+      a [\vertex] -- b -- {c [\vertex], d [\vertex]},
+    };
+  }
+  \clearpage
+}
+
+\section{Particle (edge)}
+
+\foreach \size in \sizes {
+  \subsection{Particle (\size)}
+  \feynmandiagram[\size, horizontal=a to b] {
+    a [particle=\(\mu\)] -- b -- {c [particle=\(\mu\)], d [particle=\(\mu\)]},
+  };
+}
+
+\end{document}

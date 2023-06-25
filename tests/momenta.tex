@@ -1,0 +1,72 @@
+\documentclass[twocolumn]{article}
+\usepackage{support}
+
+\def\modifiers{%
+  half left,%
+  half right,%
+  quarter left,%
+  quarter right,%
+  out=90,%
+  in=90,%
+  out=45,%
+  in=135%
+}
+
+\def\momenta{%
+  momentum,%
+  momentum',%
+  reversed momentum,%
+  reversed momentum',%
+  rmomentum,%
+  rmomentum'%
+}
+
+\def\sizes{%
+  small,%
+  medium,%
+  large%
+}
+
+\begin{document}
+
+\section{Information}
+
+\TeXTable
+\clearpage
+
+\foreach \momentum in \momenta {
+  \section{\momentum}
+
+  \foreach \size in \sizes {
+    \subsection{\momentum\ (\size)}
+    \feynmandiagram[\size, horizontal=a to b] {
+      a -- [\momentum=\(p\)] b,
+    };
+  }
+}
+\clearpage
+
+\foreach \modifier in \modifiers {
+  \section{\modifier}
+
+  \foreach \size in \sizes {
+    \subsection{\modifier\ (\size)}
+    \feynmandiagram[\size, horizontal=a to b] {
+      a -- [\modifier] b,
+    };
+  }
+}
+\clearpage
+
+\foreach \momentum in \momenta {
+  \section{\momentum}
+
+  \foreach \modifier in \modifiers {
+    \subsection{\momentum\ (\modifier)}
+    \feynmandiagram[horizontal=a to b] {
+      a -- [\momentum=\(p\), \modifier] b,
+    };
+  }
+}
+
+\end{document}

@@ -1,0 +1,23 @@
+%% Load TikZ-Feynman and set compatibility to the current version
+\RequirePackage{tikz-feynman}
+\tikzfeynmanset{compat=\tikzfeynman@version@major.\tikzfeynman@version@minor.\tikzfeynman@version@patch}
+
+%% Provide information about the compiler
+\RequirePackage{iftex}
+\RequirePackage{hologo}
+
+\newcommand{\TeXTable}{
+\begin{tabular}{lll}
+  Compiled by & \hologo{\fmtname} (\fmtversion) \\
+  \hologo{eTeX}
+    & \ifetex \the\eTeXversion\eTeXrevision \else No \fi \\
+  \hologo{pdfTeX}
+    & \ifpdftex \pdftexbanner \else No \fi \\
+  \hologo{XeTeX}
+    & \ifxetex \the\XeTeXversion\XeTeXrevision \else No \fi \\
+  \hologo{LuaTeX}
+    & \ifluatex \luatexbanner \else No \fi \\
+  \hologo{LuaTeX} (HB)
+    & \ifluahbtex Yes \else No \fi
+\end{tabular}
+}

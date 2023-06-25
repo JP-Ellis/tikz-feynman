@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage{support}
+
+\def\layouts{%
+  spring layout,%
+  spring electrical layout,%
+  layered layout,%
+  tree layout%
+}
+
+\def\sizes{%
+  small,%
+  medium,%
+  large%
+}
+
+\begin{document}
+
+\section{Information}
+
+\TeXTable
+\clearpage
+
+\section{Default layout}
+
+\foreach \size in \sizes {
+  \subsection{Default layout (\size)}
+
+  \feynmandiagram [horizontal=a to b, \size] {
+    i1 [particle=\(e^{-}\)] -- [fermion] a [blob],
+    i2 [particle=\(e^{+}\)] -- [anti fermion] a,
+    a -- [photon, edge label=\(\gamma\)] b [dot],
+    b -- [anti fermion] f1 [particle=\(\mu^{-}\)],
+    b -- [fermion] f2 [particle=\(\mu^{+}\)],
+  };
+}
+
+\clearpage
+
+\foreach \layout in \layouts {
+  \section{\layout}
+
+  \foreach \size in \sizes {
+    \subsection{\layout\ (\size)}
+
+    \feynmandiagram [horizontal=a to b, \size, \layout] {
+      i1 [particle=\(e^{-}\)] -- [fermion] a [blob],
+      i2 [particle=\(e^{+}\)] -- [anti fermion] a,
+      a -- [photon, edge label=\(\gamma\)] b [dot],
+      b -- [anti fermion] f1 [particle=\(\mu^{-}\)],
+      b -- [fermion] f2 [particle=\(\mu^{+}\)],
+    };
+  }
+
+  \clearpage
+}
+
+\section{Manual layout}
+\foreach \size in \sizes {
+  \subsection{Manual layout\ (\size)}
+
+  \begin{tikzpicture}
+    \begin{feynman}[\size]
+      \vertex [blob] (a) {};
+      \vertex [right=of a] (b);
+      \vertex [above left=of a] (i1) {\(e^{-}\)};
+      \vertex [below left=of a] (i2) {\(e^{+}\)};
+      \vertex [above right=of b] (f1) {\(\mu^{-}\)};
+      \vertex [below right=of b] (f2) {\(\mu^{+}\)};
+
+      \diagram* {
+        (i1) -- [fermion] (a) -- [fermion] (i2),
+        (a) -- [photon, edge label=\(\gamma\)] (b),
+        (f1) -- [fermion] (b) -- [fermion] (f2),
+      };
+    \end{feynman}
+  \end{tikzpicture}
+}
+
+\end{document}

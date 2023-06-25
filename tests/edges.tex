@@ -1,0 +1,58 @@
+\documentclass[twocolumn]{article}
+\usepackage{support}
+
+\def\edges{%
+  plain,%
+  boson,%
+  charged boson,%
+  anti charged boson,%
+  photon,%
+  scalar,%
+  charged scalar,%
+  anti charged scalar,%
+  ghost,%
+  fermion,%
+  anti fermion,%
+  majorana,%
+  anti majorana,%
+  gluon%
+}
+
+\def\sizes{%
+  small,%
+  medium,%
+  large%
+}
+
+\begin{document}
+
+\section{Information}
+
+\TeXTable
+\clearpage
+
+\foreach \edge in \edges {
+  \section{\edge}
+
+  \foreach \size in \sizes {
+    \subsection{\edge\ (\size)}
+    \feynmandiagram[\size, horizontal=a to b] {
+      a -- [\edge] b,
+    };
+  }
+  \clearpage
+}
+
+\foreach \edgea [count=\i] in \edges {
+  \section{\edgea}
+
+  \foreach \edgeb [count=\j] in \edges {
+    \subsection{\edgea--\edgeb}
+    \feynmandiagram[horizontal=a to b] {
+      a -- [\edgea, \edgeb] b,
+    };
+  }
+  \clearpage
+}
+
+\end{document}
