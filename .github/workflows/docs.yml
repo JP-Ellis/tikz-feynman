@@ -1,4 +1,4 @@
-name: Build
+name: Documentation
 
 on:
   push:
@@ -9,48 +9,6 @@ env:
   TEXMFHOME: ${{ github.workspace }}
 
 jobs:
-  test:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        compiler: [pdflatex, lualatex]
-
-    runs-on: ${{ matrix.os }}
-
-    steps:
-      - name: Setup TeX Live
-        uses: teatimeguest/setup-texlive-action@v2
-        with:
-          packages: |
-            scheme-basic
-            pgf
-            pgfopts
-            l3build
-            hologo
-
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Run l3build tests
-        shell: bash
-        run: |
-          l3build check
-
-      - name: Compile Tests
-        shell: bash
-        run: |
-          cd tests
-          for test in *.tex ; do
-            ${{ matrix.compiler }} -halt-on-error $test
-          done
-
-      - name: Upload PDF outputs
-        uses: actions/upload-artifact@v3
-        with:
-          name: tests-${{ matrix.os }}-${{ matrix.compiler }}
-          path: |
-            tests/*.pdf
-
   docs:
     runs-on: ubuntu-latest
 
