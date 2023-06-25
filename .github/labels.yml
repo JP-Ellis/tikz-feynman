@@ -1,0 +1,113 @@
+- name: area:ci
+  description: Relating to the CI/CD workflow
+  color: "C2E0C6"
+
+- name: area:documentation
+  description: Relating to the documentation
+  color: "C2E0C6"
+  aliases:
+    - documentation
+
+- name: area:tests
+  description: Relating to the testing
+  color: "C2E0C6"
+
+- name: area:library
+  description: Relating to the core library
+  color: "C2E0C6"
+
+- name: effort:1
+  description: Should take no more than a couple of hours
+  color: "EEEEEF"
+
+- name: effort:2
+  description: Should take no more than a day
+  color: "BBBBFF"
+
+- name: effort:3
+  description: Should take no more than a couple of days
+  color: "9999FF"
+
+- name: effort:5
+  description: Should take no more than a week
+  color: "5555FF"
+
+- name: effort:8
+  description: Might take a couple of weeks
+  color: "2222FF"
+
+- name: effort:13
+  description: Likely to take a month or more
+  color: "0000FF"
+
+- name: good first issue
+  description: Good for newcomers
+  color: "00FF00"
+
+- name: help wanted
+  description: Extra attention is needed
+  color: "FF00FF"
+
+- name: priority:1-critical
+  description: Must be addressed immediately
+  color: "FF0000"
+
+- name: priority:2-high
+  description: Must be addressed as soon as possible
+  color: "FF3333"
+
+- name: priority:4-low
+  description: An optional, or otherwise 'nice-to-have' item
+  color: "FFDDDD"
+
+- name: status:duplicate
+  description: This issue or pull request already exists
+  color: "000000"
+  aliases:
+    - duplicate
+
+- name: status:invalid
+  description: This doesn't seem right
+  color: "000000"
+  aliases:
+    - invalid
+
+- name: status:triage
+  description: An item which has been recently created and needs to be triaged
+  color: "000000"
+
+- name: status:wontfix
+  description: This will not be worked on
+  color: "000000"
+  aliases:
+    - wontfix
+
+- name: type:bug
+  description: Something isn't working
+  color: e41a1c
+  aliases:
+    - bug
+
+- name: type:feature
+  description: New feature
+  color: 377eb8
+  aliases:
+    - enhancement
+
+- name: type:fix
+  description: Fix to an issue
+  color: ff7f00
+
+- name: type:chore
+  description: Part of regular code upkeep
+  color: 984ea3
+
+- name: type:question
+  description: Further information is requested
+  color: 4daf4a
+  aliases:
+    - question
+
+- name: type:tracking
+  description: Tracks a more complicated task's progress across a number of other issues
+  color: ffff33
